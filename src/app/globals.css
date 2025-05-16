@@ -1,3 +1,13 @@
+@font-face {
+  font-family: "LS-Regular";
+  src: url("/fonts/League-Spartan/LeagueSpartan-Regular.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "LS-Medium";
+  src: url("/fonts/League-Spartan/LeagueSpartan-Medium.ttf") format("truetype");
+}
+
 :root {
   --background: #ffffff;
   --foreground: #000000;
@@ -18,12 +28,12 @@ body {
 body {
   color: var(--foreground);
   background: var(--background);
-  font-family: sans-serif;
+  font-family: "LS-Regular", sans-serif;
   box-sizing: border-box;
   padding: 0;
   margin: 0;
   font-size: 16px;
-  line-height: 1.5;
+  line-height: 1.2rem;
   min-height: 100vh;
   width: 100%;
 }
@@ -31,4 +41,8 @@ body {
 a {
   color: inherit;
   text-decoration: none;
+}
+
+::-webkit-scrollbar {
+  display: none;
 }

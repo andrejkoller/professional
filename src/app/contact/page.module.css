@@ -1,0 +1,30 @@
+.contact .back {
+  position: fixed;
+  top: 5vh;
+  right: 5vw;
+}
+
+.contact .contact-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  width: 100%;
+}
+
+.contact .contact-container .contact-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 0 5vw;
+}
+
+.contact .contact-container .contact-content .email-link a,
+.contact .contact-container .contact-content .linkedin-link a {
+  color: inherit;
+  text-decoration: none;
+  font-size: 14vw;
+  line-height: 1em;
+}

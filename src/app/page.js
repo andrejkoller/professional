@@ -15,10 +15,14 @@ export default function Home() {
             </div>
           </div>
           <div className={styles["second-row"]}>
-            <h2>FRONTEND BACKEND DESIGN</h2>
+            <h2>
+              <span>FREELANCE</span>
+              <span>DEVELOPER</span>
+              <span>MUSIC</span>
+            </h2>
           </div>
           <div className={styles["third-row"]}>
-            <p>18.24</p>
+            <p>12.40</p>
             <p>—</p>
             <p>SELECTED WORKS</p>
           </div>
@@ -33,12 +37,16 @@ export default function Home() {
         </nav>
       </div>
       <div className={styles["sections-container"]}>
-        <figure className={styles["nav"]}></figure>
+        <figure className={styles["nav"]}>
+          <p>SCROLL TO EXPLORE</p>
+        </figure>
         <section className={styles["project"]}></section>
         <section className={styles["project"]}></section>
         <section className={styles["project"]}></section>
         <section className={styles["project"]}></section>
-        <figure className={styles["nav2"]}></figure>
+        <figure className={styles["nav2"]}>
+          <p>SCROLL UP</p>
+        </figure>
       </div>
     </>
   );
