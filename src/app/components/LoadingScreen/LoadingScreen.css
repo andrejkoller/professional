@@ -1,0 +1,26 @@
+.loading-screen {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 100%;
+  background: var(--background);
+  z-index: 9999;
+  position: fixed;
+  top: 0;
+  left: 0;
+  opacity: 1;
+}
+
+.loading-screen p.loading-number {
+  position: relative;
+  left: 0;
+  width: 100%;
+  margin: 0;
+  opacity: 1;
+  transition: opacity 0.5s ease-out;
+}
+
+.fade-out {
+  opacity: 0;
+}

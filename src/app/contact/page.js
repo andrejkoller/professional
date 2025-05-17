@@ -14,7 +14,7 @@ export default function Page() {
           </div>
           <div className={styles["linkedin-link"]}>
             <Link
-              href={"https://www.linkedin.com/in/andrej-koller-7b55b4281/"}
+              href={"https://www.linkedin.com/in/andrejkoller/"}
               target="_blank"
               rel="noopener noreferrer"
             >

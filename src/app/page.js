@@ -16,9 +16,9 @@ export default function Home() {
           </div>
           <div className={styles["second-row"]}>
             <h2>
-              <span>FREELANCE</span>
-              <span>DEVELOPER</span>
-              <span>MUSIC</span>
+              <span>UI/UX</span>
+              <span>FRONTEND</span>
+              <span>BACKEND</span>
             </h2>
           </div>
           <div className={styles["third-row"]}>

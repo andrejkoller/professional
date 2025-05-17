@@ -9,7 +9,7 @@ export default function Page() {
       </Link>
       <div className={styles["about-content"]}>
         <figure className={styles["info-title"]}>
-          <div className={styles["info-title-text"]}>[INFO]</div>
+          <div className={styles["info-title-text"]}>( INFO )</div>
         </figure>
         <section className={styles["about-text"]}></section>
       </div>
