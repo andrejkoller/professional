@@ -1,5 +1,6 @@
 import Link from "next/link";
 import styles from "./page.module.css";
+import { HoverText } from "./components/HoverText/HoverText";
 
 export default function Home() {
   return (
@@ -28,10 +29,14 @@ export default function Home() {
           </div>
           <ul className={styles["fourth-row"]}>
             <li>
-              <Link href={"/about"}>INFO</Link>
+              <Link href={"/about"}>
+                <HoverText text={"INFO"} />
+              </Link>
             </li>
             <li>
-              <Link href={"/contact"}>CONTACT</Link>
+              <Link href={"/contact"}>
+                <HoverText text={"CONTACT"} />
+              </Link>
             </li>
           </ul>
         </nav>
