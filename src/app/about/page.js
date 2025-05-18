@@ -1,11 +1,12 @@
 import Link from "next/link";
 import styles from "./page.module.css";
+import { HoverText } from "../components/HoverText/HoverText";
 
 export default function Page() {
   return (
     <div className={styles["about-container"]}>
       <Link href={"/"} className={styles["back"]}>
-        CLOSE
+        <HoverText text={"CLOSE"} />
       </Link>
       <div className={styles["about-content"]}>
         <figure className={styles["info-title"]}>

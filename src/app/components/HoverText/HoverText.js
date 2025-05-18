@@ -16,15 +16,18 @@ export const HoverText = ({ text }) => {
   const intervalRef = useRef(null);
 
   const scrambleLetters = () => {
-    const original = text.split("");
     let iteration = 0;
-    const maxIterations = 10;
-
     clearInterval(intervalRef.current);
+
     intervalRef.current = setInterval(() => {
-      if (iteration < maxIterations) {
-        const shuffled = shuffleArray(original);
-        setDisplayedText(shuffled.join(""));
+      if (iteration <= text.length) {
+        const left = text.slice(0, iteration);
+        const right = text
+          .slice(iteration)
+          .split("")
+          .map((char, i, arr) => shuffleArray(arr)[i])
+          .join("");
+        setDisplayedText(left + right);
         iteration++;
       } else {
         clearInterval(intervalRef.current);

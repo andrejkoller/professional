@@ -35,8 +35,8 @@
 }
 
 .container .navigation .first-row .logo {
-  width: 1em;
-  height: 1em;
+  width: 100%;
+  height: 100%;
 }
 
 .container .navigation .second-row {

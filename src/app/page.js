@@ -1,6 +1,7 @@
 import Link from "next/link";
 import styles from "./page.module.css";
 import { HoverText } from "./components/HoverText/HoverText";
+import { ThemeSwitcher } from "./components/ThemeSwitcher/ThemeSwitcher";
 
 export default function Home() {
   return (
@@ -9,11 +10,7 @@ export default function Home() {
         <nav className={styles["navigation"]}>
           <div className={styles["first-row"]}>
             <h1>ANDREJ KOLLER</h1>
-            <div className={styles["logo"]}>
-              <svg>
-                <path></path>
-              </svg>
-            </div>
+            <div className={styles["logo"]}></div>
           </div>
           <div className={styles["second-row"]}>
             <h2>

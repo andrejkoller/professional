@@ -1,7 +1,11 @@
-:root {
+:root[data-theme="light"] {
   --background: #ffffff;
   --foreground: #000000;
-  --font-league-spartan: "LeagueSpartan", sans-serif;
+}
+
+:root[data-theme="dark"] {
+  --background: #000000;
+  --foreground: #ffffff;
 }
 
 @media (prefers-color-scheme: dark) {

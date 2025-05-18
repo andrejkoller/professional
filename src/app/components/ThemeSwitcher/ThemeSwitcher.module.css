@@ -1,0 +1,11 @@
+.theme-switcher {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  font-size: inherit;
+  padding: 0;
+}
+
+.theme-switcher svg {
+  fill: var(--foreground);
+}
