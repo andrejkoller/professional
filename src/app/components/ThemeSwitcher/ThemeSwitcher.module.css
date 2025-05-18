@@ -6,6 +6,9 @@
   padding: 0;
 }
 
-.theme-switcher svg {
-  fill: var(--foreground);
+.theme-switcher span {
+  color: var(--foreground);
+  font-size: 16px;
+  font-weight: 400;
+  font-family: var(--font-league-spartan);
 }

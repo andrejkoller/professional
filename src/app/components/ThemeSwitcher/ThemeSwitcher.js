@@ -32,7 +32,7 @@ export const ThemeSwitcher = () => {
 
   return (
     <button onClick={toggleTheme} className={styles["theme-switcher"]}>
-      {theme === "light" ? <DarkModeIcon /> : <LightModeIcon />}
+      {theme === "light" ? <span>DARK</span> : <span>LIGHT</span>}
     </button>
   );
 };

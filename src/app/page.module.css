@@ -8,6 +8,8 @@
   position: fixed;
   top: 0;
   left: 0;
+  z-index: 50;
+  transition: none;
 }
 
 .container .navigation {
@@ -18,6 +20,7 @@
   width: 252px;
   white-space: nowrap;
   overflow: hidden;
+  transform: scale(1.1);
 }
 
 .container .navigation .first-row {
@@ -32,11 +35,6 @@
   font-size: 16px;
   font-weight: 400;
   margin: 0;
-}
-
-.container .navigation .first-row .logo {
-  width: 100%;
-  height: 100%;
 }
 
 .container .navigation .second-row {
@@ -87,7 +85,7 @@
   margin: 0;
 }
 
-.sections-container .nav {
+.sections-container .figure {
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
@@ -97,12 +95,16 @@
   margin: 0;
 }
 
-.sections-container .nav p {
-  padding-bottom: 20vh;
+.sections-container .figure p {
   z-index: 20;
+  font-size: 12px;
+  margin: 0;
+  padding-bottom: 2rem;
+  position: fixed;
+  bottom: 0;
 }
 
-.sections-container .nav2 {
+.sections-container .figure2 {
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
@@ -112,6 +114,25 @@
   margin: 0;
 }
 
-.sections-container .nav2 p {
+.sections-container .figure2 p {
   z-index: 20;
+  font-size: 12px;
+  margin: 0;
+  padding-bottom: 2rem;
+}
+
+.sections-container .project {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  z-index: 999;
+  min-height: 100vh;
+}
+
+.sections-container .project .project-content h2 {
+  font-size: 16vw;
+  font-weight: 400;
+  margin: 0;
 }
