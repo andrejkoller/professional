@@ -54,7 +54,7 @@ export default function Home() {
           trigger: project,
           start: "top top",
           endTrigger: nav2,
-          end: "bottom bottom",
+          end: "bottom top",
           scrub: true,
         },
         defaults: { duration: 1, ease: "power4.out" },
@@ -87,26 +87,40 @@ export default function Home() {
         ease: "power4.out",
       });
 
-      const timeline3 = gsap.timeline({
+      const fadeInTimeline = gsap.timeline({
         scrollTrigger: {
           trigger: nav2,
           start: "bottom bottom",
-          endTrigger: project,
-          end: "bottom bottom",
-          scrub: true,
+          end: "bottom+=1 bottom", // sehr kurzer Bereich, nur beim Erreichen
+          toggleActions: "play none none reverse",
         },
-        defaults: { duration: 1, ease: "power4.out" },
+      });
+      fadeInTimeline.to(scrollUp, {
+        opacity: 1,
+        duration: 1,
+        ease: "power4.out",
       });
 
-      timeline3.to(scrollUp, {
-        opacity: 1,
+      const fadeOutTimeline = gsap.timeline({
+        scrollTrigger: {
+          trigger: nav2,
+          start: "bottom bottom",
+          end: "bottom+=1 bottom",
+          scrub: true,
+        },
+      });
+      fadeOutTimeline.to(scrollUp, {
+        opacity: 0,
+        duration: 1,
         ease: "power4.out",
       });
 
       return () => {
         timeline1.kill();
         timeline2.kill();
-        timeline3.kill();
+        fadeInTimeline.kill();
+        fadeOutTimeline.kill();
+        ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
       };
     }
   }, [loading]);
@@ -136,12 +150,12 @@ export default function Home() {
           <ul className={styles["fourth-row"]}>
             <li>
               <Link href={"/about"}>
-                <HoverText text={"INFO"} />
+                <HoverText text={"info"} />
               </Link>
             </li>
             <li>
               <Link href={"/contact"}>
-                <HoverText text={"CONTACT"} />
+                <HoverText text={"contact"} />
               </Link>
             </li>
           </ul>

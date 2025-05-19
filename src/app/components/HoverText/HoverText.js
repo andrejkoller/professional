@@ -1,6 +1,7 @@
 "use client";
 
 import { useRef, useState } from "react";
+import styles from "./HoverText.module.css";
 
 function shuffleArray(arr) {
   const a = [...arr];
@@ -37,14 +38,7 @@ export const HoverText = ({ text }) => {
   };
 
   return (
-    <span
-      onMouseEnter={scrambleLetters}
-      style={{
-        display: "inline-block",
-        letterSpacing: "0.05em",
-        cursor: "pointer",
-      }}
-    >
+    <span onMouseEnter={scrambleLetters} className={styles["hover-text"]}>
       {displayedText}
     </span>
   );

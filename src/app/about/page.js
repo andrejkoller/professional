@@ -13,6 +13,7 @@ gsap.registerPlugin(ScrollTrigger);
 export default function Page() {
   const { loading } = useLoading();
 
+  const backLinkRef = useRef(null);
   const navRef = useRef(null);
   const titleRef = useRef(null);
   const projectRef = useRef(null);
@@ -20,25 +21,33 @@ export default function Page() {
 
   useEffect(() => {
     if (!loading) {
+      const backLink = backLinkRef.current;
       const nav = navRef.current;
       const title = titleRef.current;
       const project = projectRef.current;
       const nav2 = nav2Ref.current;
 
-      if (!nav || !title || !project || !nav2) return;
-
-      gsap.set(title, { opcacity: 1, scale: 1, y: 0 });
+      if (!backLink || !nav || !title || !project || !nav2) return;
 
       const timeline1 = gsap.timeline();
-      timeline1.from(title, {
-        opacity: 0,
-        scale: 1.15,
-        y: 40,
+      timeline1.to(backLink, {
+        delay: 0.5,
+        opacity: 1,
+        ease: "power4.out",
+        duration: 1,
+      });
+
+      const timeline2 = gsap.timeline();
+      timeline2.to(title, {
+        delay: 0.5,
+        opacity: 1,
+        scale: 1,
+        y: 0,
         ease: "expo.out",
         duration: 1.3,
       });
 
-      const timeline2 = gsap.timeline({
+      const timeline3 = gsap.timeline({
         scrollTrigger: {
           trigger: project,
           start: "top top",
@@ -47,7 +56,7 @@ export default function Page() {
         },
       });
 
-      timeline2.to(nav, {
+      timeline3.to(nav, {
         scale: 0.8,
         opacity: 0.1,
         ease: "power4.out",
@@ -56,8 +65,8 @@ export default function Page() {
       return () => {
         timeline1.kill();
         timeline2.kill();
+        timeline3.kill();
         ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
-        gsap.set(title, { opacity: 1, scale: 1, y: 0 });
       };
     }
   }, [loading]);
@@ -65,7 +74,7 @@ export default function Page() {
   return (
     <>
       <div className={styles["title-container"]}>
-        <Link href={"/"} className={styles["back"]}>
+        <Link href={"/"} className={styles["back"]} ref={backLinkRef}>
           <HoverText text={"CLOSE"} />
         </Link>
         <figure className={styles["title-content"]} ref={navRef}>
@@ -93,6 +102,15 @@ export default function Page() {
                   HTML5, CSS3, SCSS, JavaScript, TypeScript, Angular, React,
                   Next.js, Vue.js, .NET, C#, Java, Mssql, Tailwindcss,
                   Bootstrap, WordPress, Webflow,
+                  <br />
+                </p>
+                <p>
+                  <Link
+                    href={"https://github.com/andrejkoller"}
+                    target="_blank"
+                  >
+                    <HoverText text={"GitHub"} />
+                  </Link>
                 </p>
               </figure>
             </div>
@@ -109,7 +127,9 @@ export default function Page() {
           <figure className={styles["figure2"]} ref={nav2Ref}>
             <h2>
               open for colloboration <br />
-              <Link href={"mailto:andrejkoller@outlook.com"}>reach out</Link>
+              <Link href={"mailto:andrejkoller@outlook.com"}>
+                <HoverText text={"reach out"} />
+              </Link>
             </h2>
           </figure>
         </div>

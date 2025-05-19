@@ -1,0 +1,9 @@
+.hover-text {
+  display: inline-block;
+  letter-spacing: 0.05em;
+  cursor: pointer;
+  color: var(--foreground);
+  font-weight: 400;
+  font-family: var(--font-league-spartan);
+  text-transform: uppercase;
+}

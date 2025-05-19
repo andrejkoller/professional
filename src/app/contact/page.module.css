@@ -2,6 +2,7 @@
   position: fixed;
   top: 5vh;
   right: 5vw;
+  opacity: 0;
 }
 
 .contact .contact-container {
@@ -19,6 +20,8 @@
   align-items: center;
   justify-content: center;
   padding: 0 5vw;
+  opacity: 0;
+  transform: scale(1.15) translateY(40px);
 }
 
 .contact .contact-container .contact-content .email-link a,

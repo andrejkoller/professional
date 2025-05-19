@@ -4,6 +4,7 @@ import React, { useEffect, useState } from "react";
 import styles from "./ThemeSwitcher.module.css";
 import DarkModeIcon from "@mui/icons-material/DarkMode";
 import LightModeIcon from "@mui/icons-material/LightMode";
+import { HoverText } from "../HoverText/HoverText";
 
 export const ThemeSwitcher = () => {
   const [theme, setTheme] = useState("light");
@@ -32,7 +33,11 @@ export const ThemeSwitcher = () => {
 
   return (
     <button onClick={toggleTheme} className={styles["theme-switcher"]}>
-      {theme === "light" ? <span>DARK</span> : <span>LIGHT</span>}
+      {theme === "light" ? (
+        <HoverText text={"dark"} />
+      ) : (
+        <HoverText text={"light"} />
+      )}
     </button>
   );
 };
