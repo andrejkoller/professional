@@ -44,14 +44,12 @@ export default function Home() {
       .to(nav, {
         scale: 0.8,
         opacity: 0.7,
-        ease: "power3.out",
-        pointerEvents: "none",
+        ease: "power4.out",
       })
       .to(nav, {
         scale: 1,
         opacity: 1,
-        ease: "power3.out",
-        pointerEvents: "all",
+        ease: "power4.out",
       });
 
     const timeline2 = gsap.timeline({
@@ -66,7 +64,7 @@ export default function Home() {
 
     timeline2.to(scroll, {
       opacity: 0,
-      ease: "power3.out",
+      ease: "power4.out",
     });
 
     const timeline3 = gsap.timeline({
@@ -82,7 +80,7 @@ export default function Home() {
 
     timeline3.to(scroll2, {
       opacity: 1,
-      ease: "power3.out",
+      ease: "power4.out",
     });
 
     ScrollTrigger.create({
@@ -116,24 +114,6 @@ export default function Home() {
     <>
       <div className={styles["container"]}>
         <nav className={styles["navigation"]} ref={navRef}>
-          <div className={styles["first-row"]}>
-            <h1>ANDREJ KOLLER</h1>
-            <div className={styles["logo"]}>
-              <ThemeSwitcher />
-            </div>
-          </div>
-          <div className={styles["second-row"]}>
-            <h2>
-              <span>UI/UX</span>
-              <span>FRONTEND</span>
-              <span>BACKEND</span>
-            </h2>
-          </div>
-          <div className={styles["third-row"]}>
-            <p>12.40</p>
-            <p>—</p>
-            <p>SELECTED WORKS</p>
-          </div>
           <ul className={styles["fourth-row"]}>
             <li>
               <Link href={"/about"}>
