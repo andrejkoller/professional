@@ -34,7 +34,7 @@
   font-weight: 400;
 }
 
-.sections-container {
+.about-container {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -42,7 +42,7 @@
   position: relative;
 }
 
-.sections-container .figure {
+.about-container .figure {
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
@@ -52,7 +52,7 @@
   margin: 0;
 }
 
-.sections-container .figure p {
+.about-container .figure p {
   z-index: 20;
   font-size: 12px;
   margin: 0;
@@ -61,7 +61,7 @@
   bottom: 0;
 }
 
-.sections-container .info-section {
+.about-container .info-section {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -73,7 +73,7 @@
   margin: 0 auto;
 }
 
-.sections-container .info-section .info-title {
+.about-container .info-section .info-title {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -82,7 +82,7 @@
   padding: 40px 0;
 }
 
-.sections-container .info-section .info-title h2 {
+.about-container .info-section .info-title h2 {
   font-size: 40px;
   font-weight: 400;
   line-height: 1em;
@@ -97,9 +97,10 @@
   justify-content: center;
   align-items: center;
   width: 100%;
+  padding: 40px 0;
 }
 
-.sections-container .info-section .info-content .info-description {
+.about-container .info-section .info-content .info-description {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -107,7 +108,7 @@
   width: 100%;
 }
 
-.sections-container .info-section .info-content .info-description p {
+.about-container .info-section .info-content .info-description p {
   font-size: 16px;
   font-weight: 400;
   line-height: 1.5em;
@@ -117,7 +118,7 @@
   text-transform: uppercase;
 }
 
-.sections-container .figure2 {
+.about-container .figure2 {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -126,7 +127,7 @@
   margin-bottom: 43vh;
 }
 
-.sections-container .figure2 h2 {
+.about-container .figure2 h2 {
   font-size: 40px;
   font-weight: 400;
   line-height: 1em;

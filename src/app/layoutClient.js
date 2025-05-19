@@ -6,22 +6,16 @@ import "./globals.css";
 import Lenis from "@studio-freight/lenis";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/all";
+import { LoadingContext } from "./contexts/LoadingContext";
 
 gsap.registerPlugin(ScrollTrigger);
 
 export default function LayoutClient({ children }) {
   const [loading, setLoading] = useState(true);
-  const isFirstRender = useRef(true);
+
+  const isFirstRenderRef = useRef(true);
 
   useEffect(() => {
-    if (isFirstRender.current) {
-      const timer = setTimeout(() => setLoading(false), 3500);
-      isFirstRender.current = false;
-      return () => clearTimeout(timer);
-    } else {
-      setLoading(false);
-    }
-
     const lenis = new Lenis({
       duration: 1.2,
       easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
@@ -32,14 +26,11 @@ export default function LayoutClient({ children }) {
       lenis.raf(time);
       requestAnimationFrame(raf);
     }
-
     requestAnimationFrame(raf);
 
     ScrollTrigger.scrollerProxy(document.body, {
       scrollTop(value) {
-        return arguments.length
-          ? lenis.scrollTo(value)
-          : lenis.scroll.instance.scroll.y;
+        return arguments.length ? lenis.scrollTo(value) : lenis.scroll;
       },
       getBoundingClientRect() {
         return {
@@ -55,16 +46,20 @@ export default function LayoutClient({ children }) {
     lenis.on("scroll", ScrollTrigger.update);
     ScrollTrigger.refresh();
 
+    setLoading(true);
+    const timer = setTimeout(() => setLoading(false), 3500);
+
     return () => {
+      clearTimeout(timer);
       lenis.destroy();
       ScrollTrigger.kill();
     };
   }, []);
 
   return (
-    <>
+    <LoadingContext.Provider value={{ loading, isFirstRenderRef, setLoading }}>
       {loading && <LoadingScreen />}
       <main>{children}</main>
-    </>
+    </LoadingContext.Provider>
   );
 }

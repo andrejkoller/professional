@@ -6,40 +6,61 @@ import gsap from "gsap";
 import { ScrollTrigger } from "gsap/all";
 import { useEffect, useRef } from "react";
 import { HoverText } from "../components/HoverText/HoverText";
+import { useLoading } from "../contexts/LoadingContext";
 
 gsap.registerPlugin(ScrollTrigger);
 
 export default function Page() {
+  const { loading } = useLoading();
+
   const navRef = useRef(null);
+  const titleRef = useRef(null);
   const projectRef = useRef(null);
   const nav2Ref = useRef(null);
 
   useEffect(() => {
-    const nav = navRef.current;
-    const project = projectRef.current;
-    const nav2 = nav2Ref.current;
+    if (!loading) {
+      const nav = navRef.current;
+      const title = titleRef.current;
+      const project = projectRef.current;
+      const nav2 = nav2Ref.current;
 
-    if (!nav || !project || !nav2) return;
+      if (!nav || !title || !project || !nav2) return;
 
-    const timeline = gsap.timeline({
-      scrollTrigger: {
-        trigger: project,
-        start: "top top",
-        end: "bottom bottom",
-        scrub: 1.5,
-      },
-    });
+      gsap.set(title, { opcacity: 1, scale: 1, y: 0 });
 
-    timeline.to(nav, {
-      scale: 0.8,
-      opacity: 0.1,
-      ease: "power4.out",
-    });
+      const timeline1 = gsap.timeline();
+      timeline1.from(title, {
+        opacity: 0,
+        scale: 1.15,
+        y: 40,
+        ease: "expo.out",
+        duration: 1.3,
+      });
 
-    return () => {
-      timeline.kill();
-    };
-  }, []);
+      const timeline2 = gsap.timeline({
+        scrollTrigger: {
+          trigger: project,
+          start: "top top",
+          end: "bottom bottom",
+          scrub: true,
+        },
+      });
+
+      timeline2.to(nav, {
+        scale: 0.8,
+        opacity: 0.1,
+        ease: "power4.out",
+      });
+
+      return () => {
+        timeline1.kill();
+        timeline2.kill();
+        ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
+        gsap.set(title, { opacity: 1, scale: 1, y: 0 });
+      };
+    }
+  }, [loading]);
 
   return (
     <>
@@ -48,13 +69,13 @@ export default function Page() {
           <HoverText text={"CLOSE"} />
         </Link>
         <figure className={styles["title-content"]} ref={navRef}>
-          <figure className={styles["title"]}>
+          <figure className={styles["title"]} ref={titleRef}>
             <div>( INFO )</div>
           </figure>
         </figure>
       </div>
-      <div className={styles["sections-container"]}>
-        <div className={styles["sections-content"]}>
+      <div className={styles["about-container"]}>
+        <div className={styles["about-content"]}>
           <figure className={styles["figure"]} ref={projectRef}></figure>
           <section className={styles["info-section"]}>
             <figure className={styles["figure-inner"]}></figure>
@@ -67,7 +88,7 @@ export default function Page() {
             <div className={styles["info-content"]}>
               <figure className={styles["info-description"]}>
                 <p>
-                  tools and technologies I used so far
+                  tools and technologies used so far
                   <br />
                   HTML5, CSS3, SCSS, JavaScript, TypeScript, Angular, React,
                   Next.js, Vue.js, .NET, C#, Java, Mssql, Tailwindcss,

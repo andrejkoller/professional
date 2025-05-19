@@ -4,24 +4,42 @@ import Link from "next/link";
 import styles from "./page.module.css";
 import { useEffect, useRef, useState } from "react";
 import { HoverText } from "../components/HoverText/HoverText";
+import gsap from "gsap";
+import { useLoading } from "../contexts/LoadingContext";
 
 export default function Page() {
-  const [animate, setAnimate] = useState(false);
-  const emailRef = useRef(null);
-  const linkedinRef = useRef(null);
+  const { loading } = useLoading();
+
+  const emailLinkRef = useRef(null);
+  const linkedinLinkRef = useRef(null);
 
   useEffect(() => {
-    [emailRef.current, linkedinRef.current].forEach((ref) => {
-      if (ref) {
-        ref.style.translate = "none";
-        ref.style.rotate = "none";
-        ref.style.scale = "none";
-        ref.style.opacity = "1";
-        ref.style.transform = "translate(0px, 0px)";
-      }
-    });
-    setAnimate(true);
-  }, []);
+    if (!loading) {
+      const emailLink = emailLinkRef.current;
+      const linkedinLink = linkedinLinkRef.current;
+
+      if (!emailLink || !linkedinLink) return;
+
+      gsap.set(emailLink, { opacity: 1, scale: 1, y: 0 });
+      gsap.set(linkedinLink, { opacity: 1, scale: 1, y: 0 });
+
+      const timeline = gsap.timeline({
+        defaults: {
+          ease: "expo.out",
+          duration: 1.3,
+          y: 40,
+          scale: 1.15,
+          opacity: 0,
+        },
+      });
+
+      timeline.from(emailLink, {}).from(linkedinLink, {}, "<");
+
+      return () => {
+        timeline.kill();
+      };
+    }
+  }, [loading]);
 
   return (
     <section className={styles["contact"]}>
@@ -30,21 +48,13 @@ export default function Page() {
       </Link>
       <div className={styles["contact-container"]}>
         <div className={styles["contact-content"]}>
-          <div className={styles["email-link"]} ref={emailRef}>
-            <Link
-              className={`${styles["email-link"]} ${
-                animate ? styles["animate-in"] : ""
-              }`}
-              href={"mailto:andrejkoller@outlook.com"}
-            >
+          <div className={styles["email-link"]} ref={emailLinkRef}>
+            <Link href={"mailto:andrejkoller@outlook.com"}>
               <HoverText text={"EMAIL"} />
             </Link>
           </div>
-          <div className={styles["linkedin-link"]} ref={linkedinRef}>
+          <div className={styles["linkedin-link"]} ref={linkedinLinkRef}>
             <Link
-              className={`${styles["linkedin-link"]} ${
-                animate ? styles["animate-in"] : ""
-              }`}
               href={"https://www.linkedin.com/in/andrejkoller/"}
               target="_blank"
               rel="noopener noreferrer"
