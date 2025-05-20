@@ -9,6 +9,7 @@ import { useCallback, useEffect, useRef } from "react";
 import { ScrollTrigger } from "gsap/all";
 import Image from "next/image";
 import { useLoading } from "./contexts/LoadingContext";
+import AnimatedLink from "./components/AnimatedLink/AnimatedLink";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -22,7 +23,7 @@ export default function Home() {
   const scrollUpRef = useRef(null);
   const projectImageRef = useRef(null);
 
-  const handleProjetImageMouseEnter = useCallback((color) => {
+  const handleProjectImageMouseEnter = useCallback((color) => {
     document.body.style.backgroundColor = color;
   }, []);
 
@@ -91,7 +92,7 @@ export default function Home() {
         scrollTrigger: {
           trigger: nav2,
           start: "bottom bottom",
-          end: "bottom+=1 bottom", // sehr kurzer Bereich, nur beim Erreichen
+          end: "bottom+=1 bottom",
           toggleActions: "play none none reverse",
         },
       });
@@ -169,7 +170,7 @@ export default function Home() {
           <figure className={styles["figure-inner"]}></figure>
           <div className={styles["project-title"]}>
             <h2>
-              <Link href={"/fadinghell"}>Fading Hell</Link>
+              <AnimatedLink href={"/fadinghell"}>Fading Hell</AnimatedLink>
             </h2>
           </div>
           <div className={styles["project-content"]}>
@@ -178,19 +179,17 @@ export default function Home() {
               ref={projectImageRef}
             >
               <div className={styles["project-image"]}>
-                <Link
-                  href={"/fadinghell"}
-                  onMouseEnter={() => handleProjetImageMouseEnter("#8c0d0d")}
-                  onMouseLeave={handleProjectImageMouseLeave}
-                >
+                <AnimatedLink href={"/fadinghell"}>
                   <Image
                     src={"/images/placeholder-image.png"}
+                    onMouseEnter={() => handleProjectImageMouseEnter("#8c0d0d")}
+                    onMouseLeave={handleProjectImageMouseLeave}
                     priority
                     height={500}
                     width={500}
                     alt="Fading Hell"
                   ></Image>
-                </Link>
+                </AnimatedLink>
               </div>
             </figure>
           </div>

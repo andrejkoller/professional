@@ -7,6 +7,9 @@ import Lenis from "@studio-freight/lenis";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/all";
 import { LoadingContext } from "./contexts/LoadingContext";
+import { TransitionProvider } from "./contexts/TransitionContext";
+import { useTransition } from "./contexts/TransitionContext";
+import TransitionOverlay from "./components/TransitionOverlay/TransitionOverlay";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -58,8 +61,22 @@ export default function LayoutClient({ children }) {
 
   return (
     <LoadingContext.Provider value={{ loading, isFirstRenderRef, setLoading }}>
-      {loading && <LoadingScreen />}
-      <main>{children}</main>
+      <TransitionProvider>
+        <TransitionOverlayWrapper />
+        {loading && <LoadingScreen />}
+        <main>{children}</main>
+      </TransitionProvider>
     </LoadingContext.Provider>
+  );
+}
+
+function TransitionOverlayWrapper() {
+  const { isTransitioning } = useTransition();
+  const backgroundColor = "#8c0d0d";
+  return (
+    <TransitionOverlay
+      isActive={isTransitioning}
+      backgroundColor={backgroundColor}
+    />
   );
 }
