@@ -1,14 +1,16 @@
 "use client";
 
 import React, { useEffect, useRef, useState } from "react";
-import "./LoadingScreen.css";
+import styles from "./LoadingScreen.module.css";
 
 export const LoadingScreen = () => {
   const numbers = [
     1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 20, 23, 30, 40, 50, 70, 80, 100,
   ];
+
   const [index, setIndex] = useState(0);
   const [hasFaded, setHasFaded] = useState(false);
+
   const loadingNumberRef = useRef(null);
 
   useEffect(() => {
@@ -30,9 +32,9 @@ export const LoadingScreen = () => {
   }, [index, hasFaded, numbers.length]);
 
   return (
-    <div className="loading-screen">
+    <div className={styles["loading-screen"]}>
       <p
-        className="loading-number"
+        className={styles["loading-number"]}
         ref={loadingNumberRef}
         style={{
           transform: `translateX(${numbers[index]}%)`,

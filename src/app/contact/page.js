@@ -3,7 +3,7 @@
 import Link from "next/link";
 import styles from "./page.module.css";
 import { useEffect, useRef } from "react";
-import { HoverText } from "../components/HoverText/HoverText";
+import { AnimatedText } from "../components/AnimatedText/AnimatedText";
 import gsap from "gsap";
 import { useLoading } from "../contexts/LoadingContext";
 
@@ -48,13 +48,13 @@ export default function Page() {
   return (
     <section className={styles["contact"]}>
       <Link href={"/"} className={styles["back"]} ref={backLinkRef}>
-        <HoverText text={"CLOSE"} />
+        <AnimatedText text={"CLOSE"} isHoverable={true} />
       </Link>
       <div className={styles["contact-container"]}>
         <div className={styles["contact-content"]} ref={contactContentRef}>
           <div className={styles["email-link"]}>
             <Link href={"mailto:andrejkoller@outlook.com"}>
-              <HoverText text={"email"} />
+              <AnimatedText text={"email"} isHoverable={true} />
             </Link>
           </div>
           <div className={styles["linkedin-link"]}>
@@ -63,7 +63,7 @@ export default function Page() {
               target="_blank"
               rel="noopener noreferrer"
             >
-              <HoverText text={"linkedin"} />
+              <AnimatedText text={"linkedin"} isHoverable={true} />
             </Link>
           </div>
         </div>

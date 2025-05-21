@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import styles from "./page.module.css";
-import { HoverText } from "../components/HoverText/HoverText";
+import { AnimatedText } from "../components/AnimatedText/AnimatedText";
 import { useEffect, useRef } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/all";
@@ -50,7 +50,7 @@ export default function Page() {
   return (
     <div className={styles["project"]}>
       <Link href={"/"} className={styles["back"]} ref={backLinkRef}>
-        <HoverText text={"close"} />
+        <AnimatedText text={"close"} isHoverable={true} />
       </Link>
       <div className={styles["project-header"]}>
         <div className={styles["project-header-content"]}>

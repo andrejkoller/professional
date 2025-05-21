@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import styles from "./page.module.css";
-import { HoverText } from "./components/HoverText/HoverText";
+import { AnimatedText } from "./components/AnimatedText/AnimatedText";
 import { ThemeSwitcher } from "./components/ThemeSwitcher/ThemeSwitcher";
 import gsap from "gsap";
 import { useCallback, useEffect, useRef } from "react";
@@ -10,6 +10,23 @@ import { ScrollTrigger } from "gsap/all";
 import Image from "next/image";
 import { useLoading } from "./contexts/LoadingContext";
 import AnimatedLink from "./components/AnimatedLink/AnimatedLink";
+
+const projects = [
+  {
+    title: "Fading Hell",
+    href: "/fadinghell",
+    imageSrc: "/images/placeholder-image.png",
+    imageAlt: "Fading Hell",
+    color: "#8c0d0d",
+  },
+  {
+    title: "Terra Intel",
+    href: "/terraintel",
+    imageSrc: "/images/placeholder-image.png",
+    imageAlt: "Terra Intel",
+    color: "#8c0d0d",
+  },
+];
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -21,10 +38,11 @@ export default function Home() {
   const nav2Ref = useRef(null);
   const scrollDownRef = useRef(null);
   const scrollUpRef = useRef(null);
-  const projectImageRef = useRef(null);
 
   const handleProjectImageMouseEnter = useCallback((color) => {
-    document.body.style.backgroundColor = color;
+    if (typeof document !== "undefined") {
+      document.body.style.backgroundColor = color;
+    }
   }, []);
 
   const handleProjectImageMouseLeave = useCallback(() => {
@@ -38,24 +56,15 @@ export default function Home() {
       const nav2 = nav2Ref.current;
       const scrollDown = scrollDownRef.current;
       const scrollUp = scrollUpRef.current;
-      const projectImage = projectImageRef.current;
 
-      if (
-        !nav ||
-        !project ||
-        !nav2 ||
-        !scrollDown ||
-        !scrollUp ||
-        !projectImage
-      )
-        return;
+      if (!nav || !project || !nav2 || !scrollDown || !scrollUp) return;
 
       const timeline1 = gsap.timeline({
         scrollTrigger: {
           trigger: project,
           start: "top top",
           endTrigger: nav2,
-          end: "bottom top",
+          end: "bottom+=200 top",
           scrub: true,
         },
         defaults: { duration: 1, ease: "power4.out" },
@@ -131,32 +140,44 @@ export default function Home() {
       <div className={styles["container"]}>
         <nav className={styles["navigation"]} ref={navRef}>
           <div className={styles["first-row"]}>
-            <h1>Andrej Koller</h1>
+            <h1>
+              <AnimatedText text="Andrej Koller" isHoverable={false} />
+            </h1>
             <div className={styles["logo"]}>
               <ThemeSwitcher />
             </div>
           </div>
           <div className={styles["second-row"]}>
             <h2>
-              <span>Ui/Ux</span>
-              <span>Frontend</span>
-              <span>Backend</span>
+              <AnimatedText text="Ui/Ux" isHoverable={false} />
+              <AnimatedText text="Frontend" isHoverable={false} />
+              <AnimatedText text="Backend" isHoverable={false} />
             </h2>
           </div>
           <div className={styles["third-row"]}>
-            <p>12.40</p>
-            <p>—</p>
-            <p>Selected Works</p>
+            <p>
+              <AnimatedText text={"12.40"} isHoverable={false} />
+            </p>
+            <p>
+              <AnimatedText text={"—"} isHoverable={false} />
+            </p>
+            <p>
+              <AnimatedText text={"Selected Works"} isHoverable={false} />
+            </p>
           </div>
           <ul className={styles["fourth-row"]}>
             <li>
               <Link href={"/about"}>
-                <HoverText text={"info"} />
+                <AnimatedText text={"info"} isHoverable={true} />
               </Link>
             </li>
             <li>
               <Link href={"/contact"}>
-                <HoverText text={"contact"} />
+                <AnimatedText
+                  text={"contact"}
+                  introDelay={300}
+                  isHoverable={true}
+                />
               </Link>
             </li>
           </ul>
@@ -166,34 +187,37 @@ export default function Home() {
         <figure className={styles["figure"]} ref={projectRef}>
           <p ref={scrollDownRef}>Scroll to explore</p>
         </figure>
-        <section className={styles["project"]}>
-          <figure className={styles["figure-inner"]}></figure>
-          <div className={styles["project-title"]}>
-            <h2>
-              <AnimatedLink href={"/fadinghell"}>Fading Hell</AnimatedLink>
-            </h2>
-          </div>
-          <div className={styles["project-content"]}>
-            <figure
-              className={styles["project-figure-image"]}
-              ref={projectImageRef}
-            >
-              <div className={styles["project-image"]}>
+        {projects.map((project, index) => (
+          <section className={styles["project"]} key={project.title}>
+            <figure className={styles["figure-inner"]}></figure>
+            <div className={styles["project-title"]}>
+              <h2>
                 <AnimatedLink href={"/fadinghell"}>
-                  <Image
-                    src={"/images/placeholder-image.png"}
-                    onMouseEnter={() => handleProjectImageMouseEnter("#8c0d0d")}
-                    onMouseLeave={handleProjectImageMouseLeave}
-                    priority
-                    height={500}
-                    width={500}
-                    alt="Fading Hell"
-                  ></Image>
+                  {project.title}
                 </AnimatedLink>
-              </div>
-            </figure>
-          </div>
-        </section>
+              </h2>
+            </div>
+            <div className={styles["project-content"]}>
+              <figure className={styles["project-figure-image"]}>
+                <div className={styles["project-image"]}>
+                  <AnimatedLink href={project.href}>
+                    <Image
+                      src={project.imageSrc}
+                      onMouseEnter={() =>
+                        handleProjectImageMouseEnter(project.color)
+                      }
+                      onMouseLeave={handleProjectImageMouseLeave}
+                      priority
+                      height={500}
+                      width={500}
+                      alt={project.imageAlt}
+                    ></Image>
+                  </AnimatedLink>
+                </div>
+              </figure>
+            </div>
+          </section>
+        ))}
         <figure className={styles["figure2"]} ref={nav2Ref}>
           <p ref={scrollUpRef}>Scroll up</p>
         </figure>

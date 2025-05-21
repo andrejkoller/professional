@@ -5,7 +5,7 @@ import styles from "./page.module.css";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/all";
 import { useEffect, useRef } from "react";
-import { HoverText } from "../components/HoverText/HoverText";
+import { AnimatedText } from "../components/AnimatedText/AnimatedText";
 import { useLoading } from "../contexts/LoadingContext";
 
 gsap.registerPlugin(ScrollTrigger);
@@ -75,7 +75,7 @@ export default function Page() {
     <>
       <div className={styles["title-container"]}>
         <Link href={"/"} className={styles["back"]} ref={backLinkRef}>
-          <HoverText text={"CLOSE"} />
+          <AnimatedText text={"CLOSE"} isHoverable={true} />
         </Link>
         <figure className={styles["title-content"]} ref={navRef}>
           <figure className={styles["title"]} ref={titleRef}>
@@ -109,7 +109,7 @@ export default function Page() {
                     href={"https://github.com/andrejkoller"}
                     target="_blank"
                   >
-                    <HoverText text={"GitHub"} />
+                    <AnimatedText text={"GitHub"} isHoverable={true} />
                   </Link>
                 </p>
               </figure>
@@ -126,9 +126,9 @@ export default function Page() {
           </section>
           <figure className={styles["figure2"]} ref={nav2Ref}>
             <h2>
-              open for colloboration <br />
+              open for collaboration <br />
               <Link href={"mailto:andrejkoller@outlook.com"}>
-                <HoverText text={"reach out"} />
+                <AnimatedText text={"reach out"} isHoverable={true} />
               </Link>
             </h2>
           </figure>

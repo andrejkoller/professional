@@ -2,7 +2,7 @@
 
 import React, { useEffect, useState } from "react";
 import styles from "./ThemeSwitcher.module.css";
-import { HoverText } from "../HoverText/HoverText";
+import { AnimatedText } from "../AnimatedText/AnimatedText";
 
 export const ThemeSwitcher = () => {
   const [theme, setTheme] = useState("light");
@@ -31,7 +31,10 @@ export const ThemeSwitcher = () => {
 
   return (
     <button onClick={toggleTheme} className={styles["theme-switcher"]}>
-      <HoverText text={theme === "light" ? "dark" : "light"} />
+      <AnimatedText
+        text={theme === "light" ? "dark" : "light"}
+        isHoverable={true}
+      />
     </button>
   );
 };

@@ -5,6 +5,7 @@ import { useRouter } from "next/navigation";
 
 export default function AnimatedLink({ href, children }) {
   const router = useRouter();
+  
   const { setIsTransitioning } = useTransition();
 
   const handleClick = async (e) => {
