@@ -101,7 +101,7 @@ export default function Page() {
                   <br />
                   HTML5, CSS3, SCSS, JavaScript, TypeScript, Angular, React,
                   Next.js, Vue.js, .NET, C#, Java, Mssql, Tailwindcss,
-                  Bootstrap, WordPress, Webflow,
+                  Bootstrap, WordPress, Webflow
                   <br />
                 </p>
                 <p>

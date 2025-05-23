@@ -1,4 +1,4 @@
-.loading-screen {
+.loading-screen-container {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -12,15 +12,22 @@
   opacity: 1;
 }
 
-.loading-screen p.loading-number {
-  position: relative;
-  left: 0;
+.loading-screen-container .loading-screen-content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  height: 100%;
   width: 100%;
-  margin: 0;
-  opacity: 1;
-  transition: opacity 0.5s ease-out;
+  padding: 0 5vw;
 }
 
-.fade-out {
+.loading-screen-container .loading-screen-content p.loading-number {
+  color: white;
+  transition: opacity 0.8s ease;
+  position: relative;
+}
+
+.fadeOut {
   opacity: 0;
 }

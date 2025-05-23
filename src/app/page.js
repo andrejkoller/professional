@@ -19,13 +19,6 @@ const projects = [
     imageAlt: "Fading Hell",
     color: "#8c0d0d",
   },
-  {
-    title: "Terra Intel",
-    href: "/terraintel",
-    imageSrc: "/images/placeholder-image.png",
-    imageAlt: "Terra Intel",
-    color: "#8c0d0d",
-  },
 ];
 
 gsap.registerPlugin(ScrollTrigger);
@@ -64,7 +57,7 @@ export default function Home() {
           trigger: project,
           start: "top top",
           endTrigger: nav2,
-          end: "bottom+=200 top",
+          end: "bottom top",
           scrub: true,
         },
         defaults: { duration: 1, ease: "power4.out" },
@@ -187,14 +180,12 @@ export default function Home() {
         <figure className={styles["figure"]} ref={projectRef}>
           <p ref={scrollDownRef}>Scroll to explore</p>
         </figure>
-        {projects.map((project, index) => (
+        {projects.map((project) => (
           <section className={styles["project"]} key={project.title}>
             <figure className={styles["figure-inner"]}></figure>
             <div className={styles["project-title"]}>
               <h2>
-                <AnimatedLink href={"/fadinghell"}>
-                  {project.title}
-                </AnimatedLink>
+                <AnimatedLink href={project.href}>{project.title}</AnimatedLink>
               </h2>
             </div>
             <div className={styles["project-content"]}>
