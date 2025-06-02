@@ -4,7 +4,7 @@ import React, { useEffect, useState } from "react";
 import styles from "./ThemeSwitcher.module.css";
 import { AnimatedText } from "../AnimatedText/AnimatedText";
 
-export const ThemeSwitcher = () => {
+export const ThemeSwitcher = ({ show, onIntroDone }) => {
   const [theme, setTheme] = useState("light");
 
   const toggleTheme = () => {
@@ -31,10 +31,13 @@ export const ThemeSwitcher = () => {
 
   return (
     <button onClick={toggleTheme} className={styles["theme-switcher"]}>
-      <AnimatedText
-        text={theme === "light" ? "dark" : "light"}
-        isHoverable={true}
-      />
+      {show && (
+        <AnimatedText
+          text={theme === "light" ? "dark" : "light"}
+          isHoverable={true}
+          onIntroDone={onIntroDone}
+        />
+      )}
     </button>
   );
 };

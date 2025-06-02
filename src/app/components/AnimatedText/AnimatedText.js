@@ -13,7 +13,14 @@ function shuffleArray(arr) {
   return a;
 }
 
-export const AnimatedText = ({ text, introDelay = 0, isHoverable }) => {
+export const AnimatedText = ({
+  text,
+  introDelay = 0,
+  isHoverable,
+  onIntroDone,
+}) => {
+  const [visible, setVisible] = useState(false);
+
   const { loading } = useLoading();
 
   const [displayedText, setDisplayedText] = useState("");
@@ -22,7 +29,9 @@ export const AnimatedText = ({ text, introDelay = 0, isHoverable }) => {
   const intervalRef = useRef(null);
 
   useEffect(() => {
-    if (!loading) {
+    if (!loading && !introDone) {
+      const fadeTimeout = setTimeout(() => setVisible(true), 10);
+
       let iteration = 0;
       clearInterval(intervalRef.current);
 
@@ -41,8 +50,9 @@ export const AnimatedText = ({ text, introDelay = 0, isHoverable }) => {
             clearInterval(intervalRef.current);
             setDisplayedText(text);
             setIntroDone(true);
+            if (onIntroDone) onIntroDone();
           }
-        }, 60);
+        }, 40);
       };
 
       if (introDelay > 0) {
@@ -53,10 +63,13 @@ export const AnimatedText = ({ text, introDelay = 0, isHoverable }) => {
         };
       } else {
         startIntro();
-        return () => clearInterval(intervalRef.current);
+        return () => {
+          clearTimeout(fadeTimeout);
+          clearInterval(intervalRef.current);
+        };
       }
     }
-  }, [loading, text, introDelay]);
+  }, [loading, text, introDelay, onIntroDone, introDone]);
 
   const scrambleLetters = (isHoverable) => {
     if (isHoverable && introDone) {
@@ -84,7 +97,7 @@ export const AnimatedText = ({ text, introDelay = 0, isHoverable }) => {
   return (
     <span
       onMouseEnter={() => scrambleLetters(isHoverable)}
-      className={styles["hover-text"]}
+      className={`${styles["hover-text"]} ${visible ? styles.visible : ""}`}
     >
       {displayedText}
     </span>

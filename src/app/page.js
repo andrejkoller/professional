@@ -5,7 +5,7 @@ import styles from "./page.module.css";
 import { AnimatedText } from "./components/AnimatedText/AnimatedText";
 import { ThemeSwitcher } from "./components/ThemeSwitcher/ThemeSwitcher";
 import gsap from "gsap";
-import { useCallback, useEffect, useRef } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 import { ScrollTrigger } from "gsap/all";
 import Image from "next/image";
 import { useLoading } from "./contexts/LoadingContext";
@@ -19,11 +19,33 @@ const projects = [
     imageAlt: "Fading Hell",
     color: "#8c0d0d",
   },
+  {
+    title: "Terror Incident",
+    href: "/terrorincident",
+    imageSrc: "/images/placeholder-image.png",
+    imageAlt: "Terror Incident",
+    color: "#0d8c0d",
+  },
+  {
+    title: "Arabian Nights",
+    href: "/arabian-nights",
+    imageSrc: "/images/placeholder-image.png",
+    imageAlt: "Arabian Nights",
+    color: "#0d0d8c",
+  },
 ];
 
 gsap.registerPlugin(ScrollTrigger);
 
 export default function Home() {
+  const [showThemeSwitcher, setShowThemeSwitcher] = useState(false);
+  const [showSecond, setShowSecond] = useState(false);
+  const [showThird, setShowThird] = useState(false);
+  const [showFourth, setShowFourth] = useState(false);
+  const [showFifth, setShowFifth] = useState(false);
+  const [showSixth, setShowSixth] = useState(false);
+  const [showSeventh, setShowSeventh] = useState(false);
+
   const { loading } = useLoading();
 
   const navRef = useRef(null);
@@ -132,46 +154,91 @@ export default function Home() {
     <>
       <div className={styles["container"]}>
         <nav className={styles["navigation"]} ref={navRef}>
-          <div className={styles["first-row"]}>
+          <div
+            className={`${styles["first-row"]} ${styles["row"]}`}
+            style={{ animationDelay: "0s" }}
+          >
             <h1>
-              <AnimatedText text="Andrej Koller" isHoverable={false} />
+              <AnimatedText
+                text="Andrej Koller"
+                isHoverable={false}
+                onIntroDone={() => setShowThemeSwitcher(true)}
+              />
             </h1>
             <div className={styles["logo"]}>
-              <ThemeSwitcher />
+              <ThemeSwitcher
+                show={showThemeSwitcher}
+                onIntroDone={() => setShowSecond(true)}
+              />
             </div>
           </div>
-          <div className={styles["second-row"]}>
+          <div
+            className={`${styles["second-row"]} ${styles["row"]}`}
+            style={{ animationDelay: "0.3s" }}
+          >
             <h2>
-              <AnimatedText text="Ui/Ux" isHoverable={false} />
-              <AnimatedText text="Frontend" isHoverable={false} />
-              <AnimatedText text="Backend" isHoverable={false} />
+              {showSecond && (
+                <AnimatedText
+                  text="Freelance UI/UX Code"
+                  isHoverable={false}
+                  onIntroDone={() => setShowThird(true)}
+                />
+              )}
             </h2>
           </div>
-          <div className={styles["third-row"]}>
+          <div
+            className={`${styles["third-row"]} ${styles["row"]}`}
+            style={{ animationDelay: "1.1s" }}
+          >
             <p>
-              <AnimatedText text={"12.40"} isHoverable={false} />
+              {showThird && (
+                <AnimatedText
+                  text={"12.40"}
+                  isHoverable={false}
+                  onIntroDone={() => setShowFourth(true)}
+                />
+              )}
             </p>
             <p>
-              <AnimatedText text={"—"} isHoverable={false} />
+              {showFourth && (
+                <AnimatedText
+                  text={"—"}
+                  isHoverable={false}
+                  onIntroDone={() => setShowFifth(true)}
+                />
+              )}
             </p>
             <p>
-              <AnimatedText text={"Selected Works"} isHoverable={false} />
+              {showFifth && (
+                <AnimatedText
+                  text={"Selected Works"}
+                  isHoverable={false}
+                  onIntroDone={() => setShowSixth(true)}
+                />
+              )}
             </p>
           </div>
-          <ul className={styles["fourth-row"]}>
+          <ul
+            className={`${styles["fourth-row"]} ${styles["row"]}`}
+            style={{ animationDelay: "1.5s" }}
+          >
             <li>
-              <Link href={"/about"}>
-                <AnimatedText text={"info"} isHoverable={true} />
-              </Link>
+              {showSixth && (
+                <Link href={"/about"}>
+                  <AnimatedText
+                    text={"info"}
+                    isHoverable={true}
+                    onIntroDone={() => setShowSeventh(true)}
+                  />
+                </Link>
+              )}
             </li>
             <li>
-              <Link href={"/contact"}>
-                <AnimatedText
-                  text={"contact"}
-                  introDelay={300}
-                  isHoverable={true}
-                />
-              </Link>
+              {showSeventh && (
+                <Link href={"/contact"}>
+                  <AnimatedText text={"contact"} isHoverable={true} />
+                </Link>
+              )}
             </li>
           </ul>
         </nav>
