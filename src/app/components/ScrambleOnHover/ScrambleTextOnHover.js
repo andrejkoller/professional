@@ -1,39 +1,51 @@
 "use client";
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import styles from "./ScrambleTextOnHover.module.css";
 
 export default function ScrambleTextOnHover({
   text,
   scrambleDuration = 0.8,
   steps = 10,
+  enabled,
+  children,
 }) {
   const [displayText, setDisplayText] = useState(text);
   const intervalRef = useRef();
 
-  const scramble = () => {
-    clearInterval(intervalRef.current);
-    let iterations = 0;
+  useEffect(() => {
+    setDisplayText(text);
+  }, [text]);
 
-    intervalRef.current = setInterval(() => {
-      iterations++;
-      if (iterations >= steps) {
-        setDisplayText(text);
-        clearInterval(intervalRef.current);
-      } else {
-        setDisplayText(shuffleText(text));
-      }
-    }, (scrambleDuration * 500) / steps);
+  const scramble = () => {
+    if (enabled) {
+      clearInterval(intervalRef.current);
+      let iterations = 0;
+
+      intervalRef.current = setInterval(() => {
+        iterations++;
+        if (iterations >= steps) {
+          setDisplayText(text);
+          clearInterval(intervalRef.current);
+        } else {
+          setDisplayText(shuffleText(text));
+        }
+      }, (scrambleDuration * 500) / steps);
+    }
   };
 
-  return (
-    <span
-      onMouseEnter={scramble}
-      className={styles["scramble-text"]}
-      style={{ display: "inline-block", cursor: "pointer" }}
-    >
-      {displayText}
-    </span>
-  );
+  if (typeof text === "string") {
+    return (
+      <span
+        onMouseEnter={scramble}
+        className={styles["scramble-text"]}
+        style={{ display: "inline-block", cursor: "pointer" }}
+      >
+        {displayText}
+      </span>
+    );
+  }
+
+  return <span>{children}</span>;
 }
 
 function shuffleText(text) {

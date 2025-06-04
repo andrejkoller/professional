@@ -11,6 +11,7 @@ export default function ScrambleTextInitial({
   texts,
   delay = 0,
   duration = 1.5,
+  onIntroDone = null,
 }) {
   const { loading } = useLoading();
   const el = useRef();
@@ -35,10 +36,15 @@ export default function ScrambleTextInitial({
             revealDelay: duration * 0.5,
             speed: 1,
           },
+          onComplete: () => {
+            if (onIntroDone && typeof onIntroDone === "function") {
+              onIntroDone();
+            }
+          },
         }
       );
     }
-  }, [texts, delay, duration, loading]);
+  }, [texts, delay, duration, loading, onIntroDone]);
 
   return (
     <span className={styles["scramble-text"]} ref={el}>

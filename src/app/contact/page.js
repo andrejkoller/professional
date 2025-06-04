@@ -47,13 +47,13 @@ export default function Page() {
   return (
     <section className={styles["contact"]}>
       <Link href={"/"} className={styles["back"]} ref={backLinkRef}>
-        <ScrambleTextOnHover text={"close"} hover={true} />
+        <ScrambleTextOnHover text={"close"} enabled={true} />
       </Link>
       <div className={styles["contact-container"]}>
         <div className={styles["contact-content"]} ref={contactContentRef}>
           <div className={styles["email-link"]}>
             <Link href={"mailto:andrejkoller@outlook.com"}>
-              <ScrambleTextOnHover text={"Email"} hover={true} />
+              <ScrambleTextOnHover text={"Email"} enabled={true} />
             </Link>
           </div>
           <div className={styles["linkedin-link"]}>
@@ -62,7 +62,7 @@ export default function Page() {
               target="_blank"
               rel="noopener noreferrer"
             >
-              <ScrambleTextOnHover text={"LinkedIn"} hover={true} />
+              <ScrambleTextOnHover text={"LinkedIn"} enabled={true} />
             </Link>
           </div>
         </div>

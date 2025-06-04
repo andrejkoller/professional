@@ -8,6 +8,7 @@ import { ScrollTrigger } from "gsap/all";
 import Image from "next/image";
 import { useLoading } from "./contexts/LoadingContext";
 import ScrambleTextInitial from "./components/ScrambleTextInitial/ScrambleTextInitial";
+import ScrambleTextOnHover from "./components/ScrambleOnHover/ScrambleTextOnHover";
 
 const projects = [
   {
@@ -43,6 +44,9 @@ export default function Home() {
   const nav2Ref = useRef(null);
   const scrollDownRef = useRef(null);
   const scrollUpRef = useRef(null);
+
+  const [infoReady, setInfoReady] = useState(false);
+  const [contactReady, setContactReady] = useState(false);
 
   const handleProjectImageMouseEnter = useCallback((color) => {
     if (typeof document !== "undefined") {
@@ -138,7 +142,7 @@ export default function Home() {
         ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
       };
     }
-  }, [loading]);
+  }, [loading, infoReady, contactReady]);
 
   return (
     <>
@@ -186,12 +190,28 @@ export default function Home() {
           >
             <li>
               <Link href="/about">
-                <ScrambleTextInitial texts={"Info"} delay={1.5} />
+                {!infoReady ? (
+                  <ScrambleTextInitial
+                    texts={"Info"}
+                    delay={1.5}
+                    onIntroDone={() => setInfoReady(true)}
+                  />
+                ) : (
+                  <ScrambleTextOnHover text="Info" enabled={infoReady} />
+                )}
               </Link>
             </li>
             <li>
               <Link href="/contact">
-                <ScrambleTextInitial texts={"Contact"} delay={1.5} />
+                {!contactReady ? (
+                  <ScrambleTextInitial
+                    texts={"Contact"}
+                    delay={1.5}
+                    onIntroDone={() => setContactReady(true)}
+                  />
+                ) : (
+                  <ScrambleTextOnHover text="Contact" enabled={contactReady} />
+                )}
               </Link>
             </li>
           </ul>

@@ -74,7 +74,7 @@ export default function Page() {
     <>
       <div className={styles["title-container"]}>
         <Link href={"/"} className={styles["back"]} ref={backLinkRef}>
-          <ScrambleTextOnHover text={"close"} />
+          <ScrambleTextOnHover text={"close"} enabled={true} />
         </Link>
         <figure className={styles["title-content"]} ref={navRef}>
           <figure className={styles["title"]} ref={titleRef}>
@@ -108,7 +108,7 @@ export default function Page() {
                     href={"https://github.com/andrejkoller"}
                     target="_blank"
                   >
-                    <ScrambleTextOnHover text={"GitHub"} />
+                    <ScrambleTextOnHover text={"GitHub"} enabled={true} />
                   </Link>
                 </p>
               </figure>
@@ -127,7 +127,7 @@ export default function Page() {
             <h2>
               open for collaboration <br />
               <Link href={"mailto:andrejkoller@outlook.com"}>
-                <ScrambleTextOnHover text={"reach out"} />
+                <ScrambleTextOnHover text={"reach out"} enabled={true} />
               </Link>
             </h2>
           </figure>

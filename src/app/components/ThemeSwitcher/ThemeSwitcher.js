@@ -2,9 +2,11 @@
 import React, { useEffect, useState } from "react";
 import styles from "./ThemeSwitcher.module.css";
 import ScrambleTextInitial from "../ScrambleTextInitial/ScrambleTextInitial";
+import ScrambleTextOnHover from "../ScrambleOnHover/ScrambleTextOnHover";
 
 export default function ThemeSwitcher() {
   const [theme, setTheme] = useState("light");
+  const [themeReady, setThemeReady] = useState(false);
 
   const toggleTheme = () => {
     const newTheme = theme === "light" ? "dark" : "light";
@@ -30,7 +32,18 @@ export default function ThemeSwitcher() {
 
   return (
     <button onClick={toggleTheme} className={styles["theme-switcher"]}>
-      <ScrambleTextInitial texts={theme === "light" ? "dark" : "light"} />
+      {!themeReady ? (
+        <ScrambleTextInitial
+          texts={theme === "light" ? "dark" : "light"}
+          delay={0}
+          onIntroDone={() => setThemeReady(true)}
+        />
+      ) : (
+        <ScrambleTextOnHover
+          text={theme === "light" ? "dark" : "light"}
+          enabled={themeReady}
+        />
+      )}
     </button>
   );
 }
