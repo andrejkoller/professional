@@ -1,9 +1,8 @@
 "use client";
-
-import React, { useEffect, useRef, useState } from "react";
+import React, { useEffect, useState } from "react";
 import styles from "./LoadingScreen.module.css";
 
-export const LoadingScreen = () => {
+export default function LoadingScreen() {
   const numbers = [
     1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 20, 23, 30, 40, 50, 70, 80, 100,
   ];

@@ -1,12 +1,11 @@
 "use client";
-
 import Link from "next/link";
 import styles from "./page.module.css";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/all";
 import { useEffect, useRef } from "react";
-import { AnimatedText } from "../components/AnimatedText/AnimatedText";
 import { useLoading } from "../contexts/LoadingContext";
+import ScrambleTextOnHover from "../components/ScrambleOnHover/ScrambleTextOnHover";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -75,7 +74,7 @@ export default function Page() {
     <>
       <div className={styles["title-container"]}>
         <Link href={"/"} className={styles["back"]} ref={backLinkRef}>
-          <AnimatedText text={"CLOSE"} isHoverable={true} />
+          <ScrambleTextOnHover text={"close"} />
         </Link>
         <figure className={styles["title-content"]} ref={navRef}>
           <figure className={styles["title"]} ref={titleRef}>
@@ -109,7 +108,7 @@ export default function Page() {
                     href={"https://github.com/andrejkoller"}
                     target="_blank"
                   >
-                    <AnimatedText text={"GitHub"} isHoverable={true} />
+                    <ScrambleTextOnHover text={"GitHub"} />
                   </Link>
                 </p>
               </figure>
@@ -128,7 +127,7 @@ export default function Page() {
             <h2>
               open for collaboration <br />
               <Link href={"mailto:andrejkoller@outlook.com"}>
-                <AnimatedText text={"reach out"} isHoverable={true} />
+                <ScrambleTextOnHover text={"reach out"} />
               </Link>
             </h2>
           </figure>

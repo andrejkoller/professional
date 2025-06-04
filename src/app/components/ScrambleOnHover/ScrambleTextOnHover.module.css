@@ -1,0 +1,7 @@
+.scramble-text {
+  display: inline-block;
+  white-space: pre;
+  transition: none;
+  text-transform: uppercase;
+  cursor: pointer;
+}

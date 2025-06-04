@@ -1,10 +1,9 @@
 "use client";
-
 import React, { useEffect, useState } from "react";
 import styles from "./ThemeSwitcher.module.css";
-import { AnimatedText } from "../AnimatedText/AnimatedText";
+import ScrambleTextInitial from "../ScrambleTextInitial/ScrambleTextInitial";
 
-export const ThemeSwitcher = ({ show, onIntroDone }) => {
+export default function ThemeSwitcher() {
   const [theme, setTheme] = useState("light");
 
   const toggleTheme = () => {
@@ -31,13 +30,7 @@ export const ThemeSwitcher = ({ show, onIntroDone }) => {
 
   return (
     <button onClick={toggleTheme} className={styles["theme-switcher"]}>
-      {show && (
-        <AnimatedText
-          text={theme === "light" ? "dark" : "light"}
-          isHoverable={true}
-          onIntroDone={onIntroDone}
-        />
-      )}
+      <ScrambleTextInitial texts={theme === "light" ? "dark" : "light"} />
     </button>
   );
-};
+}

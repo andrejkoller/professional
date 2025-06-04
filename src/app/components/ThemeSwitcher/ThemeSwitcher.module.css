@@ -2,6 +2,9 @@
   background-color: transparent;
   border: none;
   cursor: pointer;
+  color: var(--foreground);
   font-size: 16px;
+  font-weight: 400;
   padding: 0;
+  font-family: var(--league-spartan);
 }

@@ -1,11 +1,10 @@
 "use client";
-
 import Link from "next/link";
 import styles from "./page.module.css";
 import { useEffect, useRef } from "react";
-import { AnimatedText } from "../components/AnimatedText/AnimatedText";
 import gsap from "gsap";
 import { useLoading } from "../contexts/LoadingContext";
+import ScrambleTextOnHover from "../components/ScrambleOnHover/ScrambleTextOnHover";
 
 export default function Page() {
   const { loading } = useLoading();
@@ -48,13 +47,13 @@ export default function Page() {
   return (
     <section className={styles["contact"]}>
       <Link href={"/"} className={styles["back"]} ref={backLinkRef}>
-        <AnimatedText text={"CLOSE"} isHoverable={true} />
+        <ScrambleTextOnHover text={"close"} hover={true} />
       </Link>
       <div className={styles["contact-container"]}>
         <div className={styles["contact-content"]} ref={contactContentRef}>
           <div className={styles["email-link"]}>
             <Link href={"mailto:andrejkoller@outlook.com"}>
-              <AnimatedText text={"email"} isHoverable={true} />
+              <ScrambleTextOnHover text={"Email"} hover={true} />
             </Link>
           </div>
           <div className={styles["linkedin-link"]}>
@@ -63,7 +62,7 @@ export default function Page() {
               target="_blank"
               rel="noopener noreferrer"
             >
-              <AnimatedText text={"linkedin"} isHoverable={true} />
+              <ScrambleTextOnHover text={"LinkedIn"} hover={true} />
             </Link>
           </div>
         </div>

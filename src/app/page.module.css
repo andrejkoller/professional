@@ -22,14 +22,25 @@
   overflow: hidden;
   opacity: 1;
   transform: scale(1);
+  line-height: 1.2;
+}
+
+@keyframes scale-move {
+  0% {
+    clip-path: inset(0 100% 0 0);
+  }
+  100% {
+    clip-path: inset(0 0% 0 0);
+  }
 }
 
 .container .navigation .row {
   animation-name: scale-move;
   animation-duration: 1.2s;
-  animation-iteration-count: 1;
   animation-timing-function: ease;
   animation-fill-mode: forwards;
+  clip-path: inset(0 100% 0 0);
+  overflow: hidden;
 }
 
 .container .navigation .first-row {
@@ -45,7 +56,6 @@
   font-size: 16px;
   font-weight: 400;
   margin: 0;
-  text-transform: uppercase;
 }
 
 .container .navigation .second-row {
@@ -61,7 +71,6 @@
   font-weight: 400;
   width: 100%;
   margin: 0;
-  text-transform: uppercase;
 }
 
 .word-placeholder {
@@ -88,7 +97,6 @@
   font-size: 16px;
   font-weight: 400;
   margin: 0;
-  text-transform: uppercase;
 }
 
 .container .navigation .fourth-row {
@@ -105,6 +113,12 @@
 .container .navigation ul.fourth-row {
   list-style: none;
   padding: 0;
+}
+
+.container .navigation ul.fourth-row li {
+  font-size: 16px;
+  font-weight: 400;
+  margin: 0;
 }
 
 .sections-container .figure {
@@ -212,13 +226,4 @@
   img {
   width: 720px;
   height: 900px;
-}
-
-@keyframes scale-move {
-  0% {
-    clip-path: inset(0 100% 0 0);
-  }
-  100% {
-    clip-path: inset(0 0% 0 0);
-  }
 }

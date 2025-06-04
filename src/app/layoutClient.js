@@ -1,6 +1,5 @@
 "use client";
-
-import { LoadingScreen } from "./components/LoadingScreen/LoadingScreen";
+import LoadingScreen from "./components/LoadingScreen/LoadingScreen";
 import { useEffect, useRef, useState } from "react";
 import "./globals.css";
 import Lenis from "@studio-freight/lenis";
@@ -63,7 +62,7 @@ export default function LayoutClient({ children }) {
     <LoadingContext.Provider value={{ loading, isFirstRenderRef, setLoading }}>
       <TransitionProvider>
         <TransitionOverlayWrapper />
-        {loading && <LoadingScreen />}
+        {loading ? <LoadingScreen /> : null}
         <main>{children}</main>
       </TransitionProvider>
     </LoadingContext.Provider>
