@@ -1,17 +1,26 @@
 :root[data-theme="light"] {
   --background: #ffffff;
   --foreground: #000000;
+  --fadinghell: #8c0d0d;
+  --terrorincident: #0d8c8c;
+  --arabiannights: #1b0f28;
 }
 
 :root[data-theme="dark"] {
   --background: #000000;
   --foreground: #ffffff;
+  --fading-hell-color: #8c0d0d;
+  --terror-incident-color: #0d8c8c;
+  --arabian-nights-color: #1b0f28;
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
     --background: #000000;
     --foreground: #ffffff;
+    --fading-hell-color: #8c0d0d;
+    --terror-incident-color: #0d8c8c;
+    --arabian-nights-color: #1b0f28;
   }
 }
 

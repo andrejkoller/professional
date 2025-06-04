@@ -16,21 +16,21 @@ const projects = [
     href: "/fadinghell",
     imageSrc: "/images/placeholder-image.png",
     imageAlt: "Fading Hell",
-    color: "#8c0d0d",
+    color: "var(--fading-hell-color)",
   },
   {
     title: "Terror Incident",
     href: "/terrorincident",
     imageSrc: "/images/placeholder-image.png",
     imageAlt: "Terror Incident",
-    color: "#0d8c0d",
+    color: "var(--terror-incident-color)",
   },
   {
     title: "Arabian Nights",
-    href: "/arabian-nights",
+    href: "/arabiannights",
     imageSrc: "/images/placeholder-image.png",
     imageAlt: "Arabian Nights",
-    color: "#0d0d8c",
+    color: "var(--arabian-nights-color)",
   },
 ];
 
@@ -134,6 +134,7 @@ export default function Home() {
         ease: "power4.out",
       });
 
+      document.body.style.backgroundColor = "var(--background)";
       return () => {
         timeline1.kill();
         timeline2.kill();

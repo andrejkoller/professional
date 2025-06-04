@@ -54,7 +54,7 @@ export default function Page() {
       <div className={styles["project-header"]}>
         <div className={styles["project-header-content"]}>
           <h1 className={styles["project-title"]} ref={titleRef}>
-            <span className={styles["project-title-text"]}>Fading Hell</span>
+            <span className={styles["project-title-text"]}>Arabian Nights</span>
           </h1>
         </div>
       </div>

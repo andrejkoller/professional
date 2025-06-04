@@ -204,6 +204,21 @@
   height: 100vh;
   z-index: 50;
 }
+[data-theme="light"]
+  .sections-container
+  .project
+  .project-content
+  .project-figure-image {
+  filter: brightness(0) saturate(100%) invert(0%);
+}
+
+[data-theme="dark"]
+  .sections-container
+  .project
+  .project-content
+  .project-figure-image {
+  filter: brightness(0) saturate(100%) invert(100%);
+}
 
 .sections-container
   .project
