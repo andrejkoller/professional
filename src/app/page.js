@@ -19,6 +19,13 @@ const projects = [
     color: "var(--fading-hell-color)",
   },
   {
+    title: "Islamic Studies",
+    href: "/islamicstudies",
+    imageSrc: "/images/placeholder-image.png",
+    imageAlt: "Islamic Studies",
+    color: "var(--islamic-studies-color)",
+  },
+  {
     title: "Terror Incident",
     href: "/terrorincident",
     imageSrc: "/images/placeholder-image.png",
@@ -240,7 +247,7 @@ export default function Home() {
                       onMouseEnter={() =>
                         handleProjectImageMouseEnter(project.color)
                       }
-                      onMouseLeave={handleProjectImageMouseLeave}
+                      onMouseLeave={() => handleProjectImageMouseLeave()}
                       priority
                       height={500}
                       width={500}

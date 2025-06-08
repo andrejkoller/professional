@@ -23,7 +23,7 @@
 }
 
 .loading-screen-container .loading-screen-content p.loading-number {
-  color: white;
+  color: var(--foreground);
   transition: opacity 0.8s ease;
   position: relative;
 }

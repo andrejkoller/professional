@@ -3,9 +3,8 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  height: 100vh;
-  background-color: var(--arabian-nights-color);
-  padding: 0 5vw;
+  height: 100%;
+  width: 100%;
 }
 
 .project .back {
@@ -23,13 +22,117 @@
   justify-content: center;
   height: 100vh;
   width: 100%;
+  background-color: var(--arabian-nights-color);
 }
 
 .project .project-header .project-header-content h1.project-title {
   font-size: 10vw;
   font-weight: 400;
-  color: var(--foreground);
+  color: #ffffff;
   text-transform: uppercase;
   opacity: 0;
   transform: scale(1.15) translateY(40px);
+}
+
+.project .project-body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  background-color: var(--background);
+}
+
+.project .project-body .project-description {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 8rem;
+  padding: 180px 5vw 30px 5vw;
+}
+
+.project .project-body .project-description .project-description-title {
+  width: 40%;
+  font-size: 2.8rem;
+  line-height: 1em;
+  margin: 0;
+}
+
+.project .project-body .project-description .project-description-content {
+  width: 60%;
+  font-size: 1.3rem;
+  line-height: 1.5em;
+  color: var(--foreground);
+}
+
+.project
+  .project-body
+  .project-description
+  .project-description-content
+  .project-description-text {
+  margin: 0;
+}
+
+.project
+  .project-body
+  .project-description
+  .project-description-content
+  .project-description-tags {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 70px 0;
+  text-transform: uppercase;
+}
+
+.project .project-body .project-images {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 5vw;
+}
+
+.project .project-body .project-images .project-image-container {
+  width: 100%;
+}
+
+.project .project-body .project-images .project-image-container img {
+  width: 100%;
+  height: auto;
+}
+
+.project .project-body .project-images .project-image-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.project .project-next {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  width: 100%;
+  background-color: var(--fading-hell-color);
+}
+
+.project .project-next .project-next-text-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  width: 100%;
+}
+
+.project .project-next .project-next-text-container p {
+  font-size: 10vw;
+  font-weight: 400;
+  color: #ffffff;
+  text-transform: uppercase;
 }

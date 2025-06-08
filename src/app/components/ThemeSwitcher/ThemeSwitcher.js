@@ -3,32 +3,11 @@ import React, { useEffect, useState } from "react";
 import styles from "./ThemeSwitcher.module.css";
 import ScrambleTextInitial from "../ScrambleTextInitial/ScrambleTextInitial";
 import ScrambleTextOnHover from "../ScrambleOnHover/ScrambleTextOnHover";
+import { useTheme } from "@/app/contexts/ThemeContext";
 
 export default function ThemeSwitcher() {
-  const [theme, setTheme] = useState("light");
+  const { theme, toggleTheme } = useTheme();
   const [themeReady, setThemeReady] = useState(false);
-
-  const toggleTheme = () => {
-    const newTheme = theme === "light" ? "dark" : "light";
-    setTheme(newTheme);
-    localStorage.setItem("theme", newTheme);
-    document.documentElement.setAttribute("data-theme", newTheme);
-  };
-
-  useEffect(() => {
-    const storedTheme = localStorage.getItem("theme");
-    if (storedTheme) {
-      setTheme(storedTheme);
-      document.documentElement.setAttribute("data-theme", storedTheme);
-    } else {
-      const prefersDarkScheme = window.matchMedia(
-        "(prefers-color-scheme: dark)"
-      );
-      const initialTheme = prefersDarkScheme.matches ? "dark" : "light";
-      setTheme(initialTheme);
-      document.documentElement.setAttribute("data-theme", initialTheme);
-    }
-  }, []);
 
   return (
     <button onClick={toggleTheme} className={styles["theme-switcher"]}>

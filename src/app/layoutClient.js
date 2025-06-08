@@ -9,6 +9,7 @@ import { LoadingContext } from "./contexts/LoadingContext";
 import { TransitionProvider } from "./contexts/TransitionContext";
 import { useTransition } from "./contexts/TransitionContext";
 import TransitionOverlay from "./components/TransitionOverlay/TransitionOverlay";
+import { ThemeProvider } from "./contexts/ThemeContext";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -59,13 +60,17 @@ export default function LayoutClient({ children }) {
   }, []);
 
   return (
-    <LoadingContext.Provider value={{ loading, isFirstRenderRef, setLoading }}>
-      <TransitionProvider>
-        <TransitionOverlayWrapper />
-        {loading ? <LoadingScreen /> : null}
-        <main>{children}</main>
-      </TransitionProvider>
-    </LoadingContext.Provider>
+    <ThemeProvider>
+      <LoadingContext.Provider
+        value={{ loading, isFirstRenderRef, setLoading }}
+      >
+        <TransitionProvider>
+          <TransitionOverlayWrapper />
+          {loading ? <LoadingScreen /> : null}
+          <main>{children}</main>
+        </TransitionProvider>
+      </LoadingContext.Provider>
+    </ThemeProvider>
   );
 }
 
