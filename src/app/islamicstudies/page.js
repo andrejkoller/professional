@@ -55,36 +55,42 @@ export default function Page() {
       <div className={styles["project-header"]}>
         <div className={styles["project-header-content"]}>
           <h1 className={styles["project-title"]} ref={titleRef}>
-            <span className={styles["project-title-text"]}>Fading Hell</span>
+            <span className={styles["project-title-text"]}>
+              Islamic Studies
+            </span>
           </h1>
         </div>
       </div>
       <div className={styles["project-body"]}>
         <section className={styles["project-description"]}>
           <p className={styles["project-description-title"]}>
-            Bringing intensity and purpose to metalcore with Fading Hell’s
-            collaborative project
+            Understanding the Islamic World through Islamic Studies
           </p>
           <div className={styles["project-description-content"]}>
             <p className={styles["project-description-text"]}>
-              During my free time, I initiated Fading Hell, a collaborative
-              metalcore project with a subtle infusion of Christian themes. The
-              goal was to create a raw and emotional sound that captures both
-              the aggression and hope found in life’s struggles. Drawing
-              inspiration from early 2000s metalcore and modern production
-              techniques, we focused on blending heavy breakdowns with melodic
-              interludes and thoughtful lyrics. One of our key challenges was
-              finding the right balance between musical brutality and spiritual
-              depth, crafting a sound that resonates with both secular and
-              faith-driven audiences. This effort led to a unique identity that
-              stands out in the underground scene, reflecting our passion and
-              authenticity.
+              Islamic Studies is an ongoing academic project aimed at providing
+              a broad and balanced overview of Islam as a global religion and
+              cultural force. The project focuses on exploring core beliefs,
+              historical developments, and the diverse expressions of Islamic
+              thought and practice across different regions. By collecting and
+              organizing content from historical texts, modern scholarship, and
+              cultural sources, it seeks to offer a centralized and accessible
+              platform for learning and reflection. Tools such as thematic
+              categorization, multilingual content support, and contextual
+              references help present the material in a clear and engaging way.
+              A key challenge is ensuring the representation of varied
+              perspectives within the Islamic tradition while maintaining
+              clarity and neutrality. The project serves as a valuable resource
+              for students, educators, and anyone interested in gaining a deeper
+              understanding of Islam and its influence in the world.
             </p>
             <div className={styles["project-description-tags"]}>
               <p className={styles["project-description-tag"]}>
-                MUSIC, CREATIVE COLLABORATION
+                ISLAM, RELIGIOUS ANALYSIS
               </p>
-              <p className={styles["project-description-tag"]}>FADING HELL</p>
+              <p className={styles["project-description-tag"]}>
+                ISLAMIC STUDIES
+              </p>
               <p className={styles["project-description-tag"]}>ONGOING</p>
             </div>
           </div>
@@ -93,7 +99,7 @@ export default function Page() {
           <div className={styles["project-image-container"]}>
             <Image
               src={"/images/placeholder-image.png"}
-              alt="Fading Hell Image"
+              alt="Terror Incident Image"
               width={800}
               height={600}
               className={styles["project-image"]}
@@ -102,9 +108,9 @@ export default function Page() {
         </section>
       </div>
       <div className={styles["project-next"]}>
-        <Link href={"/islamicstudies"} className={styles["project-next-link"]}>
+        <Link href={"/terrorincident"} className={styles["project-next-link"]}>
           <div className={styles["project-next-text-container"]}>
-            <p className={styles["project-next-text"]}>Islamic Studies</p>
+            <p className={styles["project-next-text"]}>Terror Incident</p>
           </div>
         </Link>
       </div>

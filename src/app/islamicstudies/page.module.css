@@ -22,7 +22,7 @@
   justify-content: center;
   height: 100vh;
   width: 100%;
-  background-color: var(--fading-hell-color);
+  background-color: var(--islamic-studies-color);
 }
 
 .project .project-header .project-header-content h1.project-title {
@@ -32,7 +32,6 @@
   text-transform: uppercase;
   opacity: 0;
   transform: scale(1.15) translateY(40px);
-  margin: 0;
 }
 
 .project .project-body {
@@ -121,7 +120,7 @@ html[data-theme="dark"] .project .project-body .project-image-container img {
   justify-content: center;
   height: 100vh;
   width: 100%;
-  background-color: var(--islamic-studies-color);
+  background-color: var(--terror-incident-color);
 }
 
 .project .project-next .project-next-text-container {
@@ -138,5 +137,4 @@ html[data-theme="dark"] .project .project-body .project-image-container img {
   font-weight: 400;
   color: #ffffff;
   text-transform: uppercase;
-  margin: 0;
 }
