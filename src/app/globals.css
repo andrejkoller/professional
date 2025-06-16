@@ -3,7 +3,6 @@
   --foreground: #000000;
   --fading-hell-color: #d90715;
   --islamic-studies-color: #23a6ad;
-  --terrorincident: #6161ff;
   --arabiannights: #2c2836;
 }
 
@@ -12,7 +11,6 @@
   --foreground: #ffffff;
   --fading-hell-color: #d90715;
   --islamic-studies-color: #23a6ad;
-  --terror-incident-color: #6161ff;
   --arabian-nights-color: #2c2836;
 }
 
@@ -22,7 +20,6 @@
     --foreground: #ffffff;
     --fading-hell-color: #d90715;
     --islamic-studies-color: #23a6ad;
-    --terror-incident-color: #6161ff;
     --arabian-nights-color: #2c2836;
   }
 }
