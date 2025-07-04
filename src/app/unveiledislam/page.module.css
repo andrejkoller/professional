@@ -22,7 +22,7 @@
   justify-content: center;
   height: 100vh;
   width: 100%;
-  background-color: var(--islamic-studies-color);
+  background-color: var(--unveiled-islam-color);
 }
 
 .project .project-header .project-header-content h1.project-title {
@@ -120,7 +120,7 @@ html[data-theme="dark"] .project .project-body .project-image-container img {
   justify-content: center;
   height: 100vh;
   width: 100%;
-  background-color: var(--terror-incident-color);
+  background-color: var(--arabian-nights-color);
 }
 
 .project .project-next .project-next-text-container {

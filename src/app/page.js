@@ -19,11 +19,11 @@ const projects = [
     color: "var(--fading-hell-color)",
   },
   {
-    title: "Islamic Studies",
-    href: "/islamicstudies",
+    title: "Unveiled Islam",
+    href: "/unveiledislam",
     imageSrc: "/images/placeholder-image.png",
-    imageAlt: "Islamic Studies",
-    color: "var(--islamic-studies-color)",
+    imageAlt: "Unveiled Islam",
+    color: "var(--unveiled-islam-color)",
   },
   {
     title: "Arabian Nights",

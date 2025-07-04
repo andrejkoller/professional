@@ -1,16 +1,16 @@
 :root[data-theme="light"] {
   --background: #ffffff;
   --foreground: #000000;
-  --fading-hell-color: #d90715;
-  --islamic-studies-color: #23a6ad;
+  --fading-hell-color: #8c0d0d;
+  --unveiled-islam-color: #dbc070;
   --arabiannights: #2c2836;
 }
 
 :root[data-theme="dark"] {
   --background: #000000;
   --foreground: #ffffff;
-  --fading-hell-color: #d90715;
-  --islamic-studies-color: #23a6ad;
+  --fading-hell-color: #8c0d0d;
+  --unveiled-islam-color: #dbc070;
   --arabian-nights-color: #2c2836;
 }
 
@@ -18,8 +18,8 @@
   :root {
     --background: #000000;
     --foreground: #ffffff;
-    --fading-hell-color: #d90715;
-    --islamic-studies-color: #23a6ad;
+    --fading-hell-color: #8c0d0d;
+    --unveiled-islam-color: #dbc070;
     --arabian-nights-color: #2c2836;
   }
 }

@@ -102,9 +102,9 @@ export default function Page() {
         </section>
       </div>
       <div className={styles["project-next"]}>
-        <Link href={"/islamicstudies"} className={styles["project-next-link"]}>
+        <Link href={"/unveiledislam"} className={styles["project-next-link"]}>
           <div className={styles["project-next-text-container"]}>
-            <p className={styles["project-next-text"]}>Islamic Studies</p>
+            <p className={styles["project-next-text"]}>Unveiled Islam</p>
           </div>
         </Link>
       </div>

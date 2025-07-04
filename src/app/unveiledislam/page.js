@@ -55,41 +55,37 @@ export default function Page() {
       <div className={styles["project-header"]}>
         <div className={styles["project-header-content"]}>
           <h1 className={styles["project-title"]} ref={titleRef}>
-            <span className={styles["project-title-text"]}>
-              Islamic Studies
-            </span>
+            <span className={styles["project-title-text"]}>Unveiled Islam</span>
           </h1>
         </div>
       </div>
       <div className={styles["project-body"]}>
         <section className={styles["project-description"]}>
           <p className={styles["project-description-title"]}>
-            Understanding the Islamic World through Islamic Studies
+            Unveiled Islam – Piercing the Veil of a Global Faith
           </p>
           <div className={styles["project-description-content"]}>
             <p className={styles["project-description-text"]}>
-              Islamic Studies is an ongoing academic project aimed at providing
-              a broad and balanced overview of Islam as a global religion and
-              cultural force. The project focuses on exploring core beliefs,
-              historical developments, and the diverse expressions of Islamic
-              thought and practice across different regions. By collecting and
-              organizing content from historical texts, modern scholarship, and
-              cultural sources, it seeks to offer a centralized and accessible
-              platform for learning and reflection. Tools such as thematic
-              categorization, multilingual content support, and contextual
-              references help present the material in a clear and engaging way.
-              A key challenge is ensuring the representation of varied
-              perspectives within the Islamic tradition while maintaining
-              clarity and neutrality. The project serves as a valuable resource
-              for students, educators, and anyone interested in gaining a deeper
-              understanding of Islam and its influence in the world.
+              Unveiled Islamis more than a project — it’s a confrontation with
+              the unspoken. In an age clouded by political correctness,
+              misinformation, and silence, this work steps boldly into the arena
+              of truth-seeking. Delving deep into the origins, scriptures, and
+              ideologies of Islam, it examines not only what is believed — but
+              why it is believed. Through historical texts, theological
+              scrutiny, and critical perspectives, Unveiled Islam invites the
+              viewer to wrestle with questions often left untouched. With
+              structured themes, multilingual support, and clear source
+              references, it seeks to cut through the noise and reveal what lies
+              beneath the surface. For the curious, the skeptical, and the
+              faithful alike — this is an invitation to clarity, courage, and
+              discovery.
             </p>
             <div className={styles["project-description-tags"]}>
               <p className={styles["project-description-tag"]}>
-                ISLAM, RELIGIOUS ANALYSIS
+                ISLAM, DECONSTRUCTION
               </p>
               <p className={styles["project-description-tag"]}>
-                ISLAMIC STUDIES
+                APOLOGETICS & ANALYSIS
               </p>
               <p className={styles["project-description-tag"]}>ONGOING</p>
             </div>
@@ -108,9 +104,9 @@ export default function Page() {
         </section>
       </div>
       <div className={styles["project-next"]}>
-        <Link href={"/terrorincident"} className={styles["project-next-link"]}>
+        <Link href={"/arabiannights"} className={styles["project-next-link"]}>
           <div className={styles["project-next-text-container"]}>
-            <p className={styles["project-next-text"]}>Terror Incident</p>
+            <p className={styles["project-next-text"]}>Ariabic Nights</p>
           </div>
         </Link>
       </div>
