@@ -55,30 +55,35 @@ export default function Page() {
       <div className={styles["project-header"]}>
         <div className={styles["project-header-content"]}>
           <h1 className={styles["project-title"]} ref={titleRef}>
-            <span className={styles["project-title-text"]}>Unveiled Islam</span>
+            <span className={styles["project-title-text"]}>
+              Terror Incident
+            </span>
           </h1>
         </div>
       </div>
       <div className={styles["project-body"]}>
         <section className={styles["project-description"]}>
           <p className={styles["project-description-title"]}>
-            Unveiled Islam – Piercing the Veil of a Global Faith
+            Interactive Analysis of Global Attacks
           </p>
           <div className={styles["project-description-content"]}>
             <p className={styles["project-description-text"]}>
-              Unveiled Islam is a commissioned project that critically explores
-              the origins, texts, and doctrines of Islam. In an age of political
-              correctness and misinformation, it offers a clear, source-based
-              perspective for the curious, the skeptical, and the faithful.
-              Built with React, Next.js, and Three.js, the platform features
-              structured themes, multilingual support, and thoughtful design.
+              Terror Incidentis an interactive web application designed to
+              visualize and analyze global terror events. The project combines
+              real-time data rendering with immersive 3D environments to offer
+              users an engaging, informative experience. Built with Angular and
+              Three.js on the frontend, and powered by a robust .NET and MSSQL
+              backend, the system allows filtering by time, location, and
+              incident type. Whether for research, awareness, or educational
+              purposes, Terror Incident provides a dramatic and data-driven
+              perspective on one of the world’s most pressing issues.
             </p>
             <div className={styles["project-description-tags"]}>
               <p className={styles["project-description-tag"]}>
-                ISLAM, DECONSTRUCTION
+                DATA VISUALIZATION
               </p>
               <p className={styles["project-description-tag"]}>
-                APOLOGETICS & ANALYSIS
+                SECURITY & AWARENESS
               </p>
               <p className={styles["project-description-tag"]}>ONGOING</p>
             </div>
@@ -88,7 +93,7 @@ export default function Page() {
           <div className={styles["project-image-container"]}>
             <Image
               src={"/images/placeholder-image.png"}
-              alt="Unveiled Islam Image"
+              alt="Terror Incident Image"
               width={800}
               height={600}
               className={styles["project-image"]}
@@ -97,9 +102,9 @@ export default function Page() {
         </section>
       </div>
       <div className={styles["project-next"]}>
-        <Link href={"/terrorincident"} className={styles["project-next-link"]}>
+        <Link href={"/arabiannights"} className={styles["project-next-link"]}>
           <div className={styles["project-next-text-container"]}>
-            <p className={styles["project-next-text"]}>Terror Incident</p>
+            <p className={styles["project-next-text"]}>Arabian Nights</p>
           </div>
         </Link>
       </div>

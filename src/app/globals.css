@@ -2,7 +2,8 @@
   --background: #ffffff;
   --foreground: #000000;
   --fading-hell-color: #8c0d0d;
-  --unveiled-islam-color: #dbc070;
+  --unveiled-islam-color: #d62b18;
+  --terror-incident-color: #b00020;
   --arabiannights: #2c2836;
 }
 
@@ -10,7 +11,8 @@
   --background: #000000;
   --foreground: #ffffff;
   --fading-hell-color: #8c0d0d;
-  --unveiled-islam-color: #dbc070;
+  --unveiled-islam-color: #d62b18;
+  --terror-incident-color: #b00020;
   --arabian-nights-color: #2c2836;
 }
 
@@ -19,7 +21,8 @@
     --background: #000000;
     --foreground: #ffffff;
     --fading-hell-color: #8c0d0d;
-    --unveiled-islam-color: #dbc070;
+    --unveiled-islam-color: #d62b18;
+    --terror-incident-color: #b00020;
     --arabian-nights-color: #2c2836;
   }
 }

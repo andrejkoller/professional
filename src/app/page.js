@@ -26,6 +26,13 @@ const projects = [
     color: "var(--unveiled-islam-color)",
   },
   {
+    title: "Terror Incident",
+    href: "/terrorincident",
+    imageSrc: "/images/placeholder-image.png",
+    imageAlt: "Terror Incident",
+    color: "var(--terror-incident-color)",
+  },
+  {
     title: "Arabian Nights",
     href: "/arabiannights",
     imageSrc: "/images/placeholder-image.png",
