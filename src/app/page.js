@@ -12,6 +12,13 @@ import ScrambleTextOnHover from "./components/ScrambleOnHover/ScrambleTextOnHove
 
 const projects = [
   {
+    title: "Andrej Koller",
+    href: "/andrejkoller",
+    imageSrc: "/images/placeholder-image.png",
+    imageAlt: "Andrej Koller",
+    color: "var(--andrej-koller-color)",
+  },
+  {
     title: "Fading Hell",
     href: "/fadinghell",
     imageSrc: "/images/placeholder-image.png",

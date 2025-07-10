@@ -22,7 +22,7 @@
   justify-content: center;
   height: 100vh;
   width: 100%;
-  background-color: var(--arabian-nights-color);
+  background-color: var(--andrej-koller-color);
 }
 
 .project .project-header .project-header-content h1.project-title {
@@ -105,10 +105,12 @@
   height: auto;
 }
 
-.project .project-body .project-images .project-image-container {
-  display: flex;
-  align-items: center;
-  justify-content: center;
+html[data-theme="light"] .project .project-body .project-image-container img {
+  filter: brightness(0) saturate(100%) invert(0%);
+}
+
+html[data-theme="dark"] .project .project-body .project-image-container img {
+  filter: brightness(0) saturate(100%) invert(100%);
 }
 
 .project .project-next {
@@ -118,7 +120,7 @@
   justify-content: center;
   height: 100vh;
   width: 100%;
-  background-color: var(--andrej-koller-color);
+  background-color: var(--fading-hell-color);
 }
 
 .project .project-next .project-next-text-container {

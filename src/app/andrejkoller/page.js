@@ -55,37 +55,31 @@ export default function Page() {
       <div className={styles["project-header"]}>
         <div className={styles["project-header-content"]}>
           <h1 className={styles["project-title"]} ref={titleRef}>
-            <span className={styles["project-title-text"]}>Arabian Nights</span>
+            <span className={styles["project-title-text"]}>Andrej Koller</span>
           </h1>
         </div>
       </div>
       <div className={styles["project-body"]}>
         <section className={styles["project-description"]}>
           <p className={styles["project-description-title"]}>
-            Designing a rich coding experience with the Arabian Nights Theme for
-            VS Code
+            My Classical Performances — Piano & Organ
           </p>
           <div className={styles["project-description-content"]}>
             <p className={styles["project-description-text"]}>
-              As part of my passion for crafting aesthetic and meaningful user
-              experiences, I designed the Arabian Nights theme for Visual Studio
-              Code. The aim was to build a syntax highlighting theme that not
-              only feels elegant and easy on the eyes during long coding
-              sessions, but also evokes a sense of mystique and creativity drawn
-              from the rich storytelling tradition of the East. The challenge
-              was finding harmony between style and usability—ensuring enough
-              contrast, accessibility, and color psychology to improve focus
-              without causing fatigue. The result is a theme that invites
-              developers into a world of deep tones, soft lights, and
-              imaginative flow.
+              This personal website is a space where I share my passion for
+              classical music, especially through my piano and organ
+              performances. Built with React and Next.js, the site offers a
+              clean, modern experience where visitors can explore recordings,
+              discover favorite composers, and learn more about my musical
+              journey. It reflects not only my interests as a musician, but also
+              my dedication to design and development, combining artistic
+              expression with technical precision.
             </p>
             <div className={styles["project-description-tags"]}>
               <p className={styles["project-description-tag"]}>
-                DESIGN, DEVELOPER TOOLS
+                CLASSICAL MUSIC
               </p>
-              <p className={styles["project-description-tag"]}>
-                ARABIAN NIGHTS THEME
-              </p>
+              <p className={styles["project-description-tag"]}>PIANO & ORGAN</p>
               <p className={styles["project-description-tag"]}>2025</p>
             </div>
           </div>
@@ -93,20 +87,19 @@ export default function Page() {
         <section className={styles["project-images"]}>
           <div className={styles["project-image-container"]}>
             <Image
-              src={"/images/arabian-nights-screenshot.png"}
-              alt="Arabian Nights Image"
-              width={1920}
-              height={1080}
-              priority
+              src={"/images/placeholder-image.png"}
+              alt="Andrej Koller Image"
+              width={800}
+              height={600}
               className={styles["project-image"]}
             />
           </div>
         </section>
       </div>
       <div className={styles["project-next"]}>
-        <Link href={"/andrejkoller"} className={styles["project-next-link"]}>
+        <Link href={"/fadinghell"} className={styles["project-next-link"]}>
           <div className={styles["project-next-text-container"]}>
-            <p className={styles["project-next-text"]}>Andrej Koller</p>
+            <p className={styles["project-next-text"]}>Fading Hell</p>
           </div>
         </Link>
       </div>
