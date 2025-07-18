@@ -39,13 +39,6 @@ const projects = [
     imageAlt: "Terror Incident",
     color: "var(--terror-incident-color)",
   },
-  {
-    title: "Arabian Nights",
-    href: "/arabiannights",
-    imageSrc: "/images/placeholder-image.png",
-    imageAlt: "Arabian Nights",
-    color: "var(--arabian-nights-color)",
-  },
 ];
 
 gsap.registerPlugin(ScrollTrigger);
