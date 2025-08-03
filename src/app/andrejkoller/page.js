@@ -43,6 +43,7 @@ export default function Page() {
 
       return () => {
         timeline1.kill();
+        timeline2.kill();
       };
     }
   });
@@ -97,9 +98,9 @@ export default function Page() {
         </section>
       </div>
       <div className={styles["project-next"]}>
-        <Link href={"/fadinghell"} className={styles["project-next-link"]}>
+        <Link href={"/work"} className={styles["project-next-link"]}>
           <div className={styles["project-next-text-container"]}>
-            <p className={styles["project-next-text"]}>Fading Hell</p>
+            <p className={styles["project-next-text"]}>Work</p>
           </div>
         </Link>
       </div>

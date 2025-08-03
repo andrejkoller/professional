@@ -43,6 +43,7 @@ export default function Page() {
 
       return () => {
         timeline1.kill();
+        timeline2.kill();
       };
     }
   });

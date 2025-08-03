@@ -56,32 +56,33 @@ export default function Page() {
       <div className={styles["project-header"]}>
         <div className={styles["project-header-content"]}>
           <h1 className={styles["project-title"]} ref={titleRef}>
-            <span className={styles["project-title-text"]}>Unveiled Islam</span>
+            <span className={styles["project-title-text"]}>Work</span>
           </h1>
         </div>
       </div>
       <div className={styles["project-body"]}>
         <section className={styles["project-description"]}>
           <p className={styles["project-description-title"]}>
-            Unveiled Islam – Piercing the Veil of a Global Faith
+            Projects and Collaborations
           </p>
           <div className={styles["project-description-content"]}>
             <p className={styles["project-description-text"]}>
-              Unveiled Islam is a commissioned project that critically explores
-              the origins, texts, and doctrines of Islam. In an age of political
-              correctness and misinformation, it offers a clear, source-based
-              perspective for the curious, the skeptical, and the faithful.
-              Built with React, Next.js, and Three.js, the platform features
-              structured themes, multilingual support, and thoughtful design.
+              This platform serves as a curated preview of selected development
+              projects I&apos;ve worked on—either independently or in
+              collaboration with others. Each project reflects different areas
+              of my skillset, including UI design, frontend architecture, and
+              backend logic. The site itself is built with React, Next.js, and
+              GSAP, offering smooth animations, structured content, and a clean
+              presentation of ideas.
             </p>
             <div className={styles["project-description-tags"]}>
               <p className={styles["project-description-tag"]}>
-                ISLAM, DECONSTRUCTION
+                PROJECT HIGHLIGHTS
               </p>
               <p className={styles["project-description-tag"]}>
-                APOLOGETICS & ANALYSIS
+                UI/UX DESIGN & DEVELOPMENT
               </p>
-              <p className={styles["project-description-tag"]}>ONGOING</p>
+              <p className={styles["project-description-tag"]}>2025</p>
             </div>
           </div>
         </section>
@@ -89,7 +90,7 @@ export default function Page() {
           <div className={styles["project-image-container"]}>
             <Image
               src={"/images/placeholder-image.png"}
-              alt="Unveiled Islam Image"
+              alt="Work Image"
               width={800}
               height={600}
               className={styles["project-image"]}
@@ -98,9 +99,9 @@ export default function Page() {
         </section>
       </div>
       <div className={styles["project-next"]}>
-        <Link href={"/terrorincident"} className={styles["project-next-link"]}>
+        <Link href={"/art"} className={styles["project-next-link"]}>
           <div className={styles["project-next-text-container"]}>
-            <p className={styles["project-next-text"]}>Terror Incident</p>
+            <p className={styles["project-next-text"]}>Art</p>
           </div>
         </Link>
       </div>

@@ -56,32 +56,28 @@ export default function Page() {
       <div className={styles["project-header"]}>
         <div className={styles["project-header-content"]}>
           <h1 className={styles["project-title"]} ref={titleRef}>
-            <span className={styles["project-title-text"]}>Unveiled Islam</span>
+            <span className={styles["project-title-text"]}>Art</span>
           </h1>
         </div>
       </div>
       <div className={styles["project-body"]}>
         <section className={styles["project-description"]}>
-          <p className={styles["project-description-title"]}>
-            Unveiled Islam – Piercing the Veil of a Global Faith
-          </p>
+          <p className={styles["project-description-title"]}>Artistic Corner</p>
           <div className={styles["project-description-content"]}>
             <p className={styles["project-description-text"]}>
-              Unveiled Islam is a commissioned project that critically explores
-              the origins, texts, and doctrines of Islam. In an age of political
-              correctness and misinformation, it offers a clear, source-based
-              perspective for the curious, the skeptical, and the faithful.
-              Built with React, Next.js, and Three.js, the platform features
-              structured themes, multilingual support, and thoughtful design.
+              Alongside my development projects, I’ve launched a separate
+              subdomain dedicated entirely to art. Here, I share personal
+              artworks—digital, hand-drawn, or experimental—that offer a
+              different lens into how I think, feel, and create. It’s meant to
+              be a quiet corner beyond code—a reflective place to pause,
+              observe, and simply take in beauty without noise or deadlines.
             </p>
             <div className={styles["project-description-tags"]}>
+              <p className={styles["project-description-tag"]}>Art & Design</p>
               <p className={styles["project-description-tag"]}>
-                ISLAM, DECONSTRUCTION
+                PERSONAL EXPRESSION
               </p>
-              <p className={styles["project-description-tag"]}>
-                APOLOGETICS & ANALYSIS
-              </p>
-              <p className={styles["project-description-tag"]}>ONGOING</p>
+              <p className={styles["project-description-tag"]}>2025</p>
             </div>
           </div>
         </section>
@@ -89,7 +85,7 @@ export default function Page() {
           <div className={styles["project-image-container"]}>
             <Image
               src={"/images/placeholder-image.png"}
-              alt="Unveiled Islam Image"
+              alt="Art Image"
               width={800}
               height={600}
               className={styles["project-image"]}
@@ -98,9 +94,9 @@ export default function Page() {
         </section>
       </div>
       <div className={styles["project-next"]}>
-        <Link href={"/terrorincident"} className={styles["project-next-link"]}>
+        <Link href={"/fadinghell"} className={styles["project-next-link"]}>
           <div className={styles["project-next-text-container"]}>
-            <p className={styles["project-next-text"]}>Terror Incident</p>
+            <p className={styles["project-next-text"]}>Fading Hell</p>
           </div>
         </Link>
       </div>

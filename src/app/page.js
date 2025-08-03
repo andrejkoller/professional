@@ -19,6 +19,20 @@ const projects = [
     color: "var(--andrej-koller-color)",
   },
   {
+    title: "Work",
+    href: "/work",
+    imageSrc: "/images/placeholder-image.png",
+    imageAlt: "Work",
+    color: "var(--work-color)",
+  },
+  {
+    title: "Art",
+    href: "/art",
+    imageSrc: "/images/placeholder-image.png",
+    imageAlt: "Art",
+    color: "var(--art-color)",
+  },
+  {
     title: "Fading Hell",
     href: "/fadinghell",
     imageSrc: "/images/placeholder-image.png",
