@@ -65,7 +65,7 @@ export default function Page() {
       <div className={styles["project-body"]}>
         <section className={styles["project-description"]}>
           <p className={styles["project-description-title"]}>
-            Interactive Analysis of Global Attacks
+            Interactive Visualization of Global Terror Incidents
           </p>
           <div className={styles["project-description-content"]}>
             <p className={styles["project-description-text"]}>

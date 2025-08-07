@@ -62,7 +62,9 @@ export default function Page() {
       </div>
       <div className={styles["project-body"]}>
         <section className={styles["project-description"]}>
-          <p className={styles["project-description-title"]}>Artistic Corner</p>
+          <p className={styles["project-description-title"]}>
+            Artistic Expression
+          </p>
           <div className={styles["project-description-content"]}>
             <p className={styles["project-description-text"]}>
               Alongside my development projects, I’ve launched a separate
@@ -73,9 +75,9 @@ export default function Page() {
               observe, and simply take in beauty without noise or deadlines.
             </p>
             <div className={styles["project-description-tags"]}>
-              <p className={styles["project-description-tag"]}>Art & Design</p>
+              <p className={styles["project-description-tag"]}>Art</p>
               <p className={styles["project-description-tag"]}>
-                PERSONAL EXPRESSION
+                Digital & Traditional
               </p>
               <p className={styles["project-description-tag"]}>2025</p>
             </div>

@@ -63,7 +63,7 @@ export default function Page() {
       <div className={styles["project-body"]}>
         <section className={styles["project-description"]}>
           <p className={styles["project-description-title"]}>
-            My Classical Performances — Piano & Organ
+            Classical Performances
           </p>
           <div className={styles["project-description-content"]}>
             <p className={styles["project-description-text"]}>
