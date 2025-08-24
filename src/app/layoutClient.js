@@ -1,15 +1,16 @@
 "use client";
-import LoadingScreen from "./components/LoadingScreen/LoadingScreen";
+
+import LoadingScreen from "../components/LoadingScreen/LoadingScreen";
 import { useEffect, useRef, useState } from "react";
 import "./globals.css";
 import Lenis from "@studio-freight/lenis";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/all";
-import { LoadingContext } from "./contexts/LoadingContext";
-import { TransitionProvider } from "./contexts/TransitionContext";
-import { useTransition } from "./contexts/TransitionContext";
-import TransitionOverlay from "./components/TransitionOverlay/TransitionOverlay";
-import { ThemeProvider } from "./contexts/ThemeContext";
+import { LoadingContext } from "../contexts/LoadingContext";
+import { TransitionProvider } from "../contexts/TransitionContext";
+import { useTransition } from "../contexts/TransitionContext";
+import TransitionOverlay from "../components/TransitionOverlay/TransitionOverlay";
+import { ThemeProvider } from "../contexts/ThemeContext";
 
 gsap.registerPlugin(ScrollTrigger);
 

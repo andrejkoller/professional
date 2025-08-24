@@ -1,4 +1,4 @@
-.title-container {
+.titleContainer {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -12,7 +12,7 @@
   transition: none;
 }
 
-.title-container .back {
+.titleContainer .back {
   position: fixed;
   top: 5vh;
   right: 5vw;
@@ -20,7 +20,7 @@
   z-index: 999;
 }
 
-.title-container .title-content {
+.titleContainer .titleContent {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -30,14 +30,14 @@
   padding: 0 5vw;
 }
 
-.title-container .title-content .title {
+.titleContainer .titleContent .title {
   font-size: 16vw;
   font-weight: 400;
   opacity: 0;
   transform: scale(1.15) translateY(40px);
 }
 
-.about-container {
+.aboutContainer {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -45,7 +45,7 @@
   position: relative;
 }
 
-.about-container .figure {
+.aboutContainer .figure {
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
@@ -55,7 +55,7 @@
   margin: 0;
 }
 
-.about-container .figure p {
+.aboutContainer .figure p {
   z-index: 20;
   font-size: 12px;
   margin: 0;
@@ -64,7 +64,7 @@
   bottom: 0;
 }
 
-.about-container .info-section {
+.aboutContainer .infoSection {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -76,7 +76,7 @@
   margin: 0 auto;
 }
 
-.about-container .info-section .info-title {
+.aboutContainer .infoSection .infoTitle {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -85,7 +85,7 @@
   padding: 40px 0;
 }
 
-.about-container .info-section .info-title h2 {
+.aboutContainer .infoSection .infoTitle h2 {
   font-size: 40px;
   font-weight: 400;
   line-height: 1em;
@@ -94,7 +94,7 @@
   text-transform: uppercase;
 }
 
-.sections-container .info-section .info-content {
+.sectionsContainer .infoSection .infoContent {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -103,7 +103,7 @@
   padding: 40px 0;
 }
 
-.about-container .info-section .info-content .info-description {
+.aboutContainer .infoSection .infoContent .infoDescription {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -111,7 +111,7 @@
   width: 100%;
 }
 
-.about-container .info-section .info-content .info-description p {
+.aboutContainer .infoSection .infoContent .infoDescription p {
   font-size: 16px;
   font-weight: 400;
   line-height: 1.5em;
@@ -122,7 +122,7 @@
   text-transform: uppercase;
 }
 
-.about-container .figure2 {
+.aboutContainer .figure2 {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -133,7 +133,7 @@
   position: relative;
 }
 
-.about-container .figure2 h2 {
+.aboutContainer .figure2 h2 {
   font-size: 40px;
   font-weight: 400;
   line-height: 1em;

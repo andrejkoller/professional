@@ -1,4 +1,5 @@
 "use client";
+
 import React, { useEffect, useState } from "react";
 import styles from "./LoadingScreen.module.css";
 
@@ -36,11 +37,11 @@ export default function LoadingScreen() {
   }, [index, hasFaded, numbers.length]);
 
   return (
-    <div className={styles["loading-screen-container"]}>
-      <div className={styles["loading-screen-content"]}>
+    <div className={styles.loadingScreenContainer}>
+      <div className={styles.loadingScreenContent}>
         {isVisible && (
           <p
-            className={`${styles["loading-number"]} ${
+            className={`${styles.loadingNumber} ${
               hasFaded ? styles.fadeOut : ""
             }`}
             style={{
@@ -53,4 +54,4 @@ export default function LoadingScreen() {
       </div>
     </div>
   );
-};
+}

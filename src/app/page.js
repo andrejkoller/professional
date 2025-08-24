@@ -1,14 +1,15 @@
 "use client";
+
 import Link from "next/link";
 import styles from "./page.module.css";
-import ThemeSwitcher from "./components/ThemeSwitcher/ThemeSwitcher";
+import ThemeSwitcher from "../components/ThemeSwitcher/ThemeSwitcher";
 import gsap from "gsap";
 import { useCallback, useEffect, useRef, useState } from "react";
 import { ScrollTrigger } from "gsap/all";
 import Image from "next/image";
-import { useLoading } from "./contexts/LoadingContext";
-import ScrambleTextInitial from "./components/ScrambleTextInitial/ScrambleTextInitial";
-import ScrambleTextOnHover from "./components/ScrambleOnHover/ScrambleTextOnHover";
+import { useLoading } from "../contexts/LoadingContext";
+import ScrambleTextInitial from "../components/ScrambleTextInitial/ScrambleTextInitial";
+import ScrambleTextOnHover from "../components/ScrambleOnHover/ScrambleTextOnHover";
 
 const projects = [
   {
@@ -168,22 +169,22 @@ export default function Home() {
 
   return (
     <>
-      <div className={styles["container"]}>
-        <nav className={styles["navigation"]} ref={navRef}>
+      <div className={styles.container}>
+        <nav className={styles.navigation} ref={navRef}>
           <div
-            className={`${styles["first-row"]} ${styles["row"]}`}
+            className={`${styles.firstRow} ${styles.row}`}
             style={{ animationDelay: "0s" }}
           >
             <h1>
               <ScrambleTextInitial texts={"Andrej Koller"} delay={0} />
             </h1>
-            <div className={styles["logo"]}>
+            <div className={styles.logo}>
               <ThemeSwitcher />
             </div>
           </div>
 
           <div
-            className={`${styles["second-row"]} ${styles["row"]}`}
+            className={`${styles.secondRow} ${styles.row}`}
             style={{ animationDelay: "0.3s" }}
           >
             <h2>
@@ -192,7 +193,7 @@ export default function Home() {
           </div>
 
           <div
-            className={`${styles["third-row"]} ${styles["row"]}`}
+            className={`${styles.thirdRow} ${styles.row}`}
             style={{ animationDelay: "1.1s" }}
           >
             <p>
@@ -207,7 +208,7 @@ export default function Home() {
           </div>
 
           <ul
-            className={`${styles["fourth-row"]} ${styles["row"]}`}
+            className={`${styles.fourthRow} ${styles.row}`}
             style={{ animationDelay: "1.5s" }}
           >
             <li>
@@ -239,22 +240,22 @@ export default function Home() {
           </ul>
         </nav>
       </div>
-      <div className={styles["sections-container"]}>
-        <figure className={styles["figure"]} ref={projectRef}>
+      <div className={styles.sectionsContainer}>
+        <figure className={styles.figure} ref={projectRef}>
           <p ref={scrollDownRef}>Scroll to explore</p>
         </figure>
 
         {projects.map((project) => (
-          <section className={styles["project"]} key={project.title}>
-            <figure className={styles["figure-inner"]}></figure>
-            <div className={styles["project-title"]}>
+          <section className={styles.project} key={project.title}>
+            <figure className={styles.figureInner}></figure>
+            <div className={styles.projectTitle}>
               <h2>
                 <Link href={project.href}>{project.title}</Link>
               </h2>
             </div>
-            <div className={styles["project-content"]}>
-              <figure className={styles["project-figure-image"]}>
-                <div className={styles["project-image"]}>
+            <div className={styles.projectContent}>
+              <figure className={styles.projectFigureImage}>
+                <div className={styles.projectImage}>
                   <Link href={project.href}>
                     <Image
                       src={project.imageSrc}
@@ -274,7 +275,7 @@ export default function Home() {
           </section>
         ))}
 
-        <figure className={styles["figure2"]} ref={nav2Ref}>
+        <figure className={styles.figure2} ref={nav2Ref}>
           <p ref={scrollUpRef}>Scroll up</p>
         </figure>
       </div>

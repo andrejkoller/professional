@@ -43,7 +43,7 @@
   overflow: hidden;
 }
 
-.container .navigation .first-row {
+.container .navigation .firstRow {
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -52,18 +52,18 @@
   width: 100%;
 }
 
-.container .navigation .first-row h1 {
+.container .navigation .firstRow h1 {
   font-size: 16px;
   font-weight: 400;
   margin: 0;
 }
 
-.container .navigation .second-row {
+.container .navigation .secondRow {
   height: 21px;
   width: 100%;
 }
 
-.container .navigation .second-row h2 {
+.container .navigation .secondRow h2 {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -73,18 +73,7 @@
   margin: 0;
 }
 
-.word-placeholder {
-  display: inline-block;
-  min-width: 1ch;
-}
-
-.word-placeholder-inner {
-  visibility: hidden;
-  pointer-events: none;
-  user-select: none;
-}
-
-.container .navigation .third-row {
+.container .navigation .thirdRow {
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -93,13 +82,13 @@
   width: 100%;
 }
 
-.container .navigation .third-row p {
+.container .navigation .thirdRow p {
   font-size: 16px;
   font-weight: 400;
   margin: 0;
 }
 
-.container .navigation .fourth-row {
+.container .navigation .fourthRow {
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -110,18 +99,18 @@
   margin-bottom: 0;
 }
 
-.container .navigation ul.fourth-row {
+.container .navigation ul.fourthRow {
   list-style: none;
   padding: 0;
 }
 
-.container .navigation ul.fourth-row li {
+.container .navigation ul.fourthRow li {
   font-size: 16px;
   font-weight: 400;
   margin: 0;
 }
 
-.sections-container .figure {
+.sectionsContainer .figure {
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
@@ -131,7 +120,7 @@
   margin: 0;
 }
 
-.sections-container .figure p {
+.sectionsContainer .figure p {
   z-index: 20;
   font-size: 12px;
   margin: 0;
@@ -142,7 +131,7 @@
   opacity: 1;
 }
 
-.sections-container .figure2 {
+.sectionsContainer .figure2 {
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
@@ -152,7 +141,7 @@
   margin: 0;
 }
 
-.sections-container .figure2 p {
+.sectionsContainer .figure2 p {
   z-index: 20;
   font-size: 12px;
   margin: 0;
@@ -161,7 +150,7 @@
   text-transform: uppercase;
 }
 
-.sections-container .project {
+.sectionsContainer .project {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -171,7 +160,7 @@
   min-height: 100vh;
 }
 
-.sections-container .project .project-title {
+.sectionsContainer .project .projectTitle {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -180,14 +169,14 @@
   height: 70vh;
 }
 
-.sections-container .project .project-title h2 {
+.sectionsContainer .project .projectTitle h2 {
   font-size: 10vw;
   font-weight: 400;
   margin: 0;
   text-transform: uppercase;
 }
 
-.sections-container .project .project-content {
+.sectionsContainer .project .projectContent {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -195,7 +184,7 @@
   width: 100%;
 }
 
-.sections-container .project .project-content .project-figure-image {
+.sectionsContainer .project .projectContent .projectFigureImage {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -206,26 +195,22 @@
 }
 
 [data-theme="light"]
-  .sections-container
+  .sectionsContainer
   .project
-  .project-content
-  .project-figure-image {
+  .projectContent
+  .projectFigureImage {
   filter: brightness(0) saturate(100%) invert(0%);
 }
 
 [data-theme="dark"]
-  .sections-container
+  .sectionsContainer
   .project
-  .project-content
-  .project-figure-image {
+  .projectContent
+  .projectFigureImage {
   filter: brightness(0) saturate(100%) invert(100%);
 }
 
-.sections-container
-  .project
-  .project-content
-  .project-figure-image
-  .project-image {
+.sectionsContainer .project .projectContent .projectFigureImage .projectImage {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -234,11 +219,11 @@
   height: 100%;
 }
 
-.sections-container
+.sectionsContainer
   .project
-  .project-content
-  .project-figure-image
-  .project-image
+  .projectContent
+  .projectFigureImage
+  .projectImage
   img {
   width: 720px;
   height: 900px;

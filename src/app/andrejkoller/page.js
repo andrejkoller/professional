@@ -1,11 +1,12 @@
 "use client";
+
 import Link from "next/link";
 import styles from "./page.module.css";
 import { useEffect, useRef } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/all";
-import { useLoading } from "../contexts/LoadingContext";
-import ScrambleTextOnHover from "../components/ScrambleOnHover/ScrambleTextOnHover";
+import { useLoading } from "../../contexts/LoadingContext";
+import ScrambleTextOnHover from "../../components/ScrambleOnHover/ScrambleTextOnHover";
 import Image from "next/image";
 
 gsap.registerPlugin(ScrollTrigger);
@@ -49,24 +50,24 @@ export default function Page() {
   });
 
   return (
-    <div className={styles["project"]}>
-      <Link href={"/"} className={styles["back"]} ref={backLinkRef}>
+    <div className={styles.project}>
+      <Link href={"/"} className={styles.back} ref={backLinkRef}>
         <ScrambleTextOnHover text={"close"} enabled={true} />
       </Link>
-      <div className={styles["project-header"]}>
-        <div className={styles["project-header-content"]}>
-          <h1 className={styles["project-title"]} ref={titleRef}>
-            <span className={styles["project-title-text"]}>Andrej Koller</span>
+      <div className={styles.projectHeader}>
+        <div className={styles.projectHeaderContent}>
+          <h1 className={styles.projectTitle} ref={titleRef}>
+            <span className={styles.projectTitleText}>Andrej Koller</span>
           </h1>
         </div>
       </div>
-      <div className={styles["project-body"]}>
-        <section className={styles["project-description"]}>
-          <p className={styles["project-description-title"]}>
+      <div className={styles.projectBody}>
+        <section className={styles.projectDescription}>
+          <p className={styles.projectDescriptionTitle}>
             Classical Performances
           </p>
-          <div className={styles["project-description-content"]}>
-            <p className={styles["project-description-text"]}>
+          <div className={styles.projectDescriptionContent}>
+            <p className={styles.projectDescriptionText}>
               This personal website is a space where I share my passion for
               classical music, especially through my piano and organ
               performances. Built with React and Next.js, the site offers a
@@ -76,31 +77,29 @@ export default function Page() {
               my dedication to design and development, combining artistic
               expression with technical precision.
             </p>
-            <div className={styles["project-description-tags"]}>
-              <p className={styles["project-description-tag"]}>
-                CLASSICAL MUSIC
-              </p>
-              <p className={styles["project-description-tag"]}>PIANO & ORGAN</p>
-              <p className={styles["project-description-tag"]}>2025</p>
+            <div className={styles.projectDescriptionTags}>
+              <p className={styles.projectDescriptionTag}>CLASSICAL MUSIC</p>
+              <p className={styles.projectDescriptionTag}>PIANO & ORGAN</p>
+              <p className={styles.projectDescriptionTag}>2025</p>
             </div>
           </div>
         </section>
-        <section className={styles["project-images"]}>
-          <div className={styles["project-image-container"]}>
+        <section className={styles.projectImages}>
+          <div className={styles.projectImageContainer}>
             <Image
               src={"/images/placeholder-image.png"}
               alt="Andrej Koller Image"
               width={800}
               height={600}
-              className={styles["project-image"]}
+              className={styles.projectImage}
             />
           </div>
         </section>
       </div>
-      <div className={styles["project-next"]}>
-        <Link href={"/work"} className={styles["project-next-link"]}>
-          <div className={styles["project-next-text-container"]}>
-            <p className={styles["project-next-text"]}>Work</p>
+      <div className={styles.projectNext}>
+        <Link href={"/work"} className={styles.projectNextLink}>
+          <div className={styles.projectNextTextContainer}>
+            <p className={styles.projectNextText}>Work</p>
           </div>
         </Link>
       </div>

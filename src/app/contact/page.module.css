@@ -5,7 +5,7 @@
   opacity: 0;
 }
 
-.contact .contact-container {
+.contact .contactContainer {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -14,7 +14,7 @@
   width: 100%;
 }
 
-.contact .contact-container .contact-content {
+.contact .contactContainer .contactContent {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -24,8 +24,8 @@
   transform: scale(1.15) translateY(40px);
 }
 
-.contact .contact-container .contact-content .email-link a,
-.contact .contact-container .contact-content .linkedin-link a {
+.contact .contactContainer .contactContent .emailLink a,
+.contact .contactContainer .contactContent .linkedinLink a {
   color: inherit;
   text-decoration: none;
   font-size: 16vw;

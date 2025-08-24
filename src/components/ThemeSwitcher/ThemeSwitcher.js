@@ -1,16 +1,17 @@
 "use client";
-import React, { useEffect, useState } from "react";
+
+import React, { useState } from "react";
 import styles from "./ThemeSwitcher.module.css";
 import ScrambleTextInitial from "../ScrambleTextInitial/ScrambleTextInitial";
 import ScrambleTextOnHover from "../ScrambleOnHover/ScrambleTextOnHover";
-import { useTheme } from "@/app/contexts/ThemeContext";
+import { useTheme } from "@/contexts/ThemeContext";
 
 export default function ThemeSwitcher() {
   const { theme, toggleTheme } = useTheme();
   const [themeReady, setThemeReady] = useState(false);
 
   return (
-    <button onClick={toggleTheme} className={styles["theme-switcher"]}>
+    <button onClick={toggleTheme} className={styles.themeSwitcher}>
       {!themeReady ? (
         <ScrambleTextInitial
           texts={theme === "light" ? "dark" : "light"}

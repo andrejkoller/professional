@@ -1,9 +1,10 @@
 "use client";
+
 import { useEffect, useRef } from "react";
 import { gsap } from "gsap";
 import { ScrambleTextPlugin } from "gsap/ScrambleTextPlugin";
 import styles from "./ScrambleTextInitial.module.css";
-import { useLoading } from "@/app/contexts/LoadingContext";
+import { useLoading } from "../../contexts/LoadingContext";
 
 gsap.registerPlugin(ScrambleTextPlugin);
 
@@ -47,7 +48,7 @@ export default function ScrambleTextInitial({
   }, [texts, delay, duration, loading, onIntroDone]);
 
   return (
-    <span className={styles["scramble-text"]} ref={el}>
+    <span className={styles.scrambleText} ref={el}>
       {texts}
     </span>
   );

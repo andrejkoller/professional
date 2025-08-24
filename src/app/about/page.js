@@ -1,11 +1,12 @@
 "use client";
+
 import Link from "next/link";
 import styles from "./page.module.css";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/all";
 import { useEffect, useRef } from "react";
-import { useLoading } from "../contexts/LoadingContext";
-import ScrambleTextOnHover from "../components/ScrambleOnHover/ScrambleTextOnHover";
+import { useLoading } from "../../contexts/LoadingContext";
+import ScrambleTextOnHover from "../../components/ScrambleOnHover/ScrambleTextOnHover";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -72,29 +73,29 @@ export default function Page() {
 
   return (
     <>
-      <div className={styles["title-container"]}>
-        <Link href={"/"} className={styles["back"]} ref={backLinkRef}>
+      <div className={styles.titleContainer}>
+        <Link href={"/"} className={styles.back} ref={backLinkRef}>
           <ScrambleTextOnHover text={"close"} enabled={true} />
         </Link>
-        <figure className={styles["title-content"]} ref={navRef}>
-          <figure className={styles["title"]} ref={titleRef}>
+        <figure className={styles.titleContent} ref={navRef}>
+          <figure className={styles.title} ref={titleRef}>
             <div>( INFO )</div>
           </figure>
         </figure>
       </div>
-      <div className={styles["about-container"]}>
-        <div className={styles["about-content"]}>
-          <figure className={styles["figure"]} ref={projectRef}></figure>
-          <section className={styles["info-section"]}>
-            <figure className={styles["figure-inner"]}></figure>
-            <div className={styles["info-title"]}>
+      <div className={styles.aboutContainer}>
+        <div className={styles.aboutContent}>
+          <figure className={styles.figure} ref={projectRef}></figure>
+          <section className={styles.infoSection}>
+            <figure className={styles.figureInner}></figure>
+            <div className={styles.infoTitle}>
               <h2>
                 passionate application developer with a focus on frontend
                 development, design and user experience.
               </h2>
             </div>
-            <div className={styles["info-content"]}>
-              <figure className={styles["info-description"]}>
+            <div className={styles.infoContent}>
+              <figure className={styles.infoDescription}>
                 <p>
                   tools and technologies used so far
                   <br />
@@ -113,17 +114,17 @@ export default function Page() {
                 </p>
               </figure>
             </div>
-            <div className={styles["info-title"]}>
+            <div className={styles.infoTitle}>
               <h2>
                 always puts an emphasis on creating memorable experience that
                 transcends objectives.
               </h2>
             </div>
-            <div className={styles["info-title"]}>
+            <div className={styles.infoTitle}>
               <h2>*</h2>
             </div>
           </section>
-          <figure className={styles["figure2"]} ref={nav2Ref}>
+          <figure className={styles.figure2} ref={nav2Ref}>
             <h2>
               open for collaboration <br />
               <Link href={"mailto:andrejkoller@outlook.com"}>

@@ -15,7 +15,7 @@
   z-index: 999;
 }
 
-.project .project-header {
+.project .projectHeader {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -25,7 +25,7 @@
   background-color: var(--unveiled-islam-color);
 }
 
-.project .project-header .project-header-content h1.project-title {
+.project .projectHeader .projectHeaderContent h1.projectTitle {
   font-size: 10vw;
   font-weight: 400;
   color: #ffffff;
@@ -34,7 +34,7 @@
   transform: scale(1.15) translateY(40px);
 }
 
-.project .project-body {
+.project .projectBody {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -43,7 +43,7 @@
   background-color: var(--background);
 }
 
-.project .project-body .project-description {
+.project .projectBody .projectDescription {
   display: flex;
   flex-direction: row;
   align-items: flex-start;
@@ -52,14 +52,14 @@
   padding: 180px 5vw 30px 5vw;
 }
 
-.project .project-body .project-description .project-description-title {
+.project .projectBody .projectDescription .projectDescriptionTitle {
   width: 40%;
   font-size: 2.8rem;
   line-height: 1em;
   margin: 0;
 }
 
-.project .project-body .project-description .project-description-content {
+.project .projectBody .projectDescription .projectDescriptionContent {
   width: 60%;
   font-size: 1.3rem;
   line-height: 1.5em;
@@ -67,18 +67,26 @@
 }
 
 .project
-  .project-body
-  .project-description
-  .project-description-content
-  .project-description-text {
+  .projectBody
+  .projectDescription
+  .projectDescriptionContent
+  .projectDescriptionText {
   margin: 0;
 }
 
 .project
-  .project-body
-  .project-description
-  .project-description-content
-  .project-description-tags {
+  .projectBody
+  .projectDescription
+  .projectDescriptionContent
+  .projectDescriptionText {
+  margin: 0;
+}
+
+.project
+  .projectBody
+  .projectDescription
+  .projectDescriptionContent
+  .projectDescriptionTags {
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -88,7 +96,7 @@
   text-transform: uppercase;
 }
 
-.project .project-body .project-images {
+.project .projectBody .projectImages {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -96,24 +104,34 @@
   padding: 5vw;
 }
 
-.project .project-body .project-images .project-image-container {
+.project .projectBody .projectImages .projectImageContainer {
   width: 100%;
 }
 
-.project .project-body .project-images .project-image-container img {
+.project .projectBody .projectImages .projectImageContainer img {
   width: 100%;
   height: auto;
 }
 
-html[data-theme="light"] .project .project-body .project-image-container img {
+html[data-theme="light"]
+  .project
+  .projectBody
+  .projectImages
+  .projectImageContainer
+  img {
   filter: brightness(0) saturate(100%) invert(0%);
 }
 
-html[data-theme="dark"] .project .project-body .project-image-container img {
+html[data-theme="dark"]
+  .project
+  .projectBody
+  .projectImages
+  .projectImageContainer
+  img {
   filter: brightness(0) saturate(100%) invert(100%);
 }
 
-.project .project-next {
+.project .projectNext {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -123,7 +141,7 @@ html[data-theme="dark"] .project .project-body .project-image-container img {
   background-color: var(--terror-incident-color);
 }
 
-.project .project-next .project-next-text-container {
+.project .projectNext .projectNextTextContainer {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -132,7 +150,7 @@ html[data-theme="dark"] .project .project-body .project-image-container img {
   width: 100%;
 }
 
-.project .project-next .project-next-text-container p {
+.project .projectNext .projectNextTextContainer p {
   font-size: 10vw;
   font-weight: 400;
   color: #ffffff;

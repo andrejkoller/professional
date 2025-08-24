@@ -4,8 +4,8 @@ import styles from "./page.module.css";
 import { useEffect, useRef } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/all";
-import { useLoading } from "../contexts/LoadingContext";
-import ScrambleTextOnHover from "../components/ScrambleOnHover/ScrambleTextOnHover";
+import { useLoading } from "../../contexts/LoadingContext";
+import ScrambleTextOnHover from "../../components/ScrambleOnHover/ScrambleTextOnHover";
 import Image from "next/image";
 
 gsap.registerPlugin(ScrollTrigger);
@@ -49,26 +49,24 @@ export default function Page() {
   });
 
   return (
-    <div className={styles["project"]}>
-      <Link href={"/"} className={styles["back"]} ref={backLinkRef}>
+    <div className={styles.project}>
+      <Link href={"/"} className={styles.back} ref={backLinkRef}>
         <ScrambleTextOnHover text={"close"} enabled={true} />
       </Link>
-      <div className={styles["project-header"]}>
-        <div className={styles["project-header-content"]}>
-          <h1 className={styles["project-title"]} ref={titleRef}>
-            <span className={styles["project-title-text"]}>
-              Terror Incident
-            </span>
+      <div className={styles.projectHeader}>
+        <div className={styles.projectHeaderContent}>
+          <h1 className={styles.projectTitle} ref={titleRef}>
+            <span className={styles.projectTitleText}>Terror Incident</span>
           </h1>
         </div>
       </div>
-      <div className={styles["project-body"]}>
-        <section className={styles["project-description"]}>
-          <p className={styles["project-description-title"]}>
+      <div className={styles.projectBody}>
+        <section className={styles.projectDescription}>
+          <p className={styles.projectDescriptionTitle}>
             Interactive Visualization of Global Terror Incidents
           </p>
-          <div className={styles["project-description-content"]}>
-            <p className={styles["project-description-text"]}>
+          <div className={styles.projectDescriptionContent}>
+            <p className={styles.projectDescriptionText}>
               Terror Incidentis an interactive web application designed to
               visualize and analyze global terror events. The project combines
               real-time data rendering with immersive 3D environments to offer
@@ -79,33 +77,31 @@ export default function Page() {
               purposes, Terror Incident provides a dramatic and data-driven
               perspective on one of the world’s most pressing issues.
             </p>
-            <div className={styles["project-description-tags"]}>
-              <p className={styles["project-description-tag"]}>
-                DATA VISUALIZATION
-              </p>
-              <p className={styles["project-description-tag"]}>
+            <div className={styles.projectDescriptionTags}>
+              <p className={styles.projectDescriptionTag}>DATA VISUALIZATION</p>
+              <p className={styles.projectDescriptionTag}>
                 SECURITY & AWARENESS
               </p>
-              <p className={styles["project-description-tag"]}>ONGOING</p>
+              <p className={styles.projectDescriptionTag}>ONGOING</p>
             </div>
           </div>
         </section>
-        <section className={styles["project-images"]}>
-          <div className={styles["project-image-container"]}>
+        <section className={styles.projectImages}>
+          <div className={styles.projectImageContainer}>
             <Image
               src={"/images/placeholder-image.png"}
               alt="Terror Incident Image"
               width={800}
               height={600}
-              className={styles["project-image"]}
+              className={styles.projectImage}
             />
           </div>
         </section>
       </div>
-      <div className={styles["project-next"]}>
-        <Link href={"/andrejkoller"} className={styles["project-next-link"]}>
-          <div className={styles["project-next-text-container"]}>
-            <p className={styles["project-next-text"]}>Andrej Koller</p>
+      <div className={styles.projectNext}>
+        <Link href={"/andrejkoller"} className={styles.projectNextLink}>
+          <div className={styles.projectNextTextContainer}>
+            <p className={styles.projectNextText}>Andrej Koller</p>
           </div>
         </Link>
       </div>

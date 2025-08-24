@@ -1,10 +1,11 @@
 "use client";
+
 import Link from "next/link";
 import styles from "./page.module.css";
 import { useEffect, useRef } from "react";
 import gsap from "gsap";
-import { useLoading } from "../contexts/LoadingContext";
-import ScrambleTextOnHover from "../components/ScrambleOnHover/ScrambleTextOnHover";
+import { useLoading } from "../../contexts/LoadingContext";
+import ScrambleTextOnHover from "../../components/ScrambleOnHover/ScrambleTextOnHover";
 
 export default function Page() {
   const { loading } = useLoading();
@@ -45,18 +46,18 @@ export default function Page() {
   }, [loading]);
 
   return (
-    <section className={styles["contact"]}>
-      <Link href={"/"} className={styles["back"]} ref={backLinkRef}>
+    <section className={styles.contact}>
+      <Link href={"/"} className={styles.back} ref={backLinkRef}>
         <ScrambleTextOnHover text={"close"} enabled={true} />
       </Link>
-      <div className={styles["contact-container"]}>
-        <div className={styles["contact-content"]} ref={contactContentRef}>
-          <div className={styles["email-link"]}>
+      <div className={styles.contactContainer}>
+        <div className={styles.contactContent} ref={contactContentRef}>
+          <div className={styles.emailLink}>
             <Link href={"mailto:andrejkoller@outlook.com"}>
               <ScrambleTextOnHover text={"Email"} enabled={true} />
             </Link>
           </div>
-          <div className={styles["linkedin-link"]}>
+          <div className={styles.linkedinLink}>
             <Link
               href={"https://www.linkedin.com/in/andrejkoller/"}
               target="_blank"
