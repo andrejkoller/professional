@@ -57,29 +57,30 @@ export default function Page() {
       <div className={styles.projectHeader}>
         <div className={styles.projectHeaderContent}>
           <h1 className={styles.projectTitle} ref={titleRef}>
-            <span className={styles.projectTitleText}>Fading Hell</span>
+            <span className={styles.projectTitleText}>Theology Gateway</span>
           </h1>
         </div>
       </div>
       <div className={styles.projectBody}>
         <section className={styles.projectDescription}>
           <p className={styles.projectDescriptionTitle}>
-            Collaborative Music Project
+            Faith, Dialogue, Understanding
           </p>
           <div className={styles.projectDescriptionContent}>
             <p className={styles.projectDescriptionText}>
-              In my free time, I started Fading Hell, a collaborative metalcore
-              project with subtle Christian themes. Inspired by early 2000s
-              metalcore and modern production, we blended heavy breakdowns,
-              melodic interludes, and reflective lyrics. Our goal was to balance
-              raw aggression with spiritual depth, creating a sound that
-              resonates with both secular and faith-based audiences.
+              Theology Gateway is a comprehensive platform dedicated to the
+              exploration and understanding of Christian and Islamic theology.
+              It aims to provide users with deeper insight into the beliefs,
+              practices, and historical contexts of both faiths, fostering
+              dialogue, learning, and respectful engagement across traditions.
             </p>
             <div className={styles.projectDescriptionTags}>
               <p className={styles.projectDescriptionTag}>
-                MUSIC, CREATIVE COLLABORATION
+                RESEARCH & STRATEGY
               </p>
-              <p className={styles.projectDescriptionTag}>Metalcore</p>
+              <p className={styles.projectDescriptionTag}>
+                APOLOGETICS & ANALYSIS
+              </p>
               <p className={styles.projectDescriptionTag}>ONGOING</p>
             </div>
           </div>
@@ -88,7 +89,7 @@ export default function Page() {
           <div className={styles.projectImageContainer}>
             <Image
               src={"/images/placeholder-image.png"}
-              alt="Fading Hell Image"
+              alt="Theology Gateway Image"
               width={800}
               height={600}
               className={styles.projectImage}
@@ -97,9 +98,9 @@ export default function Page() {
         </section>
       </div>
       <div className={styles.projectNext}>
-        <Link href={"/theologygateway"} className={styles.projectNextLink}>
+        <Link href={"/biblegateway"} className={styles.projectNextLink}>
           <div className={styles.projectNextTextContainer}>
-            <p className={styles.projectNextText}>Theology Gateway</p>
+            <p className={styles.projectNextText}>Bible Gateway</p>
           </div>
         </Link>
       </div>

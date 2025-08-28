@@ -56,7 +56,7 @@ export default function Page() {
       <div className={styles.projectHeader}>
         <div className={styles.projectHeaderContent}>
           <h1 className={styles.projectTitle} ref={titleRef}>
-            <span className={styles.projectTitleText}>Terror Incident</span>
+            <span className={styles.projectTitleText}>Terror Watch</span>
           </h1>
         </div>
       </div>
@@ -67,14 +67,14 @@ export default function Page() {
           </p>
           <div className={styles.projectDescriptionContent}>
             <p className={styles.projectDescriptionText}>
-              Terror Incidentis an interactive web application designed to
+              Terror Watch is an interactive web application designed to
               visualize and analyze global terror events. The project combines
               real-time data rendering with immersive 3D environments to offer
               users an engaging, informative experience. Built with Angular and
               Three.js on the frontend, and powered by a robust .NET and MSSQL
               backend, the system allows filtering by time, location, and
               incident type. Whether for research, awareness, or educational
-              purposes, Terror Incident provides a dramatic and data-driven
+              purposes, Terror Watch provides a dramatic and data-driven
               perspective on one of the world’s most pressing issues.
             </p>
             <div className={styles.projectDescriptionTags}>
@@ -90,7 +90,7 @@ export default function Page() {
           <div className={styles.projectImageContainer}>
             <Image
               src={"/images/placeholder-image.png"}
-              alt="Terror Incident Image"
+              alt="Terror Watch Image"
               width={800}
               height={600}
               className={styles.projectImage}

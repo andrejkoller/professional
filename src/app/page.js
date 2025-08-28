@@ -41,18 +41,25 @@ const projects = [
     color: "var(--fading-hell-color)",
   },
   {
-    title: "Unveiled Islam",
-    href: "/unveiledislam",
+    title: "Theology Gateway",
+    href: "/theologygateway",
     imageSrc: "/images/placeholder-image.png",
-    imageAlt: "Unveiled Islam",
-    color: "var(--unveiled-islam-color)",
+    imageAlt: "Theology Gateway",
+    color: "var(--theology-gateway-color)",
   },
   {
-    title: "Terror Incident",
-    href: "/terrorincident",
+    title: "Bible Gateway",
+    href: "/biblegateway",
     imageSrc: "/images/placeholder-image.png",
-    imageAlt: "Terror Incident",
-    color: "var(--terror-incident-color)",
+    imageAlt: "Bible Gateway",
+    color: "var(--bible-gateway-color)",
+  },
+  {
+    title: "Terror Watch",
+    href: "/terrorwatch",
+    imageSrc: "/images/placeholder-image.png",
+    imageAlt: "Terror Watch",
+    color: "var(--terror-watch-color)",
   },
 ];
 

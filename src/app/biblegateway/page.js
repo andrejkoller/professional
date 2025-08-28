@@ -57,31 +57,27 @@ export default function Page() {
       <div className={styles.projectHeader}>
         <div className={styles.projectHeaderContent}>
           <h1 className={styles.projectTitle} ref={titleRef}>
-            <span className={styles.projectTitleText}>Unveiled Islam</span>
+            <span className={styles.projectTitleText}>Bible Gateway</span>
           </h1>
         </div>
       </div>
       <div className={styles.projectBody}>
         <section className={styles.projectDescription}>
           <p className={styles.projectDescriptionTitle}>
-            Investigation of Islam
+            The Bible, Anytime, Anywhere
           </p>
           <div className={styles.projectDescriptionContent}>
             <p className={styles.projectDescriptionText}>
-              Unveiled Islam is a commissioned project that critically explores
-              the origins, texts, and doctrines of Islam. In an age of political
-              correctness and misinformation, it offers a clear, source-based
-              perspective for the curious, the skeptical, and the faithful.
-              Built with React, Next.js, and Three.js, the platform features
-              structured themes, multilingual support, and thoughtful design.
+              Bible Gateway is an online resource designed to make the Bible
+              accessible to everyone, anywhere. It offers free access to
+              multiple translations, languages, and study tools, allowing
+              readers to search, read, and compare Scripture with ease. Whether
+              for personal devotion, academic study, or teaching, Bible Gateway
+              provides a simple and comprehensive way to engage with God’s Word.
             </p>
             <div className={styles.projectDescriptionTags}>
-              <p className={styles.projectDescriptionTag}>
-                ISLAM, DECONSTRUCTION
-              </p>
-              <p className={styles.projectDescriptionTag}>
-                APOLOGETICS & ANALYSIS
-              </p>
+              <p className={styles.projectDescriptionTag}>BIBLE STUDY</p>
+              <p className={styles.projectDescriptionTag}>STUDY TOOLS</p>
               <p className={styles.projectDescriptionTag}>ONGOING</p>
             </div>
           </div>
@@ -90,7 +86,7 @@ export default function Page() {
           <div className={styles.projectImageContainer}>
             <Image
               src={"/images/placeholder-image.png"}
-              alt="Unveiled Islam Image"
+              alt="Bible Gateway Image"
               width={800}
               height={600}
               className={styles.projectImage}
@@ -99,9 +95,9 @@ export default function Page() {
         </section>
       </div>
       <div className={styles.projectNext}>
-        <Link href={"/terrorincident"} className={styles.projectNextLink}>
+        <Link href={"/terrorwatch"} className={styles.projectNextLink}>
           <div className={styles.projectNextTextContainer}>
-            <p className={styles.projectNextText}>Terror Incident</p>
+            <p className={styles.projectNextText}>Terror Watch</p>
           </div>
         </Link>
       </div>
