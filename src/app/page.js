@@ -18,6 +18,7 @@ const projects = [
     imageSrc: "/images/placeholder-image.png",
     imageAlt: "Andrej Koller",
     color: "var(--andrej-koller-color)",
+    disabled: false,
   },
   {
     title: "Work",
@@ -25,6 +26,7 @@ const projects = [
     imageSrc: "/images/placeholder-image.png",
     imageAlt: "Work",
     color: "var(--work-color)",
+    disabled: false,
   },
   {
     title: "Art",
@@ -32,6 +34,7 @@ const projects = [
     imageSrc: "/images/placeholder-image.png",
     imageAlt: "Art",
     color: "var(--art-color)",
+    disabled: true,
   },
   {
     title: "Fading Hell",
@@ -39,13 +42,7 @@ const projects = [
     imageSrc: "/images/placeholder-image.png",
     imageAlt: "Fading Hell",
     color: "var(--fading-hell-color)",
-  },
-  {
-    title: "Theology Gateway",
-    href: "/theologygateway",
-    imageSrc: "/images/placeholder-image.png",
-    imageAlt: "Theology Gateway",
-    color: "var(--theology-gateway-color)",
+    disabled: false,
   },
   {
     title: "Bible Gateway",
@@ -53,6 +50,15 @@ const projects = [
     imageSrc: "/images/placeholder-image.png",
     imageAlt: "Bible Gateway",
     color: "var(--bible-gateway-color)",
+    disabled: false,
+  },
+  {
+    title: "Theology Gateway",
+    href: "/theologygateway",
+    imageSrc: "/images/placeholder-image.png",
+    imageAlt: "Theology Gateway",
+    color: "var(--theology-gateway-color)",
+    disabled: false,
   },
   {
     title: "Terror Watch",
@@ -60,6 +66,7 @@ const projects = [
     imageSrc: "/images/placeholder-image.png",
     imageAlt: "Terror Watch",
     color: "var(--terror-watch-color)",
+    disabled: false,
   },
 ];
 
@@ -252,35 +259,37 @@ export default function Home() {
           <p ref={scrollDownRef}>Scroll to explore</p>
         </figure>
 
-        {projects.map((project) => (
-          <section className={styles.project} key={project.title}>
-            <figure className={styles.figureInner}></figure>
-            <div className={styles.projectTitle}>
-              <h2>
-                <Link href={project.href}>{project.title}</Link>
-              </h2>
-            </div>
-            <div className={styles.projectContent}>
-              <figure className={styles.projectFigureImage}>
-                <div className={styles.projectImage}>
-                  <Link href={project.href}>
-                    <Image
-                      src={project.imageSrc}
-                      onMouseEnter={() =>
-                        handleProjectImageMouseEnter(project.color)
-                      }
-                      onMouseLeave={() => handleProjectImageMouseLeave()}
-                      priority
-                      height={500}
-                      width={500}
-                      alt={project.imageAlt}
-                    ></Image>
-                  </Link>
-                </div>
-              </figure>
-            </div>
-          </section>
-        ))}
+        {projects
+          .filter((project) => !project.disabled)
+          .map((project) => (
+            <section className={styles.project} key={project.title}>
+              <figure className={styles.figureInner}></figure>
+              <div className={styles.projectTitle}>
+                <h2>
+                  <Link href={project.href}>{project.title}</Link>
+                </h2>
+              </div>
+              <div className={styles.projectContent}>
+                <figure className={styles.projectFigureImage}>
+                  <div className={styles.projectImage}>
+                    <Link href={project.href}>
+                      <Image
+                        src={project.imageSrc}
+                        onMouseEnter={() =>
+                          handleProjectImageMouseEnter(project.color)
+                        }
+                        onMouseLeave={() => handleProjectImageMouseLeave()}
+                        priority
+                        height={500}
+                        width={500}
+                        alt={project.imageAlt}
+                      ></Image>
+                    </Link>
+                  </div>
+                </figure>
+              </div>
+            </section>
+          ))}
 
         <figure className={styles.figure2} ref={nav2Ref}>
           <p ref={scrollUpRef}>Scroll up</p>
