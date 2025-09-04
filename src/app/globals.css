@@ -2,7 +2,7 @@
   --background: #ffffff;
   --foreground: #000000;
   --andrej-koller-color: #080808;
-  --work-color: #000000;
+  --work-color: var(--background);
   --art-color: #33e960;
   --fading-hell-color: #8c0d0d;
   --theology-gateway-color: #d62b18;
@@ -14,7 +14,7 @@
   --background: #000000;
   --foreground: #ffffff;
   --andrej-koller-color: #080808;
-  --work-color: #ffffff;
+  --work-color: var(--background);
   --art-color: #33e960;
   --fading-hell-color: #8c0d0d;
   --theology-gateway-color: #d62b18;
@@ -27,7 +27,7 @@
     --background: #000000;
     --foreground: #ffffff;
     --andrej-koller-color: #080808;
-    --work-color: #ffffff;
+    --work-color: var(--background);
     --art-color: #33e960;
     --fading-hell-color: #8c0d0d;
     --theology-gateway-color: #d62b18;

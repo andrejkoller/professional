@@ -10,9 +10,17 @@ export function useTransition() {
 
 export function TransitionProvider({ children }) {
   const [isTransitioning, setIsTransitioning] = useState(false);
+  const [transitionColor, setTransitionColor] = useState("var(--background)");
 
   return (
-    <TransitionContext.Provider value={{ isTransitioning, setIsTransitioning }}>
+    <TransitionContext.Provider 
+      value={{ 
+        isTransitioning, 
+        setIsTransitioning,
+        transitionColor,
+        setTransitionColor
+      }}
+    >
       {children}
     </TransitionContext.Provider>
   );

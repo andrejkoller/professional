@@ -76,12 +76,11 @@ export default function LayoutClient({ children }) {
 }
 
 function TransitionOverlayWrapper() {
-  const { isTransitioning } = useTransition();
-  const backgroundColor = "var(--background)";
+  const { isTransitioning, transitionColor } = useTransition();
   return (
     <TransitionOverlay
       isActive={isTransitioning}
-      backgroundColor={backgroundColor}
+      backgroundColor={transitionColor}
     />
   );
 }

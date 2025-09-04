@@ -29,16 +29,16 @@ export default function Page() {
 
       if (!backLink || !nav || !title || !project || !nav2) return;
 
-      const timeline1 = gsap.timeline();
-      timeline1.to(backLink, {
+      const backLinkFadeInTimeline = gsap.timeline();
+      backLinkFadeInTimeline.to(backLink, {
         delay: 0.5,
         opacity: 1,
-        ease: "power4.out",
+        ease: "expo.out",
         duration: 1,
       });
 
-      const timeline2 = gsap.timeline();
-      timeline2.to(title, {
+      const titleAppearTimeline = gsap.timeline();
+      titleAppearTimeline.to(title, {
         delay: 0.5,
         opacity: 1,
         scale: 1,
@@ -47,25 +47,26 @@ export default function Page() {
         duration: 1.3,
       });
 
-      const timeline3 = gsap.timeline({
+      const navScrollTimeline = gsap.timeline({
         scrollTrigger: {
           trigger: project,
           start: "top top",
-          end: "bottom bottom",
-          scrub: true,
+          end: "bottom top",
+          scrub: 2,
         },
+        defaults: { duration: 1, ease: "power2.out" },
       });
 
-      timeline3.to(nav, {
+      navScrollTimeline.to(nav, {
         scale: 0.8,
         opacity: 0.1,
-        ease: "power4.out",
+        ease: "power2.out",
       });
 
       return () => {
-        timeline1.kill();
-        timeline2.kill();
-        timeline3.kill();
+        backLinkFadeInTimeline.kill();
+        titleAppearTimeline.kill();
+        navScrollTimeline.kill();
         ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
       };
     }
@@ -90,8 +91,8 @@ export default function Page() {
             <figure className={styles.figureInner}></figure>
             <div className={styles.infoTitle}>
               <h2>
-                passionate application developer with a focus on frontend
-                development, design and user experience.
+                passionate web developer with a focus on frontend development,
+                design and user experience.
               </h2>
             </div>
             <div className={styles.infoContent}>

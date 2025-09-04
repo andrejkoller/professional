@@ -104,45 +104,28 @@ export default function Home() {
 
       if (!nav || !project || !nav2 || !scrollDown || !scrollUp) return;
 
-      const timeline1 = gsap.timeline({
+      const navScaleTimeline = gsap.timeline({
         scrollTrigger: {
           trigger: project,
           start: "top top",
           endTrigger: nav2,
           end: "bottom top",
-          scrub: true,
+          scrub: 2,
         },
-        defaults: { duration: 1, ease: "power4.out" },
+        defaults: { duration: 1, ease: "power2.out" },
       });
 
-      timeline1
-        .to(nav, {
-          scale: 0.8,
-          opacity: 0.7,
-          ease: "power4.out",
-        })
-        .to(nav, {
-          scale: 1,
-          opacity: 1,
-          ease: "power4.out",
-        });
-
-      const timeline2 = gsap.timeline({
+      const scrollDownFadeTimeline = gsap.timeline({
         scrollTrigger: {
           trigger: project,
           start: "top top",
           end: "bottom bottom",
           scrub: true,
         },
-        defaults: { duration: 1, ease: "power4.out" },
+        defaults: { duration: 1, ease: "power2.out" },
       });
 
-      timeline2.to(scrollDown, {
-        opacity: 0,
-        ease: "power4.out",
-      });
-
-      const fadeInTimeline = gsap.timeline({
+      const scrollUpFadeInTimeline = gsap.timeline({
         scrollTrigger: {
           trigger: nav2,
           start: "bottom bottom",
@@ -150,13 +133,8 @@ export default function Home() {
           toggleActions: "play none none reverse",
         },
       });
-      fadeInTimeline.to(scrollUp, {
-        opacity: 1,
-        duration: 1,
-        ease: "power4.out",
-      });
 
-      const fadeOutTimeline = gsap.timeline({
+      const scrollUpFadeOutTimeline = gsap.timeline({
         scrollTrigger: {
           trigger: nav2,
           start: "bottom bottom",
@@ -164,18 +142,43 @@ export default function Home() {
           scrub: true,
         },
       });
-      fadeOutTimeline.to(scrollUp, {
+
+
+      navScaleTimeline
+        .to(nav, {
+          scale: 0.8,
+          opacity: 0.7,
+          ease: "power2.out",
+        })
+        .to(nav, {
+          scale: 1.15,
+          opacity: 1,
+          ease: "power2.out",
+        });
+
+      scrollDownFadeTimeline.to(scrollDown, {
+        opacity: 0,
+        ease: "power2.out",
+      });
+
+      scrollUpFadeInTimeline.to(scrollUp, {
+        opacity: 1,
+        duration: 1,
+        ease: "power2.out",
+      });
+
+      scrollUpFadeOutTimeline.to(scrollUp, {
         opacity: 0,
         duration: 1,
-        ease: "power4.out",
+        ease: "power2.out",
       });
 
       document.body.style.backgroundColor = "var(--background)";
       return () => {
-        timeline1.kill();
-        timeline2.kill();
-        fadeInTimeline.kill();
-        fadeOutTimeline.kill();
+        navScaleTimeline.kill();
+        scrollDownFadeTimeline.kill();
+        scrollUpFadeInTimeline.kill();
+        scrollUpFadeOutTimeline.kill();
         ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
       };
     }
