@@ -23,16 +23,16 @@ export default function Page() {
 
       if (!backLink) return;
 
-      const timeline1 = gsap.timeline();
-      timeline1.to(backLink, {
+      const backLinkFadeInTimeline = gsap.timeline();
+      backLinkFadeInTimeline.to(backLink, {
         delay: 0.5,
         opacity: 1,
-        ease: "power4.out",
+        ease: "expo.out",
         duration: 1,
       });
 
-      const timeline2 = gsap.timeline();
-      timeline2.to(title, {
+      const titleAppearTimeline = gsap.timeline();
+      titleAppearTimeline.to(title, {
         delay: 0.5,
         opacity: 1,
         scale: 1,
@@ -42,11 +42,12 @@ export default function Page() {
       });
 
       return () => {
-        timeline1.kill();
-        timeline2.kill();
+        backLinkFadeInTimeline.kill();
+        titleAppearTimeline.kill();
+        ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
       };
     }
-  });
+  }, [loading]);
 
   return (
     <div className={styles.project}>

@@ -7,7 +7,6 @@ import gsap from "gsap";
 import { ScrollTrigger } from "gsap/all";
 import { useLoading } from "../../contexts/LoadingContext";
 import ScrambleTextOnHover from "../../components/ScrambleOnHover/ScrambleTextOnHover";
-import Image from "next/image";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -15,18 +14,14 @@ export default function Page() {
   const { loading } = useLoading();
 
   const backLinkRef = useRef(null);
-  const navRef = useRef(null);
   const titleRef = useRef(null);
-  const projectRef = useRef(null);
 
   useEffect(() => {
     if (!loading) {
       const backLink = backLinkRef.current;
-      const nav = navRef.current;
       const title = titleRef.current;
-      const project = projectRef.current;
 
-      if (!backLink || !nav || !title || !project) return;
+      if (!backLink) return;
 
       const backLinkFadeInTimeline = gsap.timeline();
       backLinkFadeInTimeline.to(backLink, {
@@ -46,20 +41,9 @@ export default function Page() {
         duration: 1.3,
       });
 
-      const navScrollTimeline = gsap.timeline({
-        scrollTrigger: {
-          trigger: project,
-          start: "top top",
-          end: "bottom top",
-          scrub: 2,
-        },
-        defaults: { duration: 1, ease: "power2.out" },
-      });
-
       return () => {
         backLinkFadeInTimeline.kill();
         titleAppearTimeline.kill();
-        navScrollTimeline.kill();
         ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
       };
     }
