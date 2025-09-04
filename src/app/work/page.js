@@ -85,22 +85,11 @@ export default function Page() {
             </div>
           </div>
         </section>
-        <section className={styles.projectImages}>
-          <div className={styles.projectImageContainer}>
-            <Image
-              src={"/images/placeholder-image.png"}
-              alt="Work Image"
-              width={800}
-              height={600}
-              className={styles.projectImage}
-            />
-          </div>
-        </section>
       </div>
       <div className={styles.projectNext}>
-        <Link href={"/art"} className={styles.projectNextLink}>
+        <Link href={"/fadinghell"} className={styles.projectNextLink}>
           <div className={styles.projectNextTextContainer}>
-            <p className={styles.projectNextText}>Art</p>
+            <p className={styles.projectNextText}>Fading Hell</p>
           </div>
         </Link>
       </div>

@@ -15,25 +15,29 @@ export default function Page() {
   const { loading } = useLoading();
 
   const backLinkRef = useRef(null);
+  const navRef = useRef(null);
   const titleRef = useRef(null);
+  const projectRef = useRef(null);
 
   useEffect(() => {
     if (!loading) {
       const backLink = backLinkRef.current;
+      const nav = navRef.current;
       const title = titleRef.current;
+      const project = projectRef.current;
 
-      if (!backLink) return;
+      if (!backLink || !nav || !title || !project) return;
 
-      const timeline1 = gsap.timeline();
-      timeline1.to(backLink, {
+      const backLinkFadeInTimeline = gsap.timeline();
+      backLinkFadeInTimeline.to(backLink, {
         delay: 0.5,
         opacity: 1,
-        ease: "power4.out",
+        ease: "expo.out",
         duration: 1,
       });
 
-      const timeline2 = gsap.timeline();
-      timeline2.to(title, {
+      const titleAppearTimeline = gsap.timeline();
+      titleAppearTimeline.to(title, {
         delay: 0.5,
         opacity: 1,
         scale: 1,
@@ -42,12 +46,24 @@ export default function Page() {
         duration: 1.3,
       });
 
+      const navScrollTimeline = gsap.timeline({
+        scrollTrigger: {
+          trigger: project,
+          start: "top top",
+          end: "bottom top",
+          scrub: 2,
+        },
+        defaults: { duration: 1, ease: "power2.out" },
+      });
+
       return () => {
-        timeline1.kill();
-        timeline2.kill();
+        backLinkFadeInTimeline.kill();
+        titleAppearTimeline.kill();
+        navScrollTimeline.kill();
+        ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
       };
     }
-  });
+  }, [loading]);
 
   return (
     <div className={styles.project}>
@@ -82,17 +98,6 @@ export default function Page() {
               <p className={styles.projectDescriptionTag}>PIANO & ORGAN</p>
               <p className={styles.projectDescriptionTag}>2025</p>
             </div>
-          </div>
-        </section>
-        <section className={styles.projectImages}>
-          <div className={styles.projectImageContainer}>
-            <Image
-              src={"/images/placeholder-image.png"}
-              alt="Andrej Koller Image"
-              width={800}
-              height={600}
-              className={styles.projectImage}
-            />
           </div>
         </section>
       </div>
