@@ -26,6 +26,7 @@
   color: var(--foreground);
   transition: opacity 0.8s ease;
   position: relative;
+  transform: scale(1.15);
 }
 
 .fadeOut {

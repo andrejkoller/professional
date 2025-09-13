@@ -194,22 +194,6 @@
   z-index: 50;
 }
 
-[data-theme="light"]
-  .sectionsContainer
-  .project
-  .projectContent
-  .projectFigureImage {
-  filter: brightness(0) saturate(100%) invert(0%);
-}
-
-[data-theme="dark"]
-  .sectionsContainer
-  .project
-  .projectContent
-  .projectFigureImage {
-  filter: brightness(0) saturate(100%) invert(100%);
-}
-
 .sectionsContainer .project .projectContent .projectFigureImage .projectImage {
   display: flex;
   flex-direction: column;

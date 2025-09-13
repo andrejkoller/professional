@@ -57,39 +57,34 @@ export default function Page() {
       <div className={styles.projectHeader}>
         <div className={styles.projectHeaderContent}>
           <h1 className={styles.projectTitle} ref={titleRef}>
-            <span className={styles.projectTitleText}>Work</span>
+            <span className={styles.projectTitleText}>Omelia</span>
           </h1>
         </div>
       </div>
       <div className={styles.projectBody}>
         <section className={styles.projectDescription}>
-          <p className={styles.projectDescriptionTitle}>
-            Projects and Collaborations
-          </p>
+          <p className={styles.projectDescriptionTitle}>Omelia</p>
           <div className={styles.projectDescriptionContent}>
             <p className={styles.projectDescriptionText}>
-              This platform serves as a curated preview of selected development
-              projects I&apos;ve worked on—either independently or in
-              collaboration with others. Each project reflects different areas
-              of my skillset, including UI design, frontend architecture, and
-              backend logic. The site itself is built with React, Next.js, and
-              GSAP, offering smooth animations, structured content, and a clean
-              presentation of ideas.
+              Omelia provides modern developer tools to build the web of
+              tomorrow. From a powerful frontend framework to a flexible UI
+              component library, Omelia offers the foundation for creating fast,
+              scalable, and beautifully designed applications. With a focus on
+              performance, accessibility, and developer experience, Omelia
+              continues to expand its ecosystem—delivering solutions that
+              empower teams to move from idea to production with confidence.
             </p>
             <div className={styles.projectDescriptionTags}>
-              <p className={styles.projectDescriptionTag}>PROJECT HIGHLIGHTS</p>
-              <p className={styles.projectDescriptionTag}>
-                UI/UX DESIGN & DEVELOPMENT
-              </p>
+              <p className={styles.projectDescriptionTag}>DEVELOPER TOOLS</p>
               <p className={styles.projectDescriptionTag}>2025</p>
             </div>
           </div>
         </section>
       </div>
       <div className={styles.projectNext}>
-        <Link href={"/art"} className={styles.projectNextLink}>
+        <Link href={"/andrejkoller"} className={styles.projectNextLink}>
           <div className={styles.projectNextTextContainer}>
-            <p className={styles.projectNextText}>Art</p>
+            <p className={styles.projectNextText}>Andrej Koller</p>
           </div>
         </Link>
       </div>

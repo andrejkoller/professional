@@ -89,9 +89,9 @@ export default function Page() {
         </section>
       </div>
       <div className={styles.projectNext}>
-        <Link href={"/andrejkoller"} className={styles.projectNextLink}>
+        <Link href={"/omelia"} className={styles.projectNextLink}>
           <div className={styles.projectNextTextContainer}>
-            <p className={styles.projectNextText}>Andrej Koller</p>
+            <p className={styles.projectNextText}>Omelia</p>
           </div>
         </Link>
       </div>

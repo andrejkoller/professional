@@ -17,6 +17,7 @@ const projects = [
     href: "/andrejkoller",
     imageSrc: "/images/placeholder-image.png",
     imageAlt: "Andrej Koller",
+    bg: "var(--andrej-koller-bg)",
     color: "var(--andrej-koller-color)",
     disabled: false,
   },
@@ -25,6 +26,7 @@ const projects = [
     href: "/work",
     imageSrc: "/images/placeholder-image.png",
     imageAlt: "Work",
+    bg: "var(--work-bg)",
     color: "var(--work-color)",
     disabled: false,
   },
@@ -33,14 +35,16 @@ const projects = [
     href: "/art",
     imageSrc: "/images/placeholder-image.png",
     imageAlt: "Art",
+    bg: "var(--art-bg)",
     color: "var(--art-color)",
-    disabled: true,
+    disabled: false,
   },
   {
     title: "Fading Hell",
     href: "/fadinghell",
     imageSrc: "/images/placeholder-image.png",
     imageAlt: "Fading Hell",
+    bg: "var(--fading-hell-bg)",
     color: "var(--fading-hell-color)",
     disabled: false,
   },
@@ -49,14 +53,16 @@ const projects = [
     href: "/biblegateway",
     imageSrc: "/images/placeholder-image.png",
     imageAlt: "Bible Gateway",
+    bg: "var(--bible-gateway-bg)",
     color: "var(--bible-gateway-color)",
-    disabled: false,
+    disabled: true,
   },
   {
     title: "Theology Gateway",
     href: "/theologygateway",
     imageSrc: "/images/placeholder-image.png",
     imageAlt: "Theology Gateway",
+    bg: "var(--theology-gateway-bg)",
     color: "var(--theology-gateway-color)",
     disabled: false,
   },
@@ -65,7 +71,17 @@ const projects = [
     href: "/terrorwatch",
     imageSrc: "/images/placeholder-image.png",
     imageAlt: "Terror Watch",
+    bg: "var(--terror-watch-bg)",
     color: "var(--terror-watch-color)",
+    disabled: false,
+  },
+  {
+    title: "Omelia",
+    href: "/omelia",
+    imageSrc: "/images/placeholder-image.png",
+    imageAlt: "Omelia",
+    bg: "var(--omelia-bg)",
+    color: "var(--omelia-color)",
     disabled: false,
   },
 ];
@@ -84,14 +100,23 @@ export default function Home() {
   const [infoReady, setInfoReady] = useState(false);
   const [contactReady, setContactReady] = useState(false);
 
-  const handleProjectImageMouseEnter = useCallback((color) => {
+  const titleRefs = useRef([]);
+  const imageRefs = useRef([]);
+
+  const handleProjectImageMouseEnter = useCallback((bg, color, index) => {
     if (typeof document !== "undefined") {
-      document.body.style.backgroundColor = color;
+      document.body.style.backgroundColor = bg;
+      if (titleRefs.current[index]) {
+        titleRefs.current[index].style.color = color;
+      }
     }
   }, []);
 
-  const handleProjectImageMouseLeave = useCallback(() => {
+  const handleProjectImageMouseLeave = useCallback((index) => {
     document.body.style.backgroundColor = "var(--background)";
+    if (titleRefs.current[index]) {
+      titleRefs.current[index].style.color = "var(--foreground)";
+    }
   }, []);
 
   useEffect(() => {
@@ -143,17 +168,18 @@ export default function Home() {
         },
       });
 
-
       navScaleTimeline
         .to(nav, {
           scale: 0.8,
           opacity: 0.7,
           ease: "power2.out",
+          duration: 1,
         })
         .to(nav, {
           scale: 1.15,
           opacity: 1,
           ease: "power2.out",
+          duration: 1,
         });
 
       scrollDownFadeTimeline.to(scrollDown, {
@@ -264,11 +290,11 @@ export default function Home() {
 
         {projects
           .filter((project) => !project.disabled)
-          .map((project) => (
+          .map((project, index) => (
             <section className={styles.project} key={project.title}>
               <figure className={styles.figureInner}></figure>
               <div className={styles.projectTitle}>
-                <h2>
+                <h2 ref={(el) => (titleRefs.current[index] = el)}>
                   <Link href={project.href}>{project.title}</Link>
                 </h2>
               </div>
@@ -277,15 +303,23 @@ export default function Home() {
                   <div className={styles.projectImage}>
                     <Link href={project.href}>
                       <Image
+                        ref={(el) => (imageRefs.current[index] = el)}
                         src={project.imageSrc}
                         onMouseEnter={() =>
-                          handleProjectImageMouseEnter(project.color)
+                          handleProjectImageMouseEnter(
+                            project.bg,
+                            project.color,
+                            index
+                          )
                         }
-                        onMouseLeave={() => handleProjectImageMouseLeave()}
+                        onMouseLeave={() => handleProjectImageMouseLeave(index)}
                         priority
                         height={500}
                         width={500}
                         alt={project.imageAlt}
+                        style={{
+                          filter: project.color,
+                        }}
                       ></Image>
                     </Link>
                   </div>

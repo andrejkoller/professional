@@ -22,13 +22,13 @@
   justify-content: center;
   height: 100vh;
   width: 100%;
-  background-color: var(--andrej-koller-bg);
+  background-color: var(--omelia-bg);
 }
 
 .project .projectHeader .projectHeaderContent h1.projectTitle {
   font-size: 10vw;
   font-weight: 400;
-  color: var(--andrej-koller-color);
+  color: var(--omelia-color);
   text-transform: uppercase;
   opacity: 0;
   transform: scale(1.15) translateY(40px);
@@ -95,7 +95,7 @@
   justify-content: center;
   height: 100vh;
   width: 100%;
-  background-color: var(--work-bg);
+  background-color: var(--andrej-koller-bg);
 }
 
 .project .projectNext .projectNextTextContainer {
@@ -110,6 +110,6 @@
 .project .projectNext .projectNextTextContainer p {
   font-size: 10vw;
   font-weight: 400;
-  color: var(--work-color);
+  color: var(--andrej-koller-color);
   text-transform: uppercase;
 }
