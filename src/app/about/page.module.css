@@ -141,3 +141,23 @@
   text-align: center;
   text-transform: uppercase;
 }
+
+@media all and (max-width: 1024px) {
+  .aboutContainer .infoSection {
+    width: 90%;
+  }
+
+  .aboutContainer .infoSection .infoTitle h2 {
+    font-size: 32px;
+  }
+}
+
+@media all and (max-width: 600px) {
+  .aboutContainer .infoSection .infoTitle h2 {
+    font-size: 24px;
+  }
+
+  .aboutContainer .infoSection .infoContent .infoDescription p {
+    font-size: 14px;
+  }
+}

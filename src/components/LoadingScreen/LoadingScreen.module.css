@@ -20,13 +20,16 @@
   height: 100%;
   width: 100%;
   padding: 0 5vw;
+  position: relative;
+  box-sizing: border-box;
 }
 
 .loadingScreenContainer .loadingScreenContent p.loadingNumber {
   color: var(--foreground);
   transition: opacity 0.8s ease;
-  position: relative;
+  position: absolute;
   transform: scale(1.15);
+  white-space: nowrap;
 }
 
 .fadeOut {

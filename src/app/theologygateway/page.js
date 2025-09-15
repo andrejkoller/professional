@@ -88,9 +88,9 @@ export default function Page() {
         </section>
       </div>
       <div className={styles.projectNext}>
-        <Link href={"/terrorwatch"} className={styles.projectNextLink}>
+        <Link href={"/omelia"} className={styles.projectNextLink}>
           <div className={styles.projectNextTextContainer}>
-            <p className={styles.projectNextText}>Terror Watch</p>
+            <p className={styles.projectNextText}>Omelia</p>
           </div>
         </Link>
       </div>

@@ -73,7 +73,7 @@ const projects = [
     imageAlt: "Terror Watch",
     bg: "var(--terror-watch-bg)",
     color: "var(--terror-watch-color)",
-    disabled: false,
+    disabled: true,
   },
   {
     title: "Omelia",
@@ -171,7 +171,7 @@ export default function Home() {
       navScaleTimeline
         .to(nav, {
           scale: 0.8,
-          opacity: 0.7,
+          opacity: 0.5,
           ease: "power2.out",
           duration: 1,
         })

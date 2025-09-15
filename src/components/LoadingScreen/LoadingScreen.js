@@ -45,7 +45,7 @@ export default function LoadingScreen() {
               hasFaded ? styles.fadeOut : ""
             }`}
             style={{
-              left: `${numbers[index]}%`,
+              left: `${5 + numbers[index] * 0.9}vw`, // 5vw padding + scaled position within 90vw
             }}
           >
             {numbers[index]}

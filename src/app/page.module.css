@@ -12,6 +12,10 @@
   transition: none;
 }
 
+.sectionsContainer {
+  padding: 0 5vw;
+}
+
 .container .navigation {
   display: flex;
   flex-direction: column;
@@ -209,6 +213,21 @@
   .projectFigureImage
   .projectImage
   img {
-  width: 720px;
+  width: 100%;
   height: 900px;
+}
+
+@media all and (max-width: 768px) {
+  .sectionsContainer .project .projectTitle {
+    height: 50vh;
+  }
+
+  .sectionsContainer
+    .project
+    .projectContent
+    .projectFigureImage
+    .projectImage
+    img {
+    width: 100%;
+  }
 }
