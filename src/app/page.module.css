@@ -174,7 +174,7 @@
 }
 
 .sectionsContainer .project .projectTitle h2 {
-  font-size: 10vw;
+  font-size: 8vw;
   font-weight: 400;
   margin: 0;
   text-transform: uppercase;
@@ -215,6 +215,22 @@
   img {
   width: 100%;
   height: 900px;
+}
+
+[data-theme="light"]
+  .sectionsContainer
+  .project
+  .projectContent
+  .projectFigureImage {
+  filter: brightness(0) saturate(100%) invert(0%);
+}
+
+[data-theme="dark"]
+  .sectionsContainer
+  .project
+  .projectContent
+  .projectFigureImage {
+  filter: brightness(0) saturate(100%) invert(100%);
 }
 
 @media all and (max-width: 768px) {

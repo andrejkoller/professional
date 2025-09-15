@@ -7,10 +7,12 @@
   --work-color: #000000;
   --art-bg: #f8f5f2;
   --art-color: #1a1a1a;
+  --art-image-bg: #000000;
   --fading-hell-bg: #8c0d0d;
   --fading-hell-color: #ffffff;
   --theology-gateway-bg: #faf9f6;
   --theology-gateway-color: #111111;
+  --theology-gateway-image-bg: #000000;
   --bible-gateway-bg: #ff3d4d;
   --bible-gateway-color: #ffffff;
   --terror-watch-bg: #02081c;
@@ -28,10 +30,12 @@
   --work-color: #ffffff;
   --art-bg: #f8f5f2;
   --art-color: #1a1a1a;
+  --art-image-bg: #ffffff;
   --fading-hell-bg: #8c0d0d;
   --fading-hell-color: #ffffff;
   --theology-gateway-bg: #faf9f6;
   --theology-gateway-color: #111111;
+  --theology-gateway-image-bg: #ffffff;
   --bible-gateway-bg: #ff3d4d;
   --bible-gateway-color: #ffffff;
   --terror-watch-bg: #02081c;
@@ -50,10 +54,12 @@
     --work-color: #ffffff;
     --art-bg: #f8f5f2;
     --art-color: #1a1a1a;
+    --art-image-bg: #ffffff;
     --fading-hell-bg: #8c0d0d;
     --fading-hell-color: #ffffff;
     --theology-gateway-bg: #faf9f6;
     --theology-gateway-color: #111111;
+    --theology-gateway-image-bg: #ffffff;
     --bible-gateway-bg: #ff3d4d;
     --bible-gateway-color: #ffffff;
     --terror-watch-bg: #02081c;

@@ -76,7 +76,7 @@ export default function Page() {
             </p>
             <div className={styles.projectDescriptionTags}>
               <p className={styles.projectDescriptionTag}>DEVELOPER TOOLS</p>
-              <p className={styles.projectDescriptionTag}>2025</p>
+              <p className={styles.projectDescriptionTag}>ONGOING</p>
             </div>
           </div>
         </section>

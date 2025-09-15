@@ -78,7 +78,7 @@ export default function Page() {
               <p className={styles.projectDescriptionTag}>
                 Digital & Traditional
               </p>
-              <p className={styles.projectDescriptionTag}>2025</p>
+              <p className={styles.projectDescriptionTag}>ONGOING</p>
             </div>
           </div>
         </section>

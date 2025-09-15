@@ -81,7 +81,7 @@ export default function Page() {
               <p className={styles.projectDescriptionTag}>
                 UI/UX DESIGN & DEVELOPMENT
               </p>
-              <p className={styles.projectDescriptionTag}>2025</p>
+              <p className={styles.projectDescriptionTag}>ONGOING</p>
             </div>
           </div>
         </section>

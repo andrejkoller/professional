@@ -72,7 +72,7 @@ export default function Page() {
               In my free time, I started Fading Hell, a collaborative metalcore
               project with subtle Christian themes. Inspired by early 2000s
               metalcore and modern production, we blended heavy breakdowns,
-              melodic interludes, and reflective lyrics. Our goal was to balance
+              melodic interludes, and reflective lyrics. Our goal is to balance
               raw aggression with spiritual depth, creating a sound that
               resonates with both secular and faith-based audiences.
             </p>
