@@ -35,7 +35,7 @@ export default function TransitionOverlay({ isActive, backgroundColor }) {
         width: "100vw",
         height: "100vh",
         backgroundColor: backgroundColor || "var(--background)",
-        zIndex: 9999,
+        zIndex: 10003,
         pointerEvents: "none",
         transform: "translateY(100%)",
       }}

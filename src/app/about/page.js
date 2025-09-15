@@ -7,11 +7,13 @@ import { ScrollTrigger } from "gsap/all";
 import { useEffect, useRef } from "react";
 import { useLoading } from "../../contexts/LoadingContext";
 import ScrambleTextOnHover from "../../components/ScrambleOnHover/ScrambleTextOnHover";
+import { useRouter } from "next/navigation";
 
 gsap.registerPlugin(ScrollTrigger);
 
 export default function Page() {
   const { loading } = useLoading();
+  const router = useRouter();
 
   const backLinkRef = useRef(null);
   const navRef = useRef(null);
@@ -75,9 +77,13 @@ export default function Page() {
   return (
     <>
       <div className={styles.titleContainer}>
-        <Link href={"/"} className={styles.back} ref={backLinkRef}>
+        <button
+          onClick={() => router.push("/")}
+          className={styles.back}
+          ref={backLinkRef}
+        >
           <ScrambleTextOnHover text={"close"} enabled={true} />
-        </Link>
+        </button>
         <figure className={styles.titleContent} ref={navRef}>
           <figure className={styles.title} ref={titleRef}>
             <div>( INFO )</div>

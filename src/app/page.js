@@ -8,8 +8,10 @@ import { useCallback, useEffect, useRef, useState } from "react";
 import { ScrollTrigger } from "gsap/all";
 import Image from "next/image";
 import { useLoading } from "../contexts/LoadingContext";
+import { useTransition } from "../contexts/TransitionContext";
 import ScrambleTextInitial from "../components/ScrambleTextInitial/ScrambleTextInitial";
 import ScrambleTextOnHover from "../components/ScrambleOnHover/ScrambleTextOnHover";
+import { useRouter } from "next/navigation";
 
 const projects = [
   {
@@ -90,6 +92,8 @@ gsap.registerPlugin(ScrollTrigger);
 
 export default function Home() {
   const { loading } = useLoading();
+  const { setIsTransitioning, setTransitionColor } = useTransition();
+  const router = useRouter();
 
   const navRef = useRef(null);
   const projectRef = useRef(null);
@@ -118,6 +122,18 @@ export default function Home() {
       titleRefs.current[index].style.color = "var(--foreground)";
     }
   }, []);
+
+  const handleTransitionTo = useCallback(
+    (href, bgColor) => {
+      setTransitionColor(bgColor);
+      setIsTransitioning(true);
+
+      setTimeout(() => {
+        router.push(href);
+      }, 1000);
+    },
+    [setTransitionColor, setIsTransitioning, router]
+  );
 
   useEffect(() => {
     if (!loading) {
@@ -223,6 +239,10 @@ export default function Home() {
     }
   }, [loading, infoReady, contactReady]);
 
+  useEffect(() => {
+    setIsTransitioning(false);
+  }, [setIsTransitioning]);
+
   return (
     <>
       <div className={styles.container}>
@@ -308,13 +328,23 @@ export default function Home() {
               <figure className={styles.figureInner}></figure>
               <div className={styles.projectTitle}>
                 <h2 ref={(el) => (titleRefs.current[index] = el)}>
-                  <Link href={project.href}>{project.title}</Link>
+                  <button
+                    className={styles.projectTitleButton}
+                    onClick={() => handleTransitionTo(project.href, project.bg)}
+                  >
+                    {project.title}
+                  </button>
                 </h2>
               </div>
               <div className={styles.projectContent}>
                 <figure className={styles.projectFigureImage}>
                   <div className={styles.projectImage}>
-                    <Link href={project.href}>
+                    <button
+                      className={styles.projectImageButton}
+                      onClick={() =>
+                        handleTransitionTo(project.href, project.bg)
+                      }
+                    >
                       <Image
                         ref={(el) => (imageRefs.current[index] = el)}
                         src={project.imageSrc}
@@ -333,8 +363,8 @@ export default function Home() {
                         style={{
                           filter: project.color,
                         }}
-                      ></Image>
-                    </Link>
+                      />
+                    </button>
                   </div>
                 </figure>
               </div>

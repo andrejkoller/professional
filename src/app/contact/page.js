@@ -6,9 +6,11 @@ import { useEffect, useRef } from "react";
 import gsap from "gsap";
 import { useLoading } from "../../contexts/LoadingContext";
 import ScrambleTextOnHover from "../../components/ScrambleOnHover/ScrambleTextOnHover";
+import { useRouter } from "next/navigation";
 
 export default function Page() {
   const { loading } = useLoading();
+  const router = useRouter();
 
   const backLinkRef = useRef(null);
   const contactContentRef = useRef(null);
@@ -47,9 +49,13 @@ export default function Page() {
 
   return (
     <section className={styles.contact}>
-      <Link href={"/"} className={styles.back} ref={backLinkRef}>
+      <button
+        onClick={() => router.push("/")}
+        className={styles.back}
+        ref={backLinkRef}
+      >
         <ScrambleTextOnHover text={"close"} enabled={true} />
-      </Link>
+      </button>
       <div className={styles.contactContainer}>
         <div className={styles.contactContent} ref={contactContentRef}>
           <div className={styles.emailLink}>

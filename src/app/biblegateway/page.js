@@ -7,14 +7,26 @@ import gsap from "gsap";
 import { ScrollTrigger } from "gsap/all";
 import { useLoading } from "../../contexts/LoadingContext";
 import ScrambleTextOnHover from "../../components/ScrambleOnHover/ScrambleTextOnHover";
+import { useTransition } from "../../contexts/TransitionContext";
+import { useRouter } from "next/navigation";
 
 gsap.registerPlugin(ScrollTrigger);
 
 export default function Page() {
   const { loading } = useLoading();
+  const { setIsTransitioning } = useTransition();
+  const router = useRouter();
 
   const backLinkRef = useRef(null);
   const titleRef = useRef(null);
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setIsTransitioning(false);
+    }, 500);
+
+    return () => clearTimeout(timer);
+  }, [setIsTransitioning]);
 
   useEffect(() => {
     if (!loading) {
@@ -51,9 +63,13 @@ export default function Page() {
 
   return (
     <div className={styles.project}>
-      <Link href={"/"} className={styles.back} ref={backLinkRef}>
+      <button
+        onClick={() => router.push("/")}
+        className={styles.back}
+        ref={backLinkRef}
+      >
         <ScrambleTextOnHover text={"close"} enabled={true} />
-      </Link>
+      </button>
       <div className={styles.projectHeader}>
         <div className={styles.projectHeaderContent}>
           <h1 className={styles.projectTitle} ref={titleRef}>

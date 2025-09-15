@@ -2,19 +2,43 @@
 
 import Link from "next/link";
 import styles from "./page.module.css";
-import { useEffect, useRef } from "react";
+import { useCallback, useEffect, useRef } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/all";
 import { useLoading } from "../../contexts/LoadingContext";
 import ScrambleTextOnHover from "../../components/ScrambleOnHover/ScrambleTextOnHover";
+import { useTransition } from "../../contexts/TransitionContext";
+import { useRouter } from "next/navigation";
 
 gsap.registerPlugin(ScrollTrigger);
 
 export default function Page() {
   const { loading } = useLoading();
+  const { setIsTransitioning, setTransitionColor } = useTransition();
+  const router = useRouter();
 
   const backLinkRef = useRef(null);
   const titleRef = useRef(null);
+
+  const handleTransitionTo = useCallback(
+    (href, bgColor) => {
+      setTransitionColor(bgColor);
+      setIsTransitioning(true);
+
+      setTimeout(() => {
+        router.push(href);
+      }, 1000);
+    },
+    [setTransitionColor, setIsTransitioning, router]
+  );
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setIsTransitioning(false);
+    }, 1000);
+
+    return () => clearTimeout(timer);
+  }, [setIsTransitioning]);
 
   useEffect(() => {
     if (!loading) {
@@ -25,7 +49,7 @@ export default function Page() {
 
       const backLinkFadeInTimeline = gsap.timeline();
       backLinkFadeInTimeline.to(backLink, {
-        delay: 0.5,
+        delay: 1.1,
         opacity: 1,
         ease: "expo.out",
         duration: 1,
@@ -33,7 +57,7 @@ export default function Page() {
 
       const titleAppearTimeline = gsap.timeline();
       titleAppearTimeline.to(title, {
-        delay: 0.5,
+        delay: 1.1,
         opacity: 1,
         scale: 1,
         y: 0,
@@ -51,9 +75,13 @@ export default function Page() {
 
   return (
     <div className={styles.project}>
-      <Link href={"/"} className={styles.back} ref={backLinkRef}>
+      <button
+        onClick={() => router.push("/")}
+        className={styles.back}
+        ref={backLinkRef}
+      >
         <ScrambleTextOnHover text={"close"} enabled={true} />
-      </Link>
+      </button>
       <div className={styles.projectHeader}>
         <div className={styles.projectHeaderContent}>
           <h1 className={styles.projectTitle} ref={titleRef}>
@@ -86,11 +114,14 @@ export default function Page() {
         </section>
       </div>
       <div className={styles.projectNext}>
-        <Link href={"/work"} className={styles.projectNextLink}>
+        <button
+          className={styles.projectNextButton}
+          onClick={() => handleTransitionTo("/work", "var(--work-bg)")}
+        >
           <div className={styles.projectNextTextContainer}>
             <p className={styles.projectNextText}>Work</p>
           </div>
-        </Link>
+        </button>
       </div>
     </div>
   );
