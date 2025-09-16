@@ -1,7 +1,7 @@
 "use client";
-import Link from "next/link";
+
 import styles from "./page.module.css";
-import { useEffect, useRef } from "react";
+import { useCallback, useEffect, useRef } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/all";
 import { useLoading } from "../../contexts/LoadingContext";
@@ -118,11 +118,16 @@ export default function Page() {
         </section>
       </div>
       <div className={styles.projectNext}>
-        <Link href={"/omelia"} className={styles.projectNextLink}>
-          <div className={styles.projectNextTextContainer}>
-            <p className={styles.projectNextText}>Omelia</p>
-          </div>
-        </Link>
+        <div className={styles.projectNextLink}>
+          <button
+            className={styles.projectNextButton}
+            onClick={() => handleTransitionTo("/omelia", "var(--omelia-bg)")}
+          >
+            <div className={styles.projectNextTextContainer}>
+              <p className={styles.projectNextText}>Omelia</p>
+            </div>
+          </button>
+        </div>
       </div>
     </div>
   );
