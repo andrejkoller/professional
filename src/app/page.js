@@ -166,7 +166,7 @@ export default function Home() {
         .to(nav, {
           scale: 0.8,
           opacity: 0.5,
-          ease: "none",
+          ease: "power2.out",
           duration: 0.6,
         })
         .to(nav, {
@@ -243,138 +243,158 @@ export default function Home() {
     setIsTransitioning(false);
   }, [setIsTransitioning]);
 
-  return (
-    <>
-      <div className={styles.container}>
-        <nav className={styles.navigation} ref={navRef}>
-          <div
-            className={`${styles.firstRow} ${styles.row}`}
-            style={{ animationDelay: "0s" }}
-          >
-            <h1>
-              <ScrambleTextInitial texts={"Andrej Koller"} delay={0} />
-            </h1>
-            <div className={styles.logo}>
-              <ThemeSwitcher />
-            </div>
-          </div>
-
-          <div
-            className={`${styles.secondRow} ${styles.row}`}
-            style={{ animationDelay: "0.3s" }}
-          >
-            <h2>
-              <ScrambleTextInitial texts={"Freelance UI/UX Code"} delay={0.3} />
-            </h2>
-          </div>
-
-          <div
-            className={`${styles.thirdRow} ${styles.row}`}
-            style={{ animationDelay: "1.1s" }}
-          >
-            <p>
-              <ScrambleTextInitial texts={"12.40"} delay={1.1} />
-            </p>
-            <p>
-              <ScrambleTextInitial texts={"—"} delay={1.1} />
-            </p>
-            <p>
-              <ScrambleTextInitial texts={"Selected Works"} delay={1.1} />
-            </p>
-          </div>
-
-          <ul
-            className={`${styles.fourthRow} ${styles.row}`}
-            style={{ animationDelay: "1.5s" }}
-          >
-            <li>
-              <Link href="/about">
-                {!infoReady ? (
-                  <ScrambleTextInitial
-                    texts={"Info"}
-                    delay={1.5}
-                    onIntroDone={() => setInfoReady(true)}
-                  />
-                ) : (
-                  <ScrambleTextOnHover text="Info" enabled={infoReady} />
-                )}
-              </Link>
-            </li>
-            <li>
-              <Link href="/contact">
-                {!contactReady ? (
-                  <ScrambleTextInitial
-                    texts={"Contact"}
-                    delay={1.5}
-                    onIntroDone={() => setContactReady(true)}
-                  />
-                ) : (
-                  <ScrambleTextOnHover text="Contact" enabled={contactReady} />
-                )}
-              </Link>
-            </li>
-          </ul>
-        </nav>
-      </div>
-      <div className={styles.sectionsContainer}>
-        <figure className={styles.figure} ref={projectRef}>
-          <p ref={scrollDownRef}>Scroll to explore</p>
-        </figure>
-
-        {projects
-          .filter((project) => !project.disabled)
-          .map((project, index) => (
-            <section className={styles.project} key={project.title}>
-              <figure className={styles.figureInner}></figure>
-              <div className={styles.projectTitle}>
-                <h2 ref={(el) => (titleRefs.current[index] = el)}>
-                  <button
-                    className={styles.projectTitleButton}
-                    onClick={() => handleTransitionTo(project.href, project.bg)}
-                  >
-                    {project.title}
-                  </button>
-                </h2>
+  if (!loading) {
+    return (
+      <>
+        <div className={styles.container}>
+          <nav className={styles.navigation} ref={navRef}>
+            <div
+              className={`${styles.firstRow} ${styles.row}`}
+              style={{ animationDelay: "0s" }}
+            >
+              <h1>
+                <ScrambleTextInitial texts={"Andrej Koller"} delay={0} />
+              </h1>
+              <div className={styles.logo}>
+                <ThemeSwitcher />
               </div>
-              <div className={styles.projectContent}>
-                <figure className={styles.projectFigureImage}>
-                  <div className={styles.projectImage}>
+            </div>
+
+            <div
+              className={`${styles.secondRow} ${styles.row}`}
+              style={{ animationDelay: "0.3s" }}
+            >
+              <h2>
+                <ScrambleTextInitial
+                  texts={"Freelance UI/UX Code"}
+                  delay={0.3}
+                />
+              </h2>
+            </div>
+
+            <div
+              className={`${styles.thirdRow} ${styles.row}`}
+              style={{ animationDelay: "1.1s" }}
+            >
+              <p>
+                <ScrambleTextInitial texts={"12.40"} delay={1.1} />
+              </p>
+              <p>
+                <ScrambleTextInitial texts={"—"} delay={1.1} />
+              </p>
+              <p>
+                <ScrambleTextInitial texts={"Selected Works"} delay={1.1} />
+              </p>
+            </div>
+
+            <ul
+              className={`${styles.fourthRow} ${styles.row}`}
+              style={{ animationDelay: "1.5s" }}
+            >
+              <li>
+                <button
+                  className={styles.buttonLink}
+                  onClick={() => router.push("/about")}
+                >
+                  {!infoReady ? (
+                    <ScrambleTextInitial
+                      texts={"Info"}
+                      delay={1.5}
+                      onIntroDone={() => setInfoReady(true)}
+                    />
+                  ) : (
+                    <ScrambleTextOnHover text="Info" enabled={infoReady} />
+                  )}
+                </button>
+              </li>
+              <li>
+                <button
+                  className={styles.buttonLink}
+                  onClick={() => router.push("/contact")}
+                >
+                  {!contactReady ? (
+                    <ScrambleTextInitial
+                      texts={"Contact"}
+                      delay={1.5}
+                      onIntroDone={() => setContactReady(true)}
+                    />
+                  ) : (
+                    <ScrambleTextOnHover
+                      text="Contact"
+                      enabled={contactReady}
+                    />
+                  )}
+                </button>
+              </li>
+            </ul>
+          </nav>
+        </div>
+        <div className={styles.sectionsContainer}>
+          <figure className={styles.figure} ref={projectRef}>
+            <p ref={scrollDownRef}>Scroll to explore</p>
+          </figure>
+
+          {projects
+            .filter((project) => !project.disabled)
+            .map((project, index) => (
+              <section className={styles.project} key={project.title}>
+                <figure className={styles.figureInner}></figure>
+                <div className={styles.projectTitle}>
+                  <h2 ref={(el) => (titleRefs.current[index] = el)}>
                     <button
-                      className={styles.projectImageButton}
+                      className={styles.projectTitleButton}
                       onClick={() =>
                         handleTransitionTo(project.href, project.bg)
                       }
                     >
-                      <Image
-                        ref={(el) => (imageRefs.current[index] = el)}
-                        src={project.imageSrc}
-                        onMouseEnter={() =>
-                          handleProjectImageMouseEnter(
-                            project.bg,
-                            project.color,
-                            index
-                          )
-                        }
-                        onMouseLeave={() => handleProjectImageMouseLeave(index)}
-                        priority
-                        height={500}
-                        width={500}
-                        alt={project.imageAlt}
-                        style={{
-                          filter: project.color,
-                        }}
-                      />
+                      {project.title}
                     </button>
-                  </div>
-                </figure>
-              </div>
-            </section>
-          ))}
+                  </h2>
+                </div>
+                <div className={styles.projectContent}>
+                  <figure className={styles.projectFigureImage}>
+                    <div className={styles.projectImage}>
+                      <button
+                        className={styles.projectImageButton}
+                        onClick={() =>
+                          handleTransitionTo(project.href, project.bg)
+                        }
+                      >
+                        <Image
+                          ref={(el) => (imageRefs.current[index] = el)}
+                          src={project.imageSrc}
+                          onMouseEnter={() =>
+                            handleProjectImageMouseEnter(
+                              project.bg,
+                              project.color,
+                              index
+                            )
+                          }
+                          onMouseLeave={() =>
+                            handleProjectImageMouseLeave(index)
+                          }
+                          priority
+                          height={500}
+                          width={500}
+                          alt={project.imageAlt}
+                          style={{
+                            filter: project.color,
+                          }}
+                        />
+                      </button>
+                    </div>
+                  </figure>
+                </div>
+              </section>
+            ))}
 
-        <figure className={styles.figure2} ref={nav2Ref}>
-          <p ref={scrollUpRef}>Scroll up</p>
-        </figure>
-      </div>
-    </>
-  );
+          <figure className={styles.figure2} ref={nav2Ref}>
+            <p ref={scrollUpRef}>Scroll up</p>
+          </figure>
+        </div>
+      </>
+    );
+  } else {
+    return null;
+  }
 }

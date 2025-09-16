@@ -107,7 +107,7 @@ export default function Page() {
             </p>
             <div className={styles.projectDescriptionTags}>
               <p className={styles.projectDescriptionTag}>CLASSICAL MUSIC</p>
-              <p className={styles.projectDescriptionTag}>PIANO & ORGAN</p>
+              <p className={styles.projectDescriptionTag}>PIANO</p>
               <p className={styles.projectDescriptionTag}>ONGOING</p>
             </div>
           </div>

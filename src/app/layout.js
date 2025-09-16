@@ -6,6 +6,11 @@ const leagueSpartan = League_Spartan({
   variable: "--font-league-spartan",
 });
 
+export const metadata = {
+  title: "Andrej Koller",
+  description: "Portfolio of Andrej Koller",
+};
+
 export default function RootLayout({ children }) {
   const fontClass = leagueSpartan.variable;
 

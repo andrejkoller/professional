@@ -114,6 +114,16 @@
   margin: 0;
 }
 
+.container .navigation ul.fourthRow li .buttonLink {
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  font-family: inherit;
+  color: inherit;
+  font-size: inherit;
+}
+
 .sectionsContainer .figure {
   display: flex;
   flex-direction: column;
