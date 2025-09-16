@@ -11,6 +11,7 @@ import { TransitionProvider } from "../contexts/TransitionContext";
 import { useTransition } from "../contexts/TransitionContext";
 import TransitionOverlay from "../components/TransitionOverlay/TransitionOverlay";
 import { ThemeProvider } from "../contexts/ThemeContext";
+import { useLoading } from "../contexts/LoadingContext";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -76,11 +77,17 @@ export default function LayoutClient({ children }) {
 }
 
 function TransitionOverlayWrapper() {
-  const { isTransitioning, transitionColor } = useTransition();
+  const { isTransitioning, transitionColor, isNavigating } = useTransition();
+  
+  // Only show overlay when navigating between pages, not on direct page loads
   return (
-    <TransitionOverlay
-      isActive={isTransitioning}
-      backgroundColor={transitionColor}
-    />
+    <>
+      {isNavigating && (
+        <TransitionOverlay
+          isActive={isTransitioning}
+          backgroundColor={transitionColor}
+        />
+      )}
+    </>
   );
 }

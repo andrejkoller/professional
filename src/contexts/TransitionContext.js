@@ -11,6 +11,7 @@ export function useTransition() {
 export function TransitionProvider({ children }) {
   const [isTransitioning, setIsTransitioning] = useState(false);
   const [transitionColor, setTransitionColor] = useState("var(--background)");
+  const [isNavigating, setIsNavigating] = useState(false);
 
   return (
     <TransitionContext.Provider 
@@ -18,7 +19,9 @@ export function TransitionProvider({ children }) {
         isTransitioning, 
         setIsTransitioning,
         transitionColor,
-        setTransitionColor
+        setTransitionColor,
+        isNavigating,
+        setIsNavigating
       }}
     >
       {children}

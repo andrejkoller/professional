@@ -92,7 +92,7 @@ gsap.registerPlugin(ScrollTrigger);
 
 export default function Home() {
   const { loading } = useLoading();
-  const { setIsTransitioning, setTransitionColor } = useTransition();
+  const { setIsTransitioning, setTransitionColor, setIsNavigating } = useTransition();
   const router = useRouter();
 
   const navRef = useRef(null);
@@ -127,12 +127,13 @@ export default function Home() {
     (href, bgColor) => {
       setTransitionColor(bgColor);
       setIsTransitioning(true);
+      setIsNavigating(true); // Mark as navigation, not direct page load
 
       setTimeout(() => {
         router.push(href);
       }, 1000);
     },
-    [setTransitionColor, setIsTransitioning, router]
+    [setTransitionColor, setIsTransitioning, setIsNavigating, router]
   );
 
   useEffect(() => {
