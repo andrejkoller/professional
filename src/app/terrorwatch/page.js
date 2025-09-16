@@ -13,19 +13,34 @@ gsap.registerPlugin(ScrollTrigger);
 
 export default function Page() {
   const { loading } = useLoading();
-  const { setIsTransitioning } = useTransition();
+  const { setIsTransitioning, setTransitionColor, setIsNavigating } =
+    useTransition();
   const router = useRouter();
 
   const backLinkRef = useRef(null);
   const titleRef = useRef(null);
 
+  const handleTransitionTo = useCallback(
+    (href, bgColor) => {
+      setTransitionColor(bgColor);
+      setIsTransitioning(true);
+      setIsNavigating(true);
+
+      setTimeout(() => {
+        router.push(href);
+      }, 1000);
+    },
+    [setTransitionColor, setIsTransitioning, setIsNavigating, router]
+  );
+
   useEffect(() => {
     const timer = setTimeout(() => {
       setIsTransitioning(false);
-    }, 500);
+      setIsNavigating(false);
+    }, 1000);
 
     return () => clearTimeout(timer);
-  }, [setIsTransitioning]);
+  }, [setIsTransitioning, setIsNavigating]);
 
   useEffect(() => {
     if (!loading) {
@@ -36,7 +51,7 @@ export default function Page() {
 
       const backLinkFadeInTimeline = gsap.timeline();
       backLinkFadeInTimeline.to(backLink, {
-        delay: 0.5,
+        delay: 1.1,
         opacity: 1,
         ease: "expo.out",
         duration: 1,
@@ -44,7 +59,7 @@ export default function Page() {
 
       const titleAppearTimeline = gsap.timeline();
       titleAppearTimeline.to(title, {
-        delay: 0.5,
+        delay: 1.1,
         opacity: 1,
         scale: 1,
         y: 0,
@@ -59,7 +74,6 @@ export default function Page() {
       };
     }
   }, [loading]);
-
   return (
     <div className={styles.project}>
       <button

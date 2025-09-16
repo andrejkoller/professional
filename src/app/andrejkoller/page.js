@@ -14,7 +14,8 @@ gsap.registerPlugin(ScrollTrigger);
 
 export default function Page() {
   const { loading } = useLoading();
-  const { setIsTransitioning, setTransitionColor, setIsNavigating } = useTransition();
+  const { setIsTransitioning, setTransitionColor, setIsNavigating } =
+    useTransition();
   const router = useRouter();
 
   const backLinkRef = useRef(null);
@@ -24,7 +25,7 @@ export default function Page() {
     (href, bgColor) => {
       setTransitionColor(bgColor);
       setIsTransitioning(true);
-      setIsNavigating(true); // Mark as navigation
+      setIsNavigating(true);
 
       setTimeout(() => {
         router.push(href);
@@ -36,7 +37,7 @@ export default function Page() {
   useEffect(() => {
     const timer = setTimeout(() => {
       setIsTransitioning(false);
-      setIsNavigating(false); // Reset navigation state
+      setIsNavigating(false);
     }, 1000);
 
     return () => clearTimeout(timer);
@@ -74,7 +75,6 @@ export default function Page() {
       };
     }
   }, [loading]);
-
   return (
     <div className={styles.project}>
       <button
