@@ -11,7 +11,6 @@ import { TransitionProvider } from "../contexts/TransitionContext";
 import { useTransition } from "../contexts/TransitionContext";
 import TransitionOverlay from "../components/TransitionOverlay/TransitionOverlay";
 import { ThemeProvider } from "../contexts/ThemeContext";
-import { useLoading } from "../contexts/LoadingContext";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -51,11 +50,7 @@ export default function LayoutClient({ children }) {
     lenis.on("scroll", ScrollTrigger.update);
     ScrollTrigger.refresh();
 
-    setLoading(true);
-    const timer = setTimeout(() => setLoading(false), 3500);
-
     return () => {
-      clearTimeout(timer);
       lenis.destroy();
       ScrollTrigger.kill();
     };
@@ -68,7 +63,9 @@ export default function LayoutClient({ children }) {
       >
         <TransitionProvider>
           <TransitionOverlayWrapper />
-          {loading ? <LoadingScreen /> : null}
+          {loading ? (
+            <LoadingScreen onComplete={() => setLoading(false)} />
+          ) : null}
           <main>{children}</main>
         </TransitionProvider>
       </LoadingContext.Provider>
@@ -78,8 +75,7 @@ export default function LayoutClient({ children }) {
 
 function TransitionOverlayWrapper() {
   const { isTransitioning, transitionColor, isNavigating } = useTransition();
-  
-  // Only show overlay when navigating between pages, not on direct page loads
+
   return (
     <>
       {isNavigating && (
