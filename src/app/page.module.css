@@ -277,3 +277,32 @@
     width: 100%;
   }
 }
+
+@media all and (max-width: 425px) {
+  .sectionsContainer .project {
+    justify-content: space-between;
+  }
+
+  .sectionsContainer .project .projectTitle {
+    height: auto;
+  }
+
+  .sectionsContainer .project .projectContent .projectFigureImage {
+    height: auto;
+  }
+
+  .sectionsContainer
+    .project
+    .projectContent
+    .projectFigureImage
+    .projectImage
+    img {
+    height: auto;
+  }
+}
+
+@media all and (max-width: 320px) {
+  .sectionsContainer .project {
+    min-height: 80vh;
+  }
+}
