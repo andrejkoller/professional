@@ -1,8 +1,8 @@
 :root[data-theme="light"] {
   --background: #ffffff;
   --foreground: #000000;
-  --andrej-koller-bg: #080808;
-  --andrej-koller-color: #ffffff;
+  --music-bg: #080808;
+  --music-color: #ffffff;
   --work-bg: #ffffff;
   --work-color: #000000;
   --art-bg: #f8f5f2;
@@ -24,8 +24,8 @@
 :root[data-theme="dark"] {
   --background: #000000;
   --foreground: #ffffff;
-  --andrej-koller-bg: #080808;
-  --andrej-koller-color: #ffffff;
+  --music-bg: #080808;
+  --music-color: #ffffff;
   --work-bg: #000000;
   --work-color: #ffffff;
   --art-bg: #f8f5f2;
@@ -48,8 +48,8 @@
   :root {
     --background: #000000;
     --foreground: #ffffff;
-    --andrej-koller-bg: #080808;
-    --andrej-koller-color: #ffffff;
+    --music-bg: #080808;
+    --music-color: #ffffff;
     --work-bg: #000000;
     --work-color: #ffffff;
     --art-bg: #f8f5f2;

@@ -115,12 +115,10 @@ export default function Page() {
         <div className={styles.projectNextLink}>
           <button
             className={styles.projectNextButton}
-            onClick={() =>
-              handleTransitionTo("/andrejkoller", "var(--andrej-koller-bg)")
-            }
+            onClick={() => handleTransitionTo("/music", "var(--music-bg)")}
           >
             <div className={styles.projectNextTextContainer}>
-              <p className={styles.projectNextText}>Andrej Koller</p>
+              <p className={styles.projectNextText}>Music</p>
             </div>
           </button>
         </div>

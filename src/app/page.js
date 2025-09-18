@@ -15,12 +15,12 @@ import { useRouter } from "next/navigation";
 
 const projects = [
   {
-    title: "Andrej Koller",
-    href: "/andrejkoller",
+    title: "Music",
+    href: "/music",
     imageSrc: "/images/placeholder-image.png",
-    imageAlt: "Andrej Koller",
-    bg: "var(--andrej-koller-bg)",
-    color: "var(--andrej-koller-color)",
+    imageAlt: "Music",
+    bg: "var(--music-bg)",
+    color: "var(--music-color)",
     disabled: false,
   },
   {
@@ -92,7 +92,8 @@ gsap.registerPlugin(ScrollTrigger);
 
 export default function Home() {
   const { loading } = useLoading();
-  const { setIsTransitioning, setTransitionColor, setIsNavigating } = useTransition();
+  const { setIsTransitioning, setTransitionColor, setIsNavigating } =
+    useTransition();
   const router = useRouter();
 
   const navRef = useRef(null);
@@ -127,7 +128,7 @@ export default function Home() {
     (href, bgColor) => {
       setTransitionColor(bgColor);
       setIsTransitioning(true);
-      setIsNavigating(true); // Mark as navigation, not direct page load
+      setIsNavigating(true);
 
       setTimeout(() => {
         router.push(href);
@@ -227,6 +228,30 @@ export default function Home() {
       scrollUpFadeTimeline.to(scrollUp, {
         opacity: 1,
         ease: "power2.out",
+      });
+
+      imageRefs.current.forEach((img, index) => {
+        if (!img) return;
+
+        const projectSection = img.closest("section");
+        if (!projectSection) return;
+
+        gsap.set(img, {
+          clipPath: "inset(100% 0 0 0)",
+        });
+
+        gsap.to(img, {
+          clipPath: "inset(0% 0 0 0)",
+          ease: "none",
+          scrollTrigger: {
+            trigger: projectSection,
+            start: "top 80%",
+            end: "top 20%",
+            scrub: 1,
+            toggleActions: "play none none reverse",
+            markers: false,
+          },
+        });
       });
 
       document.body.style.backgroundColor = "var(--background)";

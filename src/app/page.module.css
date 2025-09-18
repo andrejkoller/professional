@@ -184,7 +184,7 @@
 }
 
 .sectionsContainer .project .projectTitle .projectTitleButton {
-  font-size: 10vw;
+  font-size: 14.8vw;
   font-weight: 400;
   margin: 0;
   text-transform: uppercase;
@@ -222,6 +222,7 @@
   align-items: center;
   width: 100%;
   height: 100%;
+  overflow: hidden;
 }
 
 .sectionsContainer
@@ -245,6 +246,8 @@
   img {
   width: 100%;
   height: 900px;
+  object-fit: cover;
+  will-change: transform, clip-path, opacity;
 }
 
 [data-theme="light"]

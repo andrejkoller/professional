@@ -1,6 +1,5 @@
 "use client";
 
-import Link from "next/link";
 import styles from "./page.module.css";
 import { useCallback, useEffect, useRef } from "react";
 import gsap from "gsap";
@@ -87,7 +86,7 @@ export default function Page() {
       <div className={styles.projectHeader}>
         <div className={styles.projectHeaderContent}>
           <h1 className={styles.projectTitle} ref={titleRef}>
-            <span className={styles.projectTitleText}>Andrej Koller</span>
+            <span className={styles.projectTitleText}>Music</span>
           </h1>
         </div>
       </div>
