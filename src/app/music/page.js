@@ -98,17 +98,17 @@ export default function Page() {
           <div className={styles.projectDescriptionContent}>
             <p className={styles.projectDescriptionText}>
               This personal website is a space where I share my passion for
-              classical music, especially through my piano and organ
-              performances. Built with React and Next.js, the site offers a
-              clean, modern experience where visitors can explore recordings,
-              discover favorite composers, and learn more about my musical
-              journey. It reflects not only my interests as a musician, but also
-              my dedication to design and development, combining artistic
-              expression with technical precision.
+              classical music, especially through my piano performances. Built
+              with React and Next.js, the site offers a clean, modern experience
+              where visitors can explore recordings, discover favorite
+              composers, and learn more about my musical journey. It reflects
+              not only my interests as a musician, but also my dedication to
+              design and development, combining artistic expression with
+              technical precision.
             </p>
             <div className={styles.projectDescriptionTags}>
               <p className={styles.projectDescriptionTag}>CLASSICAL MUSIC</p>
-              <p className={styles.projectDescriptionTag}>PIANO & ORGAN</p>
+              <p className={styles.projectDescriptionTag}>PIANO</p>
               <p className={styles.projectDescriptionTag}>ONGOING</p>
             </div>
           </div>
