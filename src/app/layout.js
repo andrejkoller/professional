@@ -7,8 +7,8 @@ const leagueSpartan = League_Spartan({
 });
 
 export const metadata = {
-  title: "Andrej Koller",
-  description: "Portfolio of Andrej Koller",
+  title: "Work by Andrej Koller",
+  description: "A portfolio showcasing the diverse work of Andrej Koller.",
 };
 
 export default function RootLayout({ children }) {
