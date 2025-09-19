@@ -37,7 +37,7 @@
   justify-content: center;
   height: 100vh;
   width: 100%;
-  background-color: var(--music-bg);
+  background-color: var(--scores-bg);
   position: relative;
   z-index: 10000;
 }
@@ -45,7 +45,7 @@
 .project .projectHeader .projectHeaderContent h1.projectTitle {
   font-size: 10vw;
   font-weight: 400;
-  color: var(--music-color);
+  color: var(--scores-color);
   text-transform: uppercase;
   opacity: 0;
   transform: scale(1.15) translateY(40px);
@@ -112,7 +112,7 @@
   justify-content: center;
   height: 100vh;
   width: 100%;
-  background-color: var(--scores-bg);
+  background-color: var(--work-bg);
 }
 
 .project .projectNext .projectNextButton {
@@ -135,7 +135,7 @@
 .project .projectNext .projectNextTextContainer p {
   font-size: 10vw;
   font-weight: 400;
-  color: var(--scores-color);
+  color: var(--work-color);
   text-transform: uppercase;
 }
 

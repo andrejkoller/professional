@@ -3,6 +3,8 @@
   --foreground: #000000;
   --music-bg: #080808;
   --music-color: #ffffff;
+  --scores-bg: #ffffff;
+  --scores-color: #000000;
   --work-bg: #ffffff;
   --work-color: #000000;
   --art-bg: #f8f5f2;
@@ -26,6 +28,8 @@
   --foreground: #ffffff;
   --music-bg: #080808;
   --music-color: #ffffff;
+  --scores-bg: #ffffff;
+  --scores-color: #000000;
   --work-bg: #000000;
   --work-color: #ffffff;
   --art-bg: #f8f5f2;
@@ -50,6 +54,8 @@
     --foreground: #ffffff;
     --music-bg: #080808;
     --music-color: #ffffff;
+    --scores-bg: #fffffff;
+    --scores-color: #000000;
     --work-bg: #000000;
     --work-color: #ffffff;
     --art-bg: #f8f5f2;

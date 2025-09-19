@@ -74,6 +74,7 @@ export default function Page() {
       };
     }
   }, [loading]);
+
   return (
     <div className={styles.project}>
       <button
@@ -86,43 +87,42 @@ export default function Page() {
       <div className={styles.projectHeader}>
         <div className={styles.projectHeaderContent}>
           <h1 className={styles.projectTitle} ref={titleRef}>
-            <span className={styles.projectTitleText}>Music</span>
+            <span className={styles.projectTitleText}>Scores</span>
           </h1>
         </div>
       </div>
       <div className={styles.projectBody}>
         <section className={styles.projectDescription}>
-          <p className={styles.projectDescriptionTitle}>
-            Classical Performances
-          </p>
+          <p className={styles.projectDescriptionTitle}>Scores</p>
           <div className={styles.projectDescriptionContent}>
             <p className={styles.projectDescriptionText}>
-              This personal website is a space where I share my passion for
-              classical music, especially through my piano performances. Built
-              with React and Next.js, the site offers a clean, modern experience
-              where visitors can explore recordings, discover favorite
-              composers, and learn more about my musical journey. It reflects
-              not only my interests as a musician, but also my dedication to
-              design and development, combining artistic expression with
-              technical precision.
+              Scores is the dedicated platform where I publish my original works
+              for piano and other instruments. Each piece is carefully crafted
+              and offered as professional sheet music, ready for musicians and
+              performers worldwide. With instant PDF downloads, audio previews,
+              and detailed descriptions, Scores provides a seamless way to
+              explore, purchase, and play original compositions directly from
+              the composer.
             </p>
             <div className={styles.projectDescriptionTags}>
-              <p className={styles.projectDescriptionTag}>CLASSICAL MUSIC</p>
-              <p className={styles.projectDescriptionTag}>PIANO</p>
+              <p className={styles.projectDescriptionTag}>MUSIC</p>
+              <p className={styles.projectDescriptionTag}>SHEET MUSIC</p>
               <p className={styles.projectDescriptionTag}>ONGOING</p>
             </div>
           </div>
         </section>
       </div>
       <div className={styles.projectNext}>
-        <button
-          className={styles.projectNextButton}
-          onClick={() => handleTransitionTo("/scores", "var(--scores-bg)")}
-        >
-          <div className={styles.projectNextTextContainer}>
-            <p className={styles.projectNextText}>Scores</p>
-          </div>
-        </button>
+        <div className={styles.projectNextLink}>
+          <button
+            className={styles.projectNextButton}
+            onClick={() => handleTransitionTo("/work", "var(--work-bg)")}
+          >
+            <div className={styles.projectNextTextContainer}>
+              <p className={styles.projectNextText}>Work</p>
+            </div>
+          </button>
+        </div>
       </div>
     </div>
   );

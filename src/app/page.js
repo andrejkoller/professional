@@ -24,6 +24,15 @@ const projects = [
     disabled: false,
   },
   {
+    title: "Scores",
+    href: "/scores",
+    imageSrc: "/images/placeholder-image.png",
+    imageAlt: "Scores",
+    bg: "var(--scores-bg)",
+    color: "var(--scores-color)",
+    disabled: false,
+  },
+  {
     title: "Work",
     href: "/work",
     imageSrc: "/images/placeholder-image.png",

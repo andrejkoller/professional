@@ -4,7 +4,7 @@ import React, { useState } from "react";
 import styles from "./ThemeSwitcher.module.css";
 import ScrambleTextInitial from "../ScrambleTextInitial/ScrambleTextInitial";
 import ScrambleTextOnHover from "../ScrambleOnHover/ScrambleTextOnHover";
-import { useTheme } from "@/contexts/ThemeContext";
+import { useTheme } from "../../contexts/ThemeContext";
 
 export default function ThemeSwitcher() {
   const { theme, toggleTheme } = useTheme();
