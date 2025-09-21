@@ -75,7 +75,7 @@ const projects = [
     imageAlt: "Theology Gateway",
     bg: "var(--theology-gateway-bg)",
     color: "var(--theology-gateway-color)",
-    disabled: false,
+    disabled: true,
   },
   {
     title: "Terror Watch",

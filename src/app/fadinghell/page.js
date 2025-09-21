@@ -121,13 +121,13 @@ export default function Page() {
             className={styles.projectNextButton}
             onClick={() =>
               handleTransitionTo(
-                "/theologygateway",
-                "var(--theology-gateway-bg)"
+                "/omelia",
+                "var(--omelia-bg)"
               )
             }
           >
             <div className={styles.projectNextTextContainer}>
-              <p className={styles.projectNextText}>Theology Gateway</p>
+              <p className={styles.projectNextText}>Omelia</p>
             </div>
           </button>
         </div>
