@@ -120,10 +120,12 @@ export default function Page() {
         <div className={styles.projectNextLink}>
           <button
             className={styles.projectNextButton}
-            onClick={() => handleTransitionTo("/art", "var(--art-bg)")}
+            onClick={() =>
+              handleTransitionTo("/fadinghell", "var(--fading-hell-bg)")
+            }
           >
             <div className={styles.projectNextTextContainer}>
-              <p className={styles.projectNextText}>Art</p>
+              <p className={styles.projectNextText}>Fading Hell</p>
             </div>
           </button>
         </div>

@@ -1,6 +1,5 @@
 "use client";
 
-import Link from "next/link";
 import styles from "./page.module.css";
 import ThemeSwitcher from "../components/ThemeSwitcher/ThemeSwitcher";
 import gsap from "gsap";
@@ -24,30 +23,12 @@ const projects = [
     disabled: false,
   },
   {
-    title: "Scores",
-    href: "/scores",
-    imageSrc: "/images/placeholder-image.png",
-    imageAlt: "Scores",
-    bg: "var(--scores-bg)",
-    color: "var(--scores-color)",
-    disabled: false,
-  },
-  {
     title: "Work",
     href: "/work",
     imageSrc: "/images/placeholder-image.png",
     imageAlt: "Work",
     bg: "var(--work-bg)",
     color: "var(--work-color)",
-    disabled: false,
-  },
-  {
-    title: "Art",
-    href: "/art",
-    imageSrc: "/images/placeholder-image.png",
-    imageAlt: "Art",
-    bg: "var(--art-bg)",
-    color: "var(--art-color)",
     disabled: false,
   },
   {
@@ -58,33 +39,6 @@ const projects = [
     bg: "var(--fading-hell-bg)",
     color: "var(--fading-hell-color)",
     disabled: false,
-  },
-  {
-    title: "Bible Gateway",
-    href: "/biblegateway",
-    imageSrc: "/images/placeholder-image.png",
-    imageAlt: "Bible Gateway",
-    bg: "var(--bible-gateway-bg)",
-    color: "var(--bible-gateway-color)",
-    disabled: true,
-  },
-  {
-    title: "Theology Gateway",
-    href: "/theologygateway",
-    imageSrc: "/images/placeholder-image.png",
-    imageAlt: "Theology Gateway",
-    bg: "var(--theology-gateway-bg)",
-    color: "var(--theology-gateway-color)",
-    disabled: true,
-  },
-  {
-    title: "Terror Watch",
-    href: "/terrorwatch",
-    imageSrc: "/images/placeholder-image.png",
-    imageAlt: "Terror Watch",
-    bg: "var(--terror-watch-bg)",
-    color: "var(--terror-watch-color)",
-    disabled: true,
   },
   {
     title: "Omelia",
