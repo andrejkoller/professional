@@ -1,3 +1,43 @@
+# Professional Portfolio Website
+
+A modern, interactive portfolio website built with Next.js featuring dynamic animations, theme switching, and a sleek minimalist design.
+
+## Features
+
+### 🎨 **Dynamic Theme System**
+- Light/Dark mode toggle with smooth transitions
+- CSS custom properties for consistent theming
+- Persistent theme selection across sessions
+- System preference detection on first visit
+
+### ✨ **Interactive Animations**
+- **Scramble Text Effects**: Custom text scrambling animations for initial page load and hover interactions
+- **GSAP Integration**: Smooth scroll-triggered animations and timeline-based transitions
+- **Smooth Transitions**: Fluid animations throughout the user interface
+
+### 🎯 **Project Showcase**
+- Interactive project gallery with hover effects
+- Dynamic background color changes on project image hover
+- Responsive image handling with Next.js Image optimization
+- Individual project pages with detailed presentations
+
+### 📱 **Responsive Design**
+- Mobile-first approach
+- Fluid typography and spacing
+- Cross-browser compatibility
+- Optimized for all screen sizes
+
+## Tech Stack
+
+- **Framework**: Next.js 14 (App Router)
+- **Styling**: CSS Modules with CSS Custom Properties
+- **Animations**: GSAP (GreenSock Animation Platform)
+- **Context Management**: React Context API for theme state
+- **Image Optimization**: Next.js Image component
+- **Typography**: League Spartan font family
+
+## Screenshots
+
 <div align="center">
   <img alt="Screenshot" src="https://github.com/user-attachments/assets/9431abad-c3a0-4c41-803a-46fe7b63d920" />
   <img alt="Screenshot" src="https://github.com/user-attachments/assets/ade50514-b3a9-4add-9763-25deba41850e" />
