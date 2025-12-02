@@ -1,8 +1,8 @@
-import { createContext, useContext, useEffect, useState } from "react";
+"use client";
 
-const ThemeContext = createContext();
+import { useState, useEffect } from "react";
 
-export function ThemeProvider({ children }) {
+export function useTheme() {
   const [theme, setTheme] = useState("light");
 
   useEffect(() => {
@@ -27,13 +27,5 @@ export function ThemeProvider({ children }) {
     document.documentElement.setAttribute("data-theme", newTheme);
   };
 
-  return (
-    <ThemeContext.Provider value={{ theme, toggleTheme }}>
-      {children}
-    </ThemeContext.Provider>
-  );
-}
-
-export function useTheme() {
-  return useContext(ThemeContext);
+  return { theme, toggleTheme };
 }

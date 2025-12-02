@@ -1,20 +1,20 @@
 "use client";
 
-import LoadingScreen from "../components/LoadingScreen/LoadingScreen";
+import LoadingScreen from "@/components/loading-screen/loading-screen";
 import { useEffect, useRef, useState } from "react";
 import "./globals.css";
 import Lenis from "@studio-freight/lenis";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/all";
-import { LoadingContext } from "../contexts/LoadingContext";
-import { TransitionProvider } from "../contexts/TransitionContext";
-import { useTransition } from "../contexts/TransitionContext";
-import TransitionOverlay from "../components/TransitionOverlay/TransitionOverlay";
-import { ThemeProvider } from "../contexts/ThemeContext";
+import { TransitionProvider } from "@/providers/transition-provider";
+import { useTransitionContext } from "@/contexts/transition-context";
+import TransitionOverlay from "@/components/transition-overlay/transition-overlay";
+import { ThemeProvider } from "@/providers/theme-provider";
+import { LoadingContext } from "@/contexts/loading-context";
 
 gsap.registerPlugin(ScrollTrigger);
 
-export default function LayoutClient({ children }) {
+export default function ClientLayout({ children }) {
   const [loading, setLoading] = useState(true);
 
   const isFirstRenderRef = useRef(true);
@@ -65,8 +65,9 @@ export default function LayoutClient({ children }) {
           <TransitionOverlayWrapper />
           {loading ? (
             <LoadingScreen onComplete={() => setLoading(false)} />
-          ) : null}
-          <main>{children}</main>
+          ) : (
+            <main>{children}</main>
+          )}
         </TransitionProvider>
       </LoadingContext.Provider>
     </ThemeProvider>
@@ -74,7 +75,8 @@ export default function LayoutClient({ children }) {
 }
 
 function TransitionOverlayWrapper() {
-  const { isTransitioning, transitionColor, isNavigating } = useTransition();
+  const { isTransitioning, transitionColor, isNavigating } =
+    useTransitionContext();
 
   return (
     <>

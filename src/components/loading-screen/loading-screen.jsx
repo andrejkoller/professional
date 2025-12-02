@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useEffect, useState } from "react";
-import styles from "./LoadingScreen.module.css";
+import styles from "./loading-screen.module.css";
 
 export default function LoadingScreen({ onComplete }) {
   const numbers = [

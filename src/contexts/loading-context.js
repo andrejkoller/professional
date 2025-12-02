@@ -6,4 +6,6 @@ export const LoadingContext = createContext({
   setLoading: () => {},
 });
 
-export const useLoading = () => useContext(LoadingContext);
+export function useLoadingContext() {
+  return useContext(LoadingContext);
+}

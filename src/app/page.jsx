@@ -1,15 +1,15 @@
 "use client";
 
 import styles from "./page.module.css";
-import ThemeSwitcher from "../components/ThemeSwitcher/ThemeSwitcher";
+import ThemeSwitcher from "@/components/theme-switcher/theme-switcher";
 import gsap from "gsap";
 import { useCallback, useEffect, useRef, useState } from "react";
 import { ScrollTrigger } from "gsap/all";
 import Image from "next/image";
-import { useLoading } from "../contexts/LoadingContext";
-import { useTransition } from "../contexts/TransitionContext";
-import ScrambleTextInitial from "../components/ScrambleTextInitial/ScrambleTextInitial";
-import ScrambleTextOnHover from "../components/ScrambleOnHover/ScrambleTextOnHover";
+import { useLoadingContext } from "@/contexts/loading-context";
+import { useTransitionContext } from "@/contexts/transition-context";
+import ScrambleTextInitial from "@/components/scramble-text-initial/scramble-text-initial";
+import ScrambleTextOnHover from "@/components/scramble-text-on-hover/scramble-text-on-hover";
 import { useRouter } from "next/navigation";
 
 const projects = [
@@ -54,9 +54,9 @@ const projects = [
 gsap.registerPlugin(ScrollTrigger);
 
 export default function Home() {
-  const { loading } = useLoading();
+  const { loading } = useLoadingContext();
   const { setIsTransitioning, setTransitionColor, setIsNavigating } =
-    useTransition();
+    useTransitionContext();
   const router = useRouter();
 
   const navRef = useRef(null);

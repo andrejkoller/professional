@@ -1,10 +1,10 @@
 "use client";
 
 import React, { useState } from "react";
-import styles from "./ThemeSwitcher.module.css";
-import ScrambleTextInitial from "../ScrambleTextInitial/ScrambleTextInitial";
-import ScrambleTextOnHover from "../ScrambleOnHover/ScrambleTextOnHover";
-import { useTheme } from "../../contexts/ThemeContext";
+import styles from "./theme-switcher.module.css";
+import ScrambleTextInitial from "@/components/scramble-text-initial/scramble-text-initial";
+import ScrambleTextOnHover from "@/components/scramble-text-on-hover/scramble-text-on-hover";
+import { useTheme } from "@/hooks/use-theme";
 
 export default function ThemeSwitcher() {
   const { theme, toggleTheme } = useTheme();

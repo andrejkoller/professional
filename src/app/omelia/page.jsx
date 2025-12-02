@@ -4,17 +4,17 @@ import styles from "./page.module.css";
 import { useCallback, useEffect, useRef } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/all";
-import { useLoading } from "../../contexts/LoadingContext";
-import ScrambleTextOnHover from "../../components/ScrambleOnHover/ScrambleTextOnHover";
-import { useTransition } from "../../contexts/TransitionContext";
+import { useLoadingContext } from "@/contexts/loading-context";
+import ScrambleTextOnHover from "@/components/scramble-text-on-hover/scramble-text-on-hover";
 import { useRouter } from "next/navigation";
+import { useTransitionContext } from "@/contexts/transition-context";
 
 gsap.registerPlugin(ScrollTrigger);
 
 export default function Page() {
-  const { loading } = useLoading();
+  const { loading } = useLoadingContext();
   const { setIsTransitioning, setTransitionColor, setIsNavigating } =
-    useTransition();
+    useTransitionContext();
   const router = useRouter();
 
   const backLinkRef = useRef(null);

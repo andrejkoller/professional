@@ -1,5 +1,5 @@
 import { League_Spartan } from "next/font/google";
-import LayoutClient from "./layoutClient";
+import ClientLayout from "./layout-client";
 
 const leagueSpartan = League_Spartan({
   subsets: ["latin"],
@@ -17,7 +17,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className={fontClass}>
-        <LayoutClient>{children}</LayoutClient>
+        <ClientLayout>{children}</ClientLayout>
       </body>
     </html>
   );

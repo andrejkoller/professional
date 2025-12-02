@@ -4,17 +4,17 @@ import styles from "./page.module.css";
 import { useCallback, useEffect, useRef } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/all";
-import { useLoading } from "../../contexts/LoadingContext";
-import ScrambleTextOnHover from "../../components/ScrambleOnHover/ScrambleTextOnHover";
-import { useTransition } from "../../contexts/TransitionContext";
+import { useLoadingContext } from "@/contexts/loading-context";
+import ScrambleTextOnHover from "@/components/scramble-text-on-hover/scramble-text-on-hover";
+import { useTransitionContext } from "@/contexts/transition-context";
 import { useRouter } from "next/navigation";
 
 gsap.registerPlugin(ScrollTrigger);
 
 export default function Page() {
-  const { loading } = useLoading();
+  const { loading } = useLoadingContext();
   const { setIsTransitioning, setTransitionColor, setIsNavigating } =
-    useTransition();
+    useTransitionContext();
   const router = useRouter();
 
   const backLinkRef = useRef(null);
@@ -75,6 +75,8 @@ export default function Page() {
     }
   }, [loading]);
 
+  if (loading) return null;
+
   return (
     <div className={styles.project}>
       <button
@@ -119,12 +121,7 @@ export default function Page() {
         <div className={styles.projectNextLink}>
           <button
             className={styles.projectNextButton}
-            onClick={() =>
-              handleTransitionTo(
-                "/omelia",
-                "var(--omelia-bg)"
-              )
-            }
+            onClick={() => handleTransitionTo("/omelia", "var(--omelia-bg)")}
           >
             <div className={styles.projectNextTextContainer}>
               <p className={styles.projectNextText}>Omelia</p>

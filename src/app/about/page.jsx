@@ -5,14 +5,14 @@ import styles from "./page.module.css";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/all";
 import { useEffect, useRef } from "react";
-import { useLoading } from "../../contexts/LoadingContext";
-import ScrambleTextOnHover from "../../components/ScrambleOnHover/ScrambleTextOnHover";
+import { useLoadingContext } from "@/contexts/loading-context";
+import ScrambleTextOnHover from "@/components/scramble-text-on-hover/scramble-text-on-hover";
 import { useRouter } from "next/navigation";
 
 gsap.registerPlugin(ScrollTrigger);
 
 export default function Page() {
-  const { loading } = useLoading();
+  const { loading } = useLoadingContext();
   const router = useRouter();
 
   const backLinkRef = useRef(null);

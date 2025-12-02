@@ -3,8 +3,8 @@
 import { useEffect, useRef } from "react";
 import { gsap } from "gsap";
 import { ScrambleTextPlugin } from "gsap/ScrambleTextPlugin";
-import styles from "./ScrambleTextInitial.module.css";
-import { useLoading } from "../../contexts/LoadingContext";
+import styles from "./scramble-text-initial.module.css";
+import { useLoadingContext } from "@/contexts/loading-context";
 
 gsap.registerPlugin(ScrambleTextPlugin);
 
@@ -14,7 +14,7 @@ export default function ScrambleTextInitial({
   duration = 1.5,
   onIntroDone = null,
 }) {
-  const { loading } = useLoading();
+  const { loading } = useLoadingContext();
   const el = useRef();
 
   useEffect(() => {

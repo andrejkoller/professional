@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
-import styles from "./ScrambleTextOnHover.module.css";
+import styles from "./scramble-text-on-hover.module.css";
 
 export default function ScrambleTextOnHover({
   text,
